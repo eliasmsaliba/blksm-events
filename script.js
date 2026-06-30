@@ -24,12 +24,51 @@ if (navLinks) {
   loadJSON('content/menu.json').then(data => {
     const items = data.items || [];
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+
+    const isCurrent = (href) => {
+      if (!href) return false;
+      const linkPath = href.split('#')[0].split('?')[0];
+      return linkPath && linkPath === currentPath;
+    };
+
     navLinks.innerHTML = items.map(item => {
-      const linkPath = item.href.split('#')[0].split('?')[0];
-      const isActive = linkPath && linkPath === currentPath;
+      const children = Array.isArray(item.children) ? item.children : [];
+      const hasChildren = children.length > 0;
+      const isActive = isCurrent(item.href) || children.some(c => isCurrent(c.href));
       const classes = [item.isButton ? 'nav-cta' : '', isActive ? 'active' : ''].filter(Boolean).join(' ');
-      return `<li><a href="${item.href}"${classes ? ` class="${classes}"` : ''}>${item.label}</a></li>`;
+      const href = item.href || '#';
+
+      if (!hasChildren) {
+        return `<li><a href="${href}"${classes ? ` class="${classes}"` : ''}>${item.label}</a></li>`;
+      }
+
+      return `
+        <li class="has-submenu">
+          <a href="${href}"${classes ? ` class="${classes}"` : ''}>${item.label}</a>
+          <button class="submenu-toggle" type="button" aria-label="Toggle submenu">&#9662;</button>
+          <ul class="submenu">
+            ${children.map(c => `<li><a href="${c.href}"${isCurrent(c.href) ? ' class="active"' : ''}>${c.label}</a></li>`).join('')}
+          </ul>
+        </li>`;
     }).join('');
+
+    // Tapping the caret toggles the submenu instead of navigating.
+    navLinks.querySelectorAll('.submenu-toggle').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        btn.closest('.has-submenu').classList.toggle('open');
+      });
+    });
+
+    // A parent link with no real href (just "#") toggles the submenu rather than jumping to top.
+    navLinks.querySelectorAll('.has-submenu > a[href="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        a.closest('.has-submenu').classList.toggle('open');
+      });
+    });
   }).catch(() => {
     navLinks.innerHTML = '<li><a href="index.html">Home</a></li>';
   });
@@ -407,11 +446,39 @@ function renderRegistrationForm(ev) {
     const name = slugifyFieldLabel(f.label || 'field', usedNames);
     const required = f.required !== false;
     const reqAttr = required ? 'required' : '';
+    const opts = (f.options || '').split('\n').map(o => o.trim()).filter(Boolean);
+
+    if (f.type === 'radio') {
+      return `<fieldset class="field field-group">
+        <legend>${f.label}${required ? '' : ' (optional)'}</legend>
+        ${opts.map((o, i) => `
+          <label class="option-row">
+            <input type="radio" name="${name}" value="${o}" ${i === 0 ? reqAttr : ''}> ${o}
+          </label>`).join('')}
+      </fieldset>`;
+    }
+
+    if (f.type === 'checkbox') {
+      if (!opts.length) {
+        return `<div class="field field-group">
+          <label class="option-row">
+            <input type="checkbox" id="rf-${name}" name="${name}" value="yes" ${reqAttr}> ${f.label}
+          </label>
+        </div>`;
+      }
+      return `<fieldset class="field field-group">
+        <legend>${f.label}${required ? '' : ' (optional)'}</legend>
+        ${opts.map(o => `
+          <label class="option-row">
+            <input type="checkbox" name="${name}" value="${o}"> ${o}
+          </label>`).join('')}
+      </fieldset>`;
+    }
+
     let control;
     if (f.type === 'textarea') {
       control = `<textarea id="rf-${name}" name="${name}" rows="4" ${reqAttr}></textarea>`;
     } else if (f.type === 'select') {
-      const opts = (f.options || '').split('\n').map(o => o.trim()).filter(Boolean);
       control = `<select id="rf-${name}" name="${name}" ${reqAttr}>
         <option value="" disabled selected>Select an option</option>
         ${opts.map(o => `<option value="${o}">${o}</option>`).join('')}

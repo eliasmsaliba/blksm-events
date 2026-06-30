@@ -81,6 +81,25 @@ ul{list-style:none}
 .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;z-index:600}
 .nav-toggle span{width:24px;height:2px;background:var(--ink)}
 
+/* SUBMENU (desktop dropdown) */
+.has-submenu{position:relative;display:flex;align-items:center;gap:4px}
+.submenu-toggle{
+  background:none;border:none;color:var(--muted);cursor:pointer;font-size:11px;
+  padding:4px;line-height:1;display:flex;align-items:center;transition:transform .25s,color .25s;
+}
+.has-submenu:hover .submenu-toggle{color:var(--ink)}
+.submenu{
+  position:absolute;top:calc(100% + 14px);left:0;min-width:200px;
+  background:rgba(10,10,12,.96);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:14px;
+  padding:10px;display:flex;flex-direction:column;gap:2px;
+  opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:opacity .25s,transform .25s,visibility .25s;
+  list-style:none;text-transform:none;letter-spacing:normal;font-size:14px;
+}
+.has-submenu:hover .submenu{opacity:1;visibility:visible;transform:translateY(0)}
+.submenu li a{display:block;padding:9px 14px;border-radius:8px;opacity:.85}
+.submenu li a:hover{opacity:1;background:rgba(255,255,255,.06)}
+
 /* HERO */
 .hero{
   position:relative;min-height:100vh;display:flex;flex-direction:column;
@@ -406,6 +425,15 @@ ul{list-style:none}
 }
 .contact-form .btn{align-self:flex-start;border:none;cursor:pointer;font-family:var(--sans)}
 .contact-form .btn:disabled{opacity:.6;cursor:not-allowed}
+.field-group{border:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.field-group legend{font-size:12.5px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);padding:0;margin-bottom:2px}
+.option-row{
+  display:flex;align-items:center;gap:10px;font-size:15px;color:var(--ink);
+  text-transform:none;letter-spacing:normal;cursor:pointer;
+}
+.option-row input[type="radio"],.option-row input[type="checkbox"]{
+  width:18px;height:18px;accent-color:var(--accent);cursor:pointer;flex:none;
+}
 @media (max-width:640px){.form-row{grid-template-columns:1fr}}
 
 /* REGISTRATION FORM */
@@ -453,6 +481,19 @@ ul{list-style:none}
   }
   .nav-links.open{right:0}
   .nav-toggle{display:flex}
+
+  .has-submenu{flex-direction:column;align-items:flex-start;gap:10px;width:100%}
+  .submenu-toggle{
+    position:absolute;top:0;right:-34px;font-size:16px;padding:6px;
+    transform:rotate(0deg);
+  }
+  .has-submenu.open .submenu-toggle{transform:rotate(180deg)}
+  .submenu{
+    position:static;opacity:1;visibility:visible;transform:none;
+    background:none;border:none;backdrop-filter:none;padding:0 0 0 16px;
+    max-height:0;overflow:hidden;transition:max-height .35s ease;width:100%;
+  }
+  .has-submenu.open .submenu{max-height:300px}
 }
 @media (max-width:640px){
   .model-grid{grid-template-columns:1fr}

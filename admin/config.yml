@@ -143,7 +143,9 @@ collections:
                       - { label: "File Upload", value: "file" }
                       - { label: "Long Text / Message", value: "textarea" }
                       - { label: "Dropdown", value: "select" }
-                  - { label: "Dropdown Options (only used if Field Type is Dropdown — one per line)", name: "options", widget: "text", required: false }
+                      - { label: "Radio Buttons (pick one)", value: "radio" }
+                      - { label: "Checkboxes (pick any number)", value: "checkbox" }
+                  - { label: "Options (for Dropdown, Radio, or Checkboxes — one per line. Leave blank on Checkboxes for a single yes/no checkbox.)", name: "options", widget: "text", required: false }
                   - { label: "Allow Multiple Files? (only used if Field Type is File Upload)", name: "multiple", widget: "boolean", default: false, required: false }
                   - { label: "Required?", name: "required", widget: "boolean", default: true }
 
@@ -164,8 +166,18 @@ collections:
               - label: "Link"
                 name: "href"
                 widget: "string"
-                hint: "Examples — section on homepage: index.html#about · another page: team.html or events.html · a custom page: custom-page.html?slug=your-slug · external site: https://example.com"
+                required: false
+                hint: "Examples — section on homepage: index.html#about · another page: team.html or events.html · a custom page: custom-page.html?slug=your-slug · external site: https://example.com. Leave blank if this item only opens a submenu."
               - { label: "Show as a highlighted button (like Contact)?", name: "isButton", widget: "boolean", default: false, required: false }
+              - label: "Submenu Items (optional — turns this into a dropdown)"
+                name: "children"
+                widget: "list"
+                required: false
+                summary: "{{label}}"
+                hint: "Add items here to show a dropdown under this menu link."
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Link", name: "href", widget: "string" }
 
   - name: "pages"
     label: "Custom Pages"
