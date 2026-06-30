@@ -516,7 +516,7 @@ function renderRegistrationFormWithFields(ev, fields) {
     return `<div class="field"><label for="rf-${name}">${f.label}${required ? '' : ' (optional)'}</label>${control}</div>`;
     })();
 
-    return { width, html };
+    return { width, html, name, label: f.label, type: f.type };
   });
 
   // Pair up consecutive half-width fields into a side-by-side row.
@@ -551,11 +551,77 @@ function renderRegistrationFormWithFields(ev, fields) {
     submitBtn.disabled = true;
     submitBtn.textContent = 'Submitting…';
 
-    // Plain multipart FormData (not URL-encoded) — required so any File-type
-    // fields actually upload their content, not just their filename.
+    // Netlify Forms only reliably captures fields it saw in the static stub
+    // form at build time. Since each event asks different custom questions,
+    // we can't rely on those custom field names reaching Netlify directly —
+    // instead, consolidate every answer into the stub's fixed "responses"
+    // field, map any uploaded files into the generic file1–file5 slots, and
+    // best-effort-fill name/email/phone so the dashboard/email still show
+    // something recognizable at a glance.
+    const payload = new FormData();
+    payload.append('form-name', 'event-registration');
+    payload.append('event', ev.title);
+    const honeypot = form.querySelector('[name="bot-field"]');
+    payload.append('bot-field', honeypot ? honeypot.value : '');
+
+    let responses = '';
+    let fileSlot = 1;
+    let detectedName = '', detectedEmail = '', detectedPhone = '';
+
+    fieldEntries.forEach(entry => {
+      const { name, label, type } = entry;
+
+      if (type === 'file') {
+        const input = form.querySelector(`[name="${name}"]`);
+        const files = input ? Array.from(input.files) : [];
+        if (files.length) {
+          responses += `${label}: ${files.map(f => f.name).join(', ')}\n`;
+          files.forEach(file => {
+            if (fileSlot <= 5) {
+              payload.append(`file${fileSlot}`, file, file.name);
+              fileSlot++;
+            }
+          });
+        }
+        return;
+      }
+
+      if (type === 'radio') {
+        const checked = form.querySelector(`[name="${name}"]:checked`);
+        responses += `${label}: ${checked ? checked.value : ''}\n`;
+        return;
+      }
+
+      if (type === 'checkbox') {
+        const allBoxes = form.querySelectorAll(`[name="${name}"]`);
+        const checked = Array.from(form.querySelectorAll(`[name="${name}"]:checked`));
+        if (allBoxes.length === 1) {
+          // Single yes/no consent checkbox.
+          responses += `${label}: ${checked.length ? 'Yes' : 'No'}\n`;
+        } else {
+          // Checkbox group (pick any number).
+          responses += `${label}: ${checked.map(b => b.value).join(', ') || '(none selected)'}\n`;
+        }
+        return;
+      }
+
+      const input = form.querySelector(`[name="${name}"]`);
+      const value = input ? input.value : '';
+      responses += `${label}: ${value}\n`;
+
+      if (type === 'email' && !detectedEmail) detectedEmail = value;
+      if (type === 'tel' && !detectedPhone) detectedPhone = value;
+      if (type === 'text' && !detectedName && /name/i.test(label)) detectedName = value;
+    });
+
+    payload.append('name', detectedName);
+    payload.append('email', detectedEmail);
+    payload.append('phone', detectedPhone);
+    payload.append('responses', responses.trim());
+
     fetch('/', {
       method: 'POST',
-      body: new FormData(form),
+      body: payload,
     })
       .then(() => {
         host.innerHTML = `<p class="form-success">Thanks — you're registered for <strong>${ev.title}</strong>. We've got your details and will be in touch if anything changes.</p>`;

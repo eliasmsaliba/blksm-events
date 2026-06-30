@@ -52,16 +52,24 @@
   Static stub form so Netlify's build-time scanner registers the "event-registration"
   form name. The real, dynamically-built form (rendered by script.js) submits to this
   same form name via fetch — Netlify accepts whatever fields are POSTed once the name
-  is registered, even ones not listed below.
+  is registered. Because Netlify only reliably captures fields it has seen here
+  at build time, the real visible form (built per-event from the CMS) does NOT
+  submit its own custom field names directly — script.js consolidates every
+  answer into the "responses" field below, and maps any uploaded files into the
+  generic file1–file5 slots, so nothing gets silently dropped regardless of what
+  questions a given event asks.
 -->
 <form name="event-registration" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" hidden>
   <input type="text" name="name" />
   <input type="email" name="email" />
   <input type="tel" name="phone" />
-  <input type="date" name="date" />
-  <input type="file" name="attachment" />
   <input type="text" name="event" />
-  <textarea name="message"></textarea>
+  <textarea name="responses"></textarea>
+  <input type="file" name="file1" />
+  <input type="file" name="file2" />
+  <input type="file" name="file3" />
+  <input type="file" name="file4" />
+  <input type="file" name="file5" />
 </form>
 
 <section class="section why team-culture">
