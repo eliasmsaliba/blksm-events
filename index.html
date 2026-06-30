@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLKSM Events — Designing. Managing. Delivering Live Experiences.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="noise"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo"><img src="assets/logo.svg" alt="BLKSM Events" class="logo-img"></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#departments">Departments</a></li>
+      <li><a href="#industries">Industries</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header id="top" class="hero">
+  <div class="hero-bg">
+    <div class="cine-beam"></div>
+    <div class="cine-beam2"></div>
+    <div class="cine-vignette"></div>
+  </div>
+  <div class="hero-content">
+    <p class="eyebrow reveal" data-key="heroEyebrow">End-to-End Event Management &amp; Live Experience Specialists</p>
+    <h1 class="hero-title">
+      <span class="reveal" data-key="heroLine1">DESIGNING.</span>
+      <span class="reveal" data-key="heroLine2">MANAGING.</span>
+      <span class="reveal hero-accent" data-key="heroLine3">DELIVERING LIVE EXPERIENCES.</span>
+    </h1>
+    <p class="hero-sub reveal" data-key="heroSub">From concept to curtain call, operational excellence at every touchpoint.</p>
+    <div class="hero-actions reveal">
+      <a href="#contact" class="btn btn-primary">Start a Conversation</a>
+      <a href="#departments" class="btn btn-ghost">Explore Capabilities</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span></span>Scroll</div>
+</header>
+
+<section id="about" class="section about">
+  <div class="container">
+    <div class="section-tag">01 — Who We Are</div>
+    <h2 class="section-title">About <span class="accent">BLKSM Events</span></h2>
+    <div class="about-grid">
+      <p class="lead" data-key="aboutLead">BLKSM Events is a full-service event management and planning company specialising in complex, large-scale, and high-impact live experiences.</p>
+      <div class="about-copy">
+        <p data-key="aboutCopy1">We combine strategic planning, creative design, technical delivery, and commercial execution under one integrated operating model.</p>
+        <p data-key="aboutCopy2">Our approach is process-driven, audience-centric, and execution-focused, ensuring every event is delivered safely, seamlessly, and memorably.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section model">
+  <div class="container">
+    <div class="section-tag">02 — Our Operating Model</div>
+    <h2 class="section-title">One Vision. Multiple Expert Departments.<br><span class="accent">One Seamless Experience.</span></h2>
+    <p class="lead-narrow">BLKSM operates through specialised departments that work in parallel under a unified project governance framework.</p>
+    <div class="model-grid">
+      <div class="model-card reveal-up"><span class="model-num">01</span><h3>Reduce</h3><p>Operational risk</p></div>
+      <div class="model-card reveal-up"><span class="model-num">02</span><h3>Improve</h3><p>Efficiency &amp; accountability</p></div>
+      <div class="model-card reveal-up"><span class="model-num">03</span><h3>Maintain</h3><p>Creative integrity</p></div>
+      <div class="model-card reveal-up"><span class="model-num">04</span><h3>Deliver</h3><p>Consistent quality, every touchpoint</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="section process">
+  <div class="container">
+    <div class="section-tag">03 — How We Work</div>
+    <h2 class="section-title">Our End-to-End <span class="accent">Process</span></h2>
+    <p class="lead-narrow">Each department plugs into this lifecycle at the appropriate stage.</p>
+    <ol class="timeline">
+      <li class="timeline-item"><div class="tnum">01</div><div class="ttext"><h4>Discovery &amp; Strategy</h4></div></li>
+      <li class="timeline-item"><div class="tnum">02</div><div class="ttext"><h4>Design &amp; Planning</h4></div></li>
+      <li class="timeline-item"><div class="tnum">03</div><div class="ttext"><h4>Commercial &amp; Stakeholder Alignment</h4></div></li>
+      <li class="timeline-item"><div class="tnum">04</div><div class="ttext"><h4>Operations &amp; Production</h4></div></li>
+      <li class="timeline-item"><div class="tnum">05</div><div class="ttext"><h4>Live Delivery</h4></div></li>
+      <li class="timeline-item"><div class="tnum">06</div><div class="ttext"><h4>Post-Event Review &amp; Reporting</h4></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="departments" class="section departments">
+  <div class="container">
+    <div class="section-tag">04 — Department Overview</div>
+    <h2 class="section-title">Built From <span class="accent">Specialist Departments</span></h2>
+    <p class="lead-narrow">Click a department to explore how it operates.</p>
+
+    <div class="dept-accordion" id="deptAccordion">
+
+      <div class="dept" data-open="true">
+        <button class="dept-head">
+          <span class="dept-index">01</span>
+          <span class="dept-name">Venue Operations</span>
+          <span class="dept-tagline">The Backbone of Event Delivery</span>
+          <span class="dept-chevron">+</span>
+        </button>
+        <div class="dept-body">
+          <p>Our Venue Operations team ensures that every physical space functions efficiently, safely, and in alignment with the event vision.</p>
+          <div class="dept-cols">
+            <div>
+              <h5>Core Responsibilities</h5>
+              <ul><li>Venue readiness &amp; compliance</li><li>Operational zoning &amp; workflows</li><li>Crowd movement &amp; flow planning</li><li>On-site coordination during live days</li></ul>
+            </div>
+            <div>
+              <h5>Zone Operations</h5>
+              <ul><li>Zoning strategy &amp; layout management</li><li>Area supervisors &amp; escalation protocols</li><li>Real-time issue resolution</li></ul>
+            </div>
+            <div>
+              <h5>Customer Services</h5>
+              <ul><li>Front-of-house operations</li><li>Guest information points</li><li>Complaint handling &amp; service recovery</li></ul>
+            </div>
+            <div>
+              <h5>Design &amp; Branding</h5>
+              <ul><li>Venue branding integration</li><li>Wayfinding &amp; signage</li><li>Sponsor &amp; partner visual placements</li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dept">
+        <button class="dept-head">
+          <span class="dept-index">02</span>
+          <span class="dept-name">Commercial</span>
+          <span class="dept-tagline">Driving Revenue &amp; Partnerships</span>
+          <span class="dept-chevron">+</span>
+        </button>
+        <div class="dept-body">
+          <p>Our Commercial team focuses on maximising event value through strategic monetisation and partnerships.</p>
+          <div class="dept-cols">
+            <div>
+              <h5>Functions</h5>
+              <ul><li>Ticketing strategy &amp; platform management</li><li>Sponsorship acquisition &amp; servicing</li><li>Commercial rights delivery &amp; compliance</li></ul>
+            </div>
+            <div>
+              <h5>Ticketing</h5>
+              <ul><li>Pricing strategy</li><li>Sales channel management</li><li>Access tiers &amp; seating logic</li><li>Data &amp; attendance reporting</li></ul>
+            </div>
+            <div>
+              <h5>Sponsorship</h5>
+              <ul><li>Sponsor asset development</li><li>Contractual deliverables tracking</li><li>On-site brand activation execution</li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dept">
+        <button class="dept-head">
+          <span class="dept-index">03</span>
+          <span class="dept-name">Marketing &amp; Communications</span>
+          <span class="dept-tagline">Telling the Story Before, During, and After</span>
+          <span class="dept-chevron">+</span>
+        </button>
+        <div class="dept-body">
+          <p>Our MarComms team ensures consistent, strategic communication across all channels.</p>
+          <div class="dept-cols">
+            <div>
+              <h5>Scope of Work</h5>
+              <ul><li>Event branding &amp; messaging</li><li>Digital &amp; social media coordination</li><li>Media relations &amp; press management</li><li>On-site communications</li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dept">
+        <button class="dept-head">
+          <span class="dept-index">04</span>
+          <span class="dept-name">Accreditation &amp; Access Control</span>
+          <span class="dept-tagline">Right People. Right Places. Right Time.</span>
+          <span class="dept-chevron">+</span>
+        </button>
+        <div class="dept-body">
+          <p>We manage all credentialing and access systems to ensure security, efficiency, and compliance.</p>
+          <div class="dept-cols">
+            <div>
+              <h5>Responsibilities</h5>
+              <ul><li>Accreditation hierarchy design</li><li>Access zoning &amp; permissions</li><li>Badge production &amp; distribution</li><li>Integration with security &amp; venue teams</li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dept">
+        <button class="dept-head">
+          <span class="dept-index">05</span>
+          <span class="dept-name">Shared Services</span>
+          <span class="dept-tagline">Efficiency Through Centralised Expertise</span>
+          <span class="dept-chevron">+</span>
+        </button>
+        <div class="dept-body">
+          <p>Shared Services support all departments to ensure consistency and operational efficiency.</p>
+          <div class="dept-cols">
+            <div>
+              <h5>Layout &amp; Production</h5>
+              <ul><li>Master site plans &amp; layouts</li><li>Production scheduling</li><li>Build &amp; breakdown coordination</li></ul>
+            </div>
+            <div>
+              <h5>Technical</h5>
+              <ul><li>Audio, visual, lighting, staging</li><li>Power &amp; connectivity planning</li><li>Technical rehearsals &amp; show calls</li></ul>
+            </div>
+            <div>
+              <h5>Security</h5>
+              <ul><li>Event security strategy &amp; risk assessment</li><li>Crowd management &amp; control planning</li><li>Coordination with venue security &amp; authorities</li><li>Incident response &amp; escalation protocols</li><li>Asset protection &amp; back-of-house security</li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dept">
+        <button class="dept-head">
+          <span class="dept-index">06</span>
+          <span class="dept-name">Procurement</span>
+          <span class="dept-tagline">Cost Control Without Compromising Quality</span>
+          <span class="dept-chevron">+</span>
+        </button>
+        <div class="dept-body">
+          <p>Our Procurement team manages supplier sourcing, contracts, and budget optimisation.</p>
+          <div class="dept-cols">
+            <div>
+              <h5>Key Functions</h5>
+              <ul><li>Vendor selection &amp; negotiation</li><li>Contract management</li><li>Budget tracking &amp; cost control</li><li>Compliance &amp; risk mitigation</li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dept">
+        <button class="dept-head">
+          <span class="dept-index">07</span>
+          <span class="dept-name">IT</span>
+          <span class="dept-tagline">Digital Infrastructure for Live Operations</span>
+          <span class="dept-chevron">+</span>
+        </button>
+        <div class="dept-body">
+          <p>IT ensures that all event systems operate reliably and securely.</p>
+          <div class="dept-cols">
+            <div>
+              <h5>Responsibilities</h5>
+              <ul><li>Ticketing &amp; accreditation systems</li><li>Network &amp; connectivity</li><li>On-site technical support</li><li>Data security &amp; reporting</li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dept">
+        <button class="dept-head">
+          <span class="dept-index">08</span>
+          <span class="dept-name">Hospitality &amp; Guest Management</span>
+          <span class="dept-tagline">Premium Experiences for VIPs, Talent &amp; Stakeholders</span>
+          <span class="dept-chevron">+</span>
+        </button>
+        <div class="dept-body">
+          <p>We manage high-touch guest experiences with precision and discretion.</p>
+          <div class="dept-cols">
+            <div>
+              <h5>Scope</h5>
+              <ul><li>VIP &amp; protocol management</li><li>Talent logistics &amp; hosting</li><li>Catering coordination</li><li>Guest journey mapping</li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dept">
+        <button class="dept-head">
+          <span class="dept-index">09</span>
+          <span class="dept-name">Live Experience</span>
+          <span class="dept-tagline">Moments That Define the Event</span>
+          <span class="dept-chevron">+</span>
+        </button>
+        <div class="dept-body">
+          <p>This department delivers the emotional and experiential core of the event.</p>
+          <div class="dept-cols">
+            <div>
+              <h5>Opening &amp; Closing Ceremonies</h5>
+              <ul><li>Creative direction</li><li>Rehearsals &amp; show flow</li><li>Multi-disciplinary coordination</li></ul>
+            </div>
+            <div>
+              <h5>Live Entertainment &amp; Concerts</h5>
+              <ul><li>Artist booking &amp; management</li><li>Technical riders &amp; rehearsals</li><li>Show execution &amp; audience engagement</li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="industries" class="section industries">
+  <div class="container">
+    <div class="section-tag">05 — Sector-Specific Expertise</div>
+    <h2 class="section-title">Industry <span class="accent">Operations</span></h2>
+    <p class="lead-narrow">BLKSM adapts its operational model to suit the specific requirements of different industries.</p>
+    <div class="industry-grid">
+      <div class="industry-card reveal-up"><div class="industry-icon">◆</div><h3>Sports &amp; Competitions</h3><p>Large-scale sporting events and championships.</p></div>
+      <div class="industry-card reveal-up"><div class="industry-icon">◆</div><h3>Corporate &amp; Brand</h3><p>Corporate activations and brand experiences.</p></div>
+      <div class="industry-card reveal-up"><div class="industry-icon">◆</div><h3>Cultural &amp; Public</h3><p>Cultural programming and public events.</p></div>
+      <div class="industry-card reveal-up"><div class="industry-icon">◆</div><h3>Entertainment &amp; Festivals</h3><p>Concerts, festivals, and live entertainment.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="section why">
+  <div class="container">
+    <div class="section-tag">06 — Why BLKSM Events</div>
+    <h2 class="section-title">What Sets Us <span class="accent">Apart</span></h2>
+    <div class="why-grid">
+      <div class="why-item reveal-up"><span class="why-mark">01</span><p>Fully integrated operating model</p></div>
+      <div class="why-item reveal-up"><span class="why-mark">02</span><p>Clear accountability across departments</p></div>
+      <div class="why-item reveal-up"><span class="why-mark">03</span><p>Proven processes and controls</p></div>
+      <div class="why-item reveal-up"><span class="why-mark">04</span><p>Creative excellence backed by operational discipline</p></div>
+      <div class="why-item reveal-up"><span class="why-mark">05</span><p>Scalable solutions for events of all sizes</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section contact">
+  <div class="container contact-inner">
+    <h2 class="section-title cta-title"><span data-key="contactTitle1">Let's Build Something</span><br><span class="accent" data-key="contactTitle2">Unforgettable.</span></h2>
+    <p class="lead-narrow" data-key="contactBlurb">Tell us about your event — we'll handle the rest, end to end.</p>
+
+    <form class="contact-form" action="https://formsubmit.co/hello@blksm.events" method="POST">
+      <input type="hidden" name="_subject" value="New enquiry from blksm.events">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none">
+
+      <div class="form-row">
+        <div class="field">
+          <label for="f-name">Name</label>
+          <input type="text" id="f-name" name="Name" required>
+        </div>
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input type="email" id="f-email" name="Email" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="f-phone">Phone / Mobile</label>
+          <input type="tel" id="f-phone" name="Phone" required>
+        </div>
+        <div class="field">
+          <label for="f-city">City</label>
+          <select id="f-city" name="City" required>
+            <option value="" disabled selected>Select your city</option>
+            <option>Alberton</option><option>Alexander Bay</option><option>Aliwal North</option><option>Ballito</option><option>Bela-Bela</option><option>Bellville</option><option>Benoni</option><option>Bethlehem</option><option>Bloemfontein</option><option>Boksburg</option><option>Brakpan</option><option>Brits</option><option>Butterworth</option><option>Calvinia</option><option>Cape Town</option><option>Centurion</option><option>Chatsworth</option><option>Colesberg</option><option>Cradock</option><option>De Aar</option><option>Durban</option><option>Durbanville</option><option>East London</option><option>Empangeni</option><option>Ermelo</option><option>Ficksburg</option><option>George</option><option>Giyani</option><option>Gqeberha</option><option>Grahamstown</option><option>Harrismith</option><option>Hartbeespoort</option><option>Hazyview</option><option>Hermanus</option><option>Hoedspruit</option><option>Howick</option><option>Jeffreys Bay</option><option>Johannesburg</option><option>Kathu</option><option>Kempton Park</option><option>Kimberley</option><option>King William's Town</option><option>Klerksdorp</option><option>Knysna</option><option>Komatipoort</option><option>Kroonstad</option><option>Krugersdorp</option><option>Kuruman</option><option>Ladysmith</option><option>Lephalale</option><option>Lichtenburg</option><option>Louis Trichardt</option><option>Mahikeng</option><option>Malmesbury</option><option>Margate</option><option>Middelburg</option><option>Midrand</option><option>Mokopane</option><option>Mossel Bay</option><option>Mthatha</option><option>Musina</option><option>Nelspruit</option><option>Newcastle</option><option>Orkney</option><option>Oudtshoorn</option><option>Paarl</option><option>Parys</option><option>Phuthaditjhaba</option><option>Pietermaritzburg</option><option>Pinetown</option><option>Polokwane</option><option>Port Alfred</option><option>Port Shepstone</option><option>Postmasburg</option><option>Potchefstroom</option><option>Pretoria</option><option>Queenstown</option><option>Randburg</option><option>Richards Bay</option><option>Roodepoort</option><option>Rustenburg</option><option>Sabie</option><option>Saldanha</option><option>Sandton</option><option>Sasolburg</option><option>Secunda</option><option>Somerset West</option><option>Soweto</option><option>Springbok</option><option>Springs</option><option>Standerton</option><option>Stanger</option><option>Stellenbosch</option><option>Thohoyandou</option><option>Tzaneen</option><option>Uitenhage</option><option>Umhlanga</option><option>Upington</option><option>Virginia</option><option>Vredenburg</option><option>Vryburg</option><option>Vryheid</option><option>Welkom</option><option>White River</option><option>Witbank</option><option>Worcester</option><option>Zeerust</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="f-source">How did you hear about us?</label>
+        <select id="f-source" name="How did you hear about us" required>
+          <option value="" disabled selected>Select an option</option>
+          <option>Instagram</option>
+          <option>Facebook</option>
+          <option>Google Search</option>
+          <option>LinkedIn</option>
+          <option>Referral / Word of Mouth</option>
+          <option>Attended a Past Event</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="f-message">Message</label>
+        <textarea id="f-message" name="Message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg">Send Enquiry</button>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="#top" class="logo"><img src="assets/logo.svg" alt="BLKSM Events" class="logo-img"></a>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+    </div>
+    <p>&copy; <span id="year"></span> BLKSM Events. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

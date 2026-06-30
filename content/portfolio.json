@@ -1,0 +1,12 @@
+{
+  "projects": [
+    { "id": "nocturne-open-air", "title": "Nocturne Open Air", "category": "festival", "categoryLabel": "Festival", "image": "", "summary": "40,000-capacity multi-day music festival — full production, security, and commercial management." },
+    { "id": "continental-championship-finals", "title": "Continental Championship Finals", "category": "sports", "categoryLabel": "Sports", "image": "", "summary": "End-to-end venue operations and accreditation for a regional championship final." },
+    { "id": "horizon-tech-summit", "title": "Horizon Tech Summit", "category": "corporate", "categoryLabel": "Corporate", "image": "", "summary": "Three-day brand activation and conference experience for a global technology client." },
+    { "id": "heritage-arts-biennale", "title": "Heritage Arts Biennale", "category": "cultural", "categoryLabel": "Cultural", "image": "", "summary": "City-wide cultural programme spanning twelve venues with unified wayfinding and branding." },
+    { "id": "solstice-block-party", "title": "Solstice Block Party", "category": "festival", "categoryLabel": "Festival", "image": "", "summary": "Street-level live entertainment series with rolling stages and rapid changeovers." },
+    { "id": "metro-marathon", "title": "Metro Marathon", "category": "sports", "categoryLabel": "Sports", "image": "", "summary": "Crowd management and guest hospitality for a 60,000-runner city marathon." },
+    { "id": "apex-product-launch", "title": "Apex Product Launch", "category": "corporate", "categoryLabel": "Corporate", "image": "", "summary": "High-impact opening ceremony and live reveal for a flagship product launch." },
+    { "id": "lantern-festival-quarter", "title": "Lantern Festival Quarter", "category": "cultural", "categoryLabel": "Cultural", "image": "", "summary": "Public cultural celebration with integrated security, accreditation, and sponsor activation." }
+  ]
+}

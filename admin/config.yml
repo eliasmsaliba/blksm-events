@@ -1,0 +1,80 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+site_url: https://blksm.events
+display_url: https://blksm.events
+logo_url: /assets/logo.svg
+
+collections:
+  - name: "home"
+    label: "Homepage Text"
+    files:
+      - name: "home"
+        label: "Homepage Content"
+        file: "content/home.json"
+        fields:
+          - { label: "Hero — Eyebrow line", name: "heroEyebrow", widget: "string" }
+          - { label: "Hero — Title line 1", name: "heroLine1", widget: "string" }
+          - { label: "Hero — Title line 2", name: "heroLine2", widget: "string" }
+          - { label: "Hero — Title line 3 (highlighted)", name: "heroLine3", widget: "string" }
+          - { label: "Hero — Subtext", name: "heroSub", widget: "text" }
+          - { label: "About — Lead sentence", name: "aboutLead", widget: "text" }
+          - { label: "About — Paragraph 1", name: "aboutCopy1", widget: "text" }
+          - { label: "About — Paragraph 2", name: "aboutCopy2", widget: "text" }
+          - { label: "Contact — Title line 1", name: "contactTitle1", widget: "string" }
+          - { label: "Contact — Title line 2 (highlighted)", name: "contactTitle2", widget: "string" }
+          - { label: "Contact — Blurb", name: "contactBlurb", widget: "text" }
+
+  - name: "team"
+    label: "Team Members"
+    files:
+      - name: "team"
+        label: "Team Roster"
+        file: "content/team.json"
+        fields:
+          - label: "Members"
+            name: "members"
+            widget: "list"
+            summary: "{{name}} — {{role}}"
+            fields:
+              - { label: "Full Name", name: "name", widget: "string" }
+              - { label: "Role / Title", name: "role", widget: "string" }
+              - { label: "Department", name: "department", widget: "string" }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Phone", name: "phone", widget: "string", required: false }
+              - { label: "Short Bio (shown on team grid card)", name: "bio", widget: "text" }
+              - { label: "Full Bio (shown on their profile page)", name: "details", widget: "text" }
+              - { label: "URL Slug (no spaces, e.g. jane-doe)", name: "id", widget: "string", hint: "Used in the web address for this person's profile page. Lowercase, hyphens only, no spaces." }
+
+  - name: "portfolio"
+    label: "Portfolio Projects"
+    files:
+      - name: "portfolio"
+        label: "Portfolio Projects"
+        file: "content/portfolio.json"
+        fields:
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            summary: "{{title}} — {{categoryLabel}}"
+            fields:
+              - { label: "Project Title", name: "title", widget: "string" }
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options:
+                  - { label: "Festival", value: "festival" }
+                  - { label: "Sports", value: "sports" }
+                  - { label: "Corporate", value: "corporate" }
+                  - { label: "Cultural", value: "cultural" }
+              - { label: "Category Label (shown on the badge)", name: "categoryLabel", widget: "string" }
+              - { label: "Image", name: "image", widget: "image", required: false, hint: "Optional — leave blank to use a brand gradient instead of a photo." }
+              - { label: "Summary", name: "summary", widget: "text" }
+              - { label: "URL Slug", name: "id", widget: "string", hint: "Lowercase, hyphens only, no spaces." }

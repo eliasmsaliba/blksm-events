@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — BLKSM Events</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="noise"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><img src="assets/logo.svg" alt="BLKSM Events" class="logo-img"></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#process">Process</a></li>
+      <li><a href="index.html#departments">Departments</a></li>
+      <li><a href="index.html#industries">Industries</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero hero-sub-page">
+  <div class="hero-bg">
+    <div class="cine-beam"></div>
+    <div class="cine-beam2"></div>
+    <div class="cine-vignette"></div>
+  </div>
+  <div class="hero-content">
+    <p class="eyebrow reveal">Selected Work</p>
+    <h1 class="hero-title page-title">
+      <span class="reveal">OUR</span>
+      <span class="reveal hero-accent">PORTFOLIO</span>
+    </h1>
+    <p class="hero-sub reveal">A look at the live experiences we've designed, managed, and delivered across sports, culture, corporate, and entertainment.</p>
+  </div>
+</header>
+
+<section class="section portfolio">
+  <div class="container">
+    <div class="filter-row reveal-up">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="festival">Festivals</button>
+      <button class="filter-btn" data-filter="sports">Sports</button>
+      <button class="filter-btn" data-filter="corporate">Corporate</button>
+      <button class="filter-btn" data-filter="cultural">Cultural</button>
+    </div>
+
+    <div class="portfolio-grid" id="portfolioGrid"></div>
+  </div>
+</section>
+
+<section class="section why team-culture">
+  <div class="container">
+    <div class="section-tag">Let's Talk</div>
+    <h2 class="section-title">Have an Event <span class="accent">In Mind?</span></h2>
+    <p class="lead-narrow">Whichever industry you're in, our integrated operating model adapts to deliver it safely, seamlessly, and memorably.</p>
+    <a href="index.html#contact" class="btn btn-primary">Start a Conversation</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="index.html" class="logo"><img src="assets/logo.svg" alt="BLKSM Events" class="logo-img"></a>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+    </div>
+    <p>&copy; <span id="year"></span> BLKSM Events. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

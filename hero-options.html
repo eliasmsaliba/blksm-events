@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hero Concepts — BLKSM Events</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#040405; --ink:#f5f6f8; --muted:#9b9aa1;
+  --magenta:#eb008b; --cyan:#00d9e8; --yellow:#fff200;
+  --serif:'Bebas Neue',sans-serif; --sans:'Inter',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);overflow-x:hidden}
+.picker{
+  position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:999;
+  display:flex;gap:8px;background:rgba(8,8,10,.7);backdrop-filter:blur(10px);
+  padding:8px;border-radius:999px;border:1px solid rgba(255,255,255,.1);
+}
+.picker a{
+  color:var(--muted);text-decoration:none;font-size:12.5px;letter-spacing:.5px;text-transform:uppercase;
+  padding:9px 16px;border-radius:999px;transition:all .25s;
+}
+.picker a:hover{color:var(--ink)}
+.picker a.active{background:var(--magenta);color:#fff}
+
+.variant{
+  position:relative;min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;overflow:hidden;
+  border-bottom:2px solid rgba(255,255,255,.06);
+}
+.label{
+  position:absolute;top:90px;left:50%;transform:translateX(-50%);
+  font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);z-index:5;
+}
+.eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:22px;position:relative;z-index:5}
+.htitle{
+  font-family:var(--serif);font-size:clamp(46px,9vw,108px);line-height:.94;letter-spacing:1px;position:relative;z-index:5;
+}
+.htitle .accent{
+  background:linear-gradient(100deg,var(--magenta),var(--cyan) 55%,var(--magenta));
+  background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:gradFlow 8s ease-in-out infinite;display:block;
+}
+@keyframes gradFlow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.hsub{margin:26px auto 0;max-width:480px;color:var(--muted);font-size:17px;line-height:1.6;position:relative;z-index:5}
+.scrolldown{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);z-index:5}
+
+/* ============ OPTION 1: SIGNAL GRID ============ */
+#v1{background:var(--bg)}
+.v1-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(245,246,248,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(245,246,248,.05) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 70% 60% at 50% 45%, #000 30%, transparent 80%);
+  animation:gridPan 18s linear infinite;
+}
+@keyframes gridPan{0%{background-position:0 0}100%{background-position:60px 60px}}
+.v1-scan{
+  position:absolute;left:0;right:0;height:2px;top:0;
+  background:linear-gradient(90deg,transparent,var(--cyan),var(--magenta),transparent);
+  box-shadow:0 0 30px 6px rgba(0,217,232,.6);
+  animation:v1scan 6s linear infinite;
+}
+@keyframes v1scan{0%{top:0%;opacity:0}10%{opacity:1}90%{opacity:1}100%{top:100%;opacity:0}}
+.v1-node{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--magenta);box-shadow:0 0 12px 3px var(--magenta)}
+.v1-glow{position:absolute;width:560px;height:560px;border-radius:50%;background:var(--magenta);filter:blur(120px);opacity:.25;top:50%;left:50%;transform:translate(-50%,-50%);animation:v1pulse 6s ease-in-out infinite}
+@keyframes v1pulse{0%,100%{opacity:.18;transform:translate(-50%,-50%) scale(1)}50%{opacity:.32;transform:translate(-50%,-50%) scale(1.15)}}
+
+/* ============ OPTION 2: LIQUID CHROME ============ */
+#v2{background:var(--bg)}
+.v2-blob{position:absolute;filter:blur(80px);border-radius:50%;mix-blend-mode:screen}
+.v2-b1{width:520px;height:520px;background:var(--magenta);top:-10%;left:5%;opacity:.55;animation:v2morph1 14s ease-in-out infinite}
+.v2-b2{width:480px;height:480px;background:var(--cyan);bottom:-10%;right:5%;opacity:.45;animation:v2morph2 18s ease-in-out infinite}
+.v2-b3{width:300px;height:300px;background:#ffffff;top:40%;left:50%;opacity:.06;animation:v2morph3 10s ease-in-out infinite}
+@keyframes v2morph1{
+  0%,100%{border-radius:42% 58% 70% 30%/45% 45% 55% 55%;transform:translate(0,0) scale(1)}
+  33%{border-radius:60% 40% 30% 70%/60% 30% 70% 40%;transform:translate(60px,40px) scale(1.1)}
+  66%{border-radius:30% 70% 60% 40%/50% 60% 40% 50%;transform:translate(-30px,60px) scale(.95)}
+}
+@keyframes v2morph2{
+  0%,100%{border-radius:50% 50% 50% 50%/40% 60% 40% 60%;transform:translate(0,0) scale(1)}
+  50%{border-radius:65% 35% 45% 55%/55% 45% 65% 35%;transform:translate(-50px,-40px) scale(1.12)}
+}
+@keyframes v2morph3{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.4)}}
+.v2-grain{position:absolute;inset:0;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ============ OPTION 3: PARTICLE NETWORK ============ */
+#v3{background:var(--bg)}
+#v3canvas{position:absolute;inset:0}
+.v3-vignette{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 45%, transparent 30%, var(--bg) 90%)}
+
+/* ============ OPTION 4: CINEMATIC BEAM ============ */
+#v4{background:var(--bg)}
+.v4-beam{
+  position:absolute;width:140%;height:240px;top:-10%;left:-20%;
+  background:linear-gradient(180deg,transparent,rgba(235,0,139,.35),transparent);
+  transform:rotate(-18deg);filter:blur(30px);
+  animation:v4sweep 12s ease-in-out infinite;
+}
+.v4-beam2{
+  position:absolute;width:140%;height:160px;bottom:-10%;right:-20%;
+  background:linear-gradient(180deg,transparent,rgba(0,217,232,.3),transparent);
+  transform:rotate(-18deg);filter:blur(30px);
+  animation:v4sweep2 16s ease-in-out infinite;
+}
+@keyframes v4sweep{0%,100%{top:-15%}50%{top:55%}}
+@keyframes v4sweep2{0%,100%{bottom:-15%}50%{bottom:50%}}
+.v4-vig{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 50% 50%, transparent 40%, var(--bg) 100%)}
+.v4-grain{position:absolute;inset:0;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+</style>
+</head>
+<body>
+
+<nav class="picker">
+  <a href="#v1">1 · Signal Grid</a>
+  <a href="#v2">2 · Liquid Chrome</a>
+  <a href="#v3">3 · Particle Network</a>
+  <a href="#v4">4 · Cinematic Beam</a>
+</nav>
+
+<!-- OPTION 1 -->
+<section class="variant" id="v1">
+  <div class="label">Option 1 — Signal Grid</div>
+  <div class="v1-grid"></div>
+  <div class="v1-glow"></div>
+  <div class="v1-scan"></div>
+  <div id="v1nodes"></div>
+  <p class="eyebrow">End-to-End Event Management &amp; Live Experience Specialists</p>
+  <h1 class="htitle">DESIGNING. MANAGING.<span class="accent">DELIVERING LIVE EXPERIENCES.</span></h1>
+  <p class="hsub">A precise, technical grid with a continuous scanning sweep and pulsing signal nodes — structured and futuristic.</p>
+  <div class="scrolldown">Scroll for more options</div>
+</section>
+
+<!-- OPTION 2 -->
+<section class="variant" id="v2">
+  <div class="label">Option 2 — Liquid Chrome</div>
+  <div class="v2-blob v2-b1"></div>
+  <div class="v2-blob v2-b2"></div>
+  <div class="v2-blob v2-b3"></div>
+  <div class="v2-grain"></div>
+  <p class="eyebrow">End-to-End Event Management &amp; Live Experience Specialists</p>
+  <h1 class="htitle">DESIGNING. MANAGING.<span class="accent">DELIVERING LIVE EXPERIENCES.</span></h1>
+  <p class="hsub">Soft, continuously morphing chrome blobs blending magenta and cyan — fluid, premium, organic motion.</p>
+  <div class="scrolldown">Scroll for more options</div>
+</section>
+
+<!-- OPTION 3 -->
+<section class="variant" id="v3">
+  <div class="label">Option 3 — Particle Network</div>
+  <canvas id="v3canvas"></canvas>
+  <div class="v3-vignette"></div>
+  <p class="eyebrow">End-to-End Event Management &amp; Live Experience Specialists</p>
+  <h1 class="htitle">DESIGNING. MANAGING.<span class="accent">DELIVERING LIVE EXPERIENCES.</span></h1>
+  <p class="hsub">A living constellation of connected nodes drifting and linking in real time — high-tech, data-driven energy.</p>
+  <div class="scrolldown">Scroll for more options</div>
+</section>
+
+<!-- OPTION 4 -->
+<section class="variant" id="v4">
+  <div class="label">Option 4 — Cinematic Beam</div>
+  <div class="v4-beam"></div>
+  <div class="v4-beam2"></div>
+  <div class="v4-vig"></div>
+  <div class="v4-grain"></div>
+  <p class="eyebrow">End-to-End Event Management &amp; Live Experience Specialists</p>
+  <h1 class="htitle">DESIGNING. MANAGING.<span class="accent">DELIVERING LIVE EXPERIENCES.</span></h1>
+  <p class="hsub">Slow-sweeping cinematic light beams through grain and shadow — moody, minimal, stage-lighting energy.</p>
+  <div class="scrolldown">This is the last option</div>
+</section>
+
+<script>
+// active picker state on scroll
+const sections = document.querySelectorAll('.variant');
+const links = document.querySelectorAll('.picker a');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      links.forEach(l => l.classList.remove('active'));
+      const id = e.target.id;
+      document.querySelector(`.picker a[href="#${id}"]`).classList.add('active');
+    }
+  });
+}, { threshold: 0.6 });
+sections.forEach(s => io.observe(s));
+
+// Option 1: signal nodes traveling along grid lines
+const nodeHost = document.getElementById('v1nodes');
+for (let i = 0; i < 6; i++) {
+  const n = document.createElement('div');
+  n.className = 'v1-node';
+  const horizontal = i % 2 === 0;
+  n.style.background = i % 3 === 0 ? 'var(--cyan)' : 'var(--magenta)';
+  n.style.boxShadow = `0 0 12px 3px ${i % 3 === 0 ? 'var(--cyan)' : 'var(--magenta)'}`;
+  if (horizontal) {
+    n.style.top = (20 + i * 12) + '%';
+    n.style.left = '-10px';
+    n.style.animation = `v1travelX ${8 + i}s linear infinite`;
+    n.style.animationDelay = (i * 1.3) + 's';
+  } else {
+    n.style.left = (15 + i * 13) + '%';
+    n.style.top = '-10px';
+    n.style.animation = `v1travelY ${9 + i}s linear infinite`;
+    n.style.animationDelay = (i * 1.1) + 's';
+  }
+  nodeHost.appendChild(n);
+}
+const style = document.createElement('style');
+style.textContent = `
+@keyframes v1travelX{0%{transform:translateX(0);opacity:0}5%{opacity:1}95%{opacity:1}100%{transform:translateX(110vw);opacity:0}}
+@keyframes v1travelY{0%{transform:translateY(0);opacity:0}5%{opacity:1}95%{opacity:1}100%{transform:translateY(110vh);opacity:0}}
+`;
+document.head.appendChild(style);
+
+// Option 3: particle network canvas
+const canvas = document.getElementById('v3canvas');
+const ctx = canvas.getContext('2d');
+let w, h, particles;
+const v3section = document.getElementById('v3');
+
+function resize() {
+  w = canvas.width = v3section.offsetWidth;
+  h = canvas.height = v3section.offsetHeight;
+}
+function initParticles() {
+  const count = Math.min(70, Math.floor((w * h) / 16000));
+  particles = Array.from({ length: count }, () => ({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    vx: (Math.random() - 0.5) * 0.35,
+    vy: (Math.random() - 0.5) * 0.35,
+    c: Math.random() > 0.5 ? '235,0,139' : '0,217,232'
+  }));
+}
+resize();
+initParticles();
+window.addEventListener('resize', () => { resize(); initParticles(); });
+
+function tick() {
+  ctx.clearRect(0, 0, w, h);
+  for (const p of particles) {
+    p.x += p.vx; p.y += p.vy;
+    if (p.x < 0 || p.x > w) p.vx *= -1;
+    if (p.y < 0 || p.y > h) p.vy *= -1;
+  }
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const a = particles[i], b = particles[j];
+      const dx = a.x - b.x, dy = a.y - b.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 140) {
+        ctx.strokeStyle = `rgba(245,246,248,${(1 - dist / 140) * 0.12})`;
+        ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+      }
+    }
+  }
+  for (const p of particles) {
+    ctx.beginPath();
+    ctx.fillStyle = `rgba(${p.c},0.9)`;
+    ctx.shadowColor = `rgba(${p.c},0.8)`;
+    ctx.shadowBlur = 8;
+    ctx.arc(p.x, p.y, 1.8, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  requestAnimationFrame(tick);
+}
+tick();
+</script>
+</body>
+</html>
