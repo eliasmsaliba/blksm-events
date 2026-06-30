@@ -13,7 +13,26 @@ const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 if (navToggle && navLinks) {
   navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+  // Event delegation, since nav links are rendered dynamically from the CMS.
+  navLinks.addEventListener('click', (e) => {
+    if (e.target.closest('a')) navLinks.classList.remove('open');
+  });
+}
+
+// Render the global nav menu from the CMS (content/menu.json) on every page.
+if (navLinks) {
+  loadJSON('content/menu.json').then(data => {
+    const items = data.items || [];
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    navLinks.innerHTML = items.map(item => {
+      const linkPath = item.href.split('#')[0].split('?')[0];
+      const isActive = linkPath && linkPath === currentPath;
+      const classes = [item.isButton ? 'nav-cta' : '', isActive ? 'active' : ''].filter(Boolean).join(' ');
+      return `<li><a href="${item.href}"${classes ? ` class="${classes}"` : ''}>${item.label}</a></li>`;
+    }).join('');
+  }).catch(() => {
+    navLinks.innerHTML = '<li><a href="index.html">Home</a></li>';
+  });
 }
 
 // Cursor glow (desktop only)
@@ -398,7 +417,7 @@ function renderRegistrationForm(ev) {
         ${opts.map(o => `<option value="${o}">${o}</option>`).join('')}
       </select>`;
     } else if (f.type === 'file') {
-      control = `<input type="file" id="rf-${name}" name="${name}" ${reqAttr}>`;
+      control = `<input type="file" id="rf-${name}" name="${name}" ${f.multiple ? 'multiple' : ''} ${reqAttr}>`;
     } else {
       const type = ['email', 'tel', 'number', 'date'].includes(f.type) ? f.type : 'text';
       control = `<input type="${type}" id="rf-${name}" name="${name}" ${reqAttr}>`;
@@ -440,5 +459,108 @@ function renderRegistrationForm(ev) {
         submitBtn.disabled = false;
         submitBtn.textContent = ev.registrationButtonLabel || 'Register Now';
       });
+  });
+}
+
+/* ===================== CUSTOM PAGE GRID (custom-page.html) ===================== */
+const customPageHero = document.getElementById('customPageHero');
+const customPageGrid = document.getElementById('customPageGrid');
+if (customPageHero && customPageGrid) {
+  const slug = new URLSearchParams(window.location.search).get('slug');
+  loadJSON('content/pages.json').then(data => {
+    const page = (data.pages || []).find(p => p.slug === slug);
+    if (!page) {
+      customPageHero.innerHTML = `<p class="eyebrow">Page Not Found</p><h1 class="hero-title page-title">UNKNOWN PAGE</h1>`;
+      customPageGrid.innerHTML = '';
+      return;
+    }
+
+    document.title = page.title + ' — BLKSM Events';
+
+    customPageHero.innerHTML = `
+      ${page.eyebrow ? `<p class="eyebrow reveal">${page.eyebrow}</p>` : ''}
+      <h1 class="hero-title page-title reveal">${page.title}</h1>
+      ${page.intro ? `<p class="hero-sub reveal">${page.intro}</p>` : ''}
+    `;
+
+    const items = page.items || [];
+    customPageGrid.innerHTML = items.map((item, i) => {
+      const [g1, g2] = GRADIENT_PAIRS[i % GRADIENT_PAIRS.length];
+      const mediaStyle = item.image
+        ? `background-image:url('${item.image}');background-size:cover;background-position:center`
+        : `--g1:${g1};--g2:${g2}`;
+      return `
+      <a class="portfolio-card reveal-up" href="custom-page-detail.html?slug=${page.slug}&id=${item.id}">
+        <div class="portfolio-media" style="${mediaStyle}"></div>
+        <h3>${item.title}</h3>
+        <p>${item.summary || ''}</p>
+      </a>`;
+    }).join('');
+    observeReveals();
+  }).catch(() => {
+    customPageGrid.innerHTML = '<p style="color:var(--muted)">Unable to load this page right now.</p>';
+  });
+}
+
+/* ===================== CUSTOM PAGE ITEM DETAIL (custom-page-detail.html) ===================== */
+const customItemHero = document.getElementById('customItemHero');
+const customItemDetail = document.getElementById('customItemDetail');
+if (customItemHero && customItemDetail) {
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get('slug');
+  const id = params.get('id');
+
+  loadJSON('content/pages.json').then(data => {
+    const page = (data.pages || []).find(p => p.slug === slug);
+    const items = page ? (page.items || []) : [];
+    const idx = Math.max(0, items.findIndex(it => it.id === id));
+    const item = items.find(it => it.id === id) || items[0];
+
+    if (!page || !item) {
+      customItemHero.innerHTML = `<p class="eyebrow">Not Found</p><h1>Item Not Found</h1>`;
+      customItemDetail.innerHTML = '';
+      return;
+    }
+
+    document.title = item.title + ' — BLKSM Events';
+
+    const [c1, c2] = GRADIENT_PAIRS[idx % GRADIENT_PAIRS.length];
+    const heroMedia = item.image
+      ? `background-image:url('${item.image}');background-size:cover;background-position:center`
+      : `--c1:${c1};--c2:${c2}`;
+
+    customItemHero.innerHTML = `
+      <div class="member-card-hero">
+        <div class="member-avatar project-avatar" style="${heroMedia}"></div>
+        <div class="member-meta">
+          <p class="eyebrow">${page.itemLabelSingular || 'Item'}</p>
+          <h1>${item.title}</h1>
+        </div>
+      </div>
+    `;
+
+    const gallery = Array.isArray(item.gallery) ? item.gallery.filter(Boolean) : [];
+    const galleryHTML = gallery.length
+      ? `<div class="project-gallery">${gallery.map(src => `<div class="project-gallery-item"><img src="${src}" alt="${item.title}"></div>`).join('')}</div>`
+      : '';
+
+    customItemDetail.innerHTML = `
+      <div class="detail-body">
+        <p>${item.details || item.summary || ''}</p>
+        ${galleryHTML}
+      </div>
+    `;
+
+    const backTag = document.getElementById('customItemBackTag');
+    const backTitle = document.getElementById('customItemBackTitle');
+    const backLink = document.getElementById('customItemBackLink');
+    if (backTag) backTag.textContent = page.title;
+    if (backTitle) backTitle.textContent = `Full ${page.title} List`;
+    if (backLink) {
+      backLink.href = `custom-page.html?slug=${page.slug}`;
+      backLink.textContent = `View All ${page.title}`;
+    }
+  }).catch(() => {
+    customItemDetail.innerHTML = '<p style="color:var(--muted)">Unable to load this item right now.</p>';
   });
 }

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Events — BLKSM Events</title>
+<title>BLKSM Events</title>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,34 +29,21 @@
     <div class="cine-beam2"></div>
     <div class="cine-vignette"></div>
   </div>
-  <div class="hero-content">
-    <p class="eyebrow reveal">What's On</p>
-    <h1 class="hero-title page-title">
-      <span class="reveal">EVENTS</span>
-      <span class="reveal hero-accent">CALENDAR</span>
-    </h1>
-    <p class="hero-sub reveal">Upcoming and past events delivered by BLKSM — updated as new dates are confirmed.</p>
+  <div class="hero-content" id="customPageHero">
+    <!-- populated by script.js -->
   </div>
 </header>
 
-<section class="section events-page">
+<section class="section portfolio">
   <div class="container">
-    <div class="filter-row reveal-up">
-      <button class="filter-btn active" data-events-filter="upcoming">Upcoming</button>
-      <button class="filter-btn" data-events-filter="past">Past</button>
-      <button class="filter-btn" data-events-filter="all">All</button>
-    </div>
-
-    <div class="events-list" id="eventsList">
-      <!-- populated by script.js -->
-    </div>
+    <div class="portfolio-grid" id="customPageGrid"></div>
   </div>
 </section>
 
 <section class="section why team-culture">
   <div class="container">
     <div class="section-tag">Let's Talk</div>
-    <h2 class="section-title">Got an Event <span class="accent">Coming Up?</span></h2>
+    <h2 class="section-title">Have an Event <span class="accent">In Mind?</span></h2>
     <p class="lead-narrow">Whichever industry you're in, our integrated operating model adapts to deliver it safely, seamlessly, and memorably.</p>
     <a href="index.html#contact" class="btn btn-primary">Start a Conversation</a>
   </div>

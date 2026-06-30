@@ -1,0 +1,22 @@
+{
+  "pages": [
+    {
+      "slug": "sample-page",
+      "navLabel": "Sample Page — Edit or Delete Me",
+      "title": "Sample Page",
+      "eyebrow": "Custom Page",
+      "intro": "This is an example custom page. Edit or delete it from the CMS, and add your own pages — each one automatically gets a grid view and individual detail pages, just like Team and Portfolio. Add a menu item pointing to 'custom-page.html?slug=your-slug' to link it from the navigation.",
+      "itemLabelSingular": "Item",
+      "items": [
+        {
+          "id": "sample-item",
+          "title": "Sample Item",
+          "image": "",
+          "summary": "Short summary shown on the grid card.",
+          "details": "Longer description shown on the item's own detail page.",
+          "gallery": []
+        }
+      ]
+    }
+  ]
+}

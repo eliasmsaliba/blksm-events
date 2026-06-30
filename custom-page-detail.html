@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Events — BLKSM Events</title>
+<title>BLKSM Events</title>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,42 +23,28 @@
   </div>
 </nav>
 
-<header class="hero hero-sub-page">
+<header class="hero hero-sub-page member-hero">
   <div class="hero-bg">
     <div class="cine-beam"></div>
     <div class="cine-beam2"></div>
     <div class="cine-vignette"></div>
   </div>
-  <div class="hero-content">
-    <p class="eyebrow reveal">What's On</p>
-    <h1 class="hero-title page-title">
-      <span class="reveal">EVENTS</span>
-      <span class="reveal hero-accent">CALENDAR</span>
-    </h1>
-    <p class="hero-sub reveal">Upcoming and past events delivered by BLKSM — updated as new dates are confirmed.</p>
+  <div class="hero-content" id="customItemHero">
+    <!-- populated by script.js -->
   </div>
 </header>
 
-<section class="section events-page">
-  <div class="container">
-    <div class="filter-row reveal-up">
-      <button class="filter-btn active" data-events-filter="upcoming">Upcoming</button>
-      <button class="filter-btn" data-events-filter="past">Past</button>
-      <button class="filter-btn" data-events-filter="all">All</button>
-    </div>
-
-    <div class="events-list" id="eventsList">
-      <!-- populated by script.js -->
-    </div>
+<section class="section member-detail">
+  <div class="container" id="customItemDetail">
+    <!-- populated by script.js -->
   </div>
 </section>
 
 <section class="section why team-culture">
   <div class="container">
-    <div class="section-tag">Let's Talk</div>
-    <h2 class="section-title">Got an Event <span class="accent">Coming Up?</span></h2>
-    <p class="lead-narrow">Whichever industry you're in, our integrated operating model adapts to deliver it safely, seamlessly, and memorably.</p>
-    <a href="index.html#contact" class="btn btn-primary">Start a Conversation</a>
+    <div class="section-tag" id="customItemBackTag">More</div>
+    <h2 class="section-title">Back to the <span class="accent" id="customItemBackTitle">Full List</span></h2>
+    <a href="#" id="customItemBackLink" class="btn btn-primary">View All</a>
   </div>
 </section>
 

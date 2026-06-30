@@ -144,4 +144,56 @@ collections:
                       - { label: "Long Text / Message", value: "textarea" }
                       - { label: "Dropdown", value: "select" }
                   - { label: "Dropdown Options (only used if Field Type is Dropdown — one per line)", name: "options", widget: "text", required: false }
+                  - { label: "Allow Multiple Files? (only used if Field Type is File Upload)", name: "multiple", widget: "boolean", default: false, required: false }
                   - { label: "Required?", name: "required", widget: "boolean", default: true }
+
+  - name: "menu"
+    label: "Site Navigation"
+    files:
+      - name: "menu"
+        label: "Menu Links"
+        file: "content/menu.json"
+        fields:
+          - label: "Menu Items"
+            name: "items"
+            widget: "list"
+            summary: "{{label}}"
+            hint: "Drag to reorder. These links appear in the navigation bar on every page, in this order."
+            fields:
+              - { label: "Label (what visitors see)", name: "label", widget: "string" }
+              - label: "Link"
+                name: "href"
+                widget: "string"
+                hint: "Examples — section on homepage: index.html#about · another page: team.html or events.html · a custom page: custom-page.html?slug=your-slug · external site: https://example.com"
+              - { label: "Show as a highlighted button (like Contact)?", name: "isButton", widget: "boolean", default: false, required: false }
+
+  - name: "pages"
+    label: "Custom Pages"
+    files:
+      - name: "pages"
+        label: "Custom Pages"
+        file: "content/pages.json"
+        fields:
+          - label: "Pages"
+            name: "pages"
+            widget: "list"
+            summary: "{{title}}"
+            hint: "Each page here works just like Team or Portfolio — a grid of items, each with its own detail page. Link to one from the menu using custom-page.html?slug=your-slug."
+            fields:
+              - { label: "URL Slug", name: "slug", widget: "string", hint: "Lowercase, hyphens only, no spaces — e.g. 'sponsors' or 'venues'." }
+              - { label: "Menu Label", name: "navLabel", widget: "string", required: false, hint: "Optional label to use if you link this page from the menu." }
+              - { label: "Page Title", name: "title", widget: "string" }
+              - { label: "Eyebrow (small text above the title)", name: "eyebrow", widget: "string", required: false }
+              - { label: "Intro Text", name: "intro", widget: "text", required: false }
+              - { label: "Item Label (singular, e.g. 'Sponsor', 'Venue', 'Partner')", name: "itemLabelSingular", widget: "string", required: false, default: "Item" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                summary: "{{title}}"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Cover Image", name: "image", widget: "image", required: false }
+                  - { label: "Short Summary (shown on the grid card)", name: "summary", widget: "text", required: false }
+                  - { label: "Full Details (shown on the item's page)", name: "details", widget: "text", required: false }
+                  - { label: "Gallery Photos", name: "gallery", widget: "list", field: { label: "Photo", name: "image", widget: "image" }, required: false }
+                  - { label: "URL Slug", name: "id", widget: "string", hint: "Lowercase, hyphens only, no spaces." }
