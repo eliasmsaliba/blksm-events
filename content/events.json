@@ -10,6 +10,7 @@
       "venue": "Kapstadt Brauhaus Menlo Park",
       "registrationFields": [],
       "gallery": [],
+      "registrationTemplate": "ai-prompt-party-submission",
       "title": "AI Prompt Party",
       "id": "prompt-party-july-01",
       "image": "",
