@@ -139,6 +139,8 @@ collections:
                       - { label: "Email Address", value: "email" }
                       - { label: "Phone Number", value: "tel" }
                       - { label: "Number", value: "number" }
+                      - { label: "Date", value: "date" }
+                      - { label: "File Upload", value: "file" }
                       - { label: "Long Text / Message", value: "textarea" }
                       - { label: "Dropdown", value: "select" }
                   - { label: "Dropdown Options (only used if Field Type is Dropdown — one per line)", name: "options", widget: "text", required: false }

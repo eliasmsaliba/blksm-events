@@ -62,10 +62,12 @@
   same form name via fetch — Netlify accepts whatever fields are POSTed once the name
   is registered, even ones not listed below.
 -->
-<form name="event-registration" data-netlify="true" netlify-honeypot="bot-field" hidden>
+<form name="event-registration" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" hidden>
   <input type="text" name="name" />
   <input type="email" name="email" />
   <input type="tel" name="phone" />
+  <input type="date" name="date" />
+  <input type="file" name="attachment" />
   <input type="text" name="event" />
   <textarea name="message"></textarea>
 </form>

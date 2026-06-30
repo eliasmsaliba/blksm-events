@@ -397,15 +397,17 @@ function renderRegistrationForm(ev) {
         <option value="" disabled selected>Select an option</option>
         ${opts.map(o => `<option value="${o}">${o}</option>`).join('')}
       </select>`;
+    } else if (f.type === 'file') {
+      control = `<input type="file" id="rf-${name}" name="${name}" ${reqAttr}>`;
     } else {
-      const type = ['email', 'tel', 'number'].includes(f.type) ? f.type : 'text';
+      const type = ['email', 'tel', 'number', 'date'].includes(f.type) ? f.type : 'text';
       control = `<input type="${type}" id="rf-${name}" name="${name}" ${reqAttr}>`;
     }
     return `<div class="field"><label for="rf-${name}">${f.label}${required ? '' : ' (optional)'}</label>${control}</div>`;
   }).join('');
 
   host.innerHTML = `
-    <form class="contact-form" id="registrationForm">
+    <form class="contact-form" id="registrationForm" enctype="multipart/form-data">
       <input type="hidden" name="form-name" value="event-registration">
       <input type="hidden" name="event" value="${ev.title}">
       <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
@@ -419,15 +421,15 @@ function renderRegistrationForm(ev) {
   const status = document.getElementById('registrationStatus');
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const data = new URLSearchParams(new FormData(form)).toString();
     const submitBtn = form.querySelector('button[type="submit"]');
     submitBtn.disabled = true;
     submitBtn.textContent = 'Submitting…';
 
+    // Plain multipart FormData (not URL-encoded) — required so any File-type
+    // fields actually upload their content, not just their filename.
     fetch('/', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: data,
+      body: new FormData(form),
     })
       .then(() => {
         host.innerHTML = `<p class="form-success">Thanks — you're registered for <strong>${ev.title}</strong>. We've got your details and will be in touch if anything changes.</p>`;
