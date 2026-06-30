@@ -429,11 +429,33 @@ function slugifyFieldLabel(label, usedNames) {
 function renderRegistrationForm(ev) {
   const section = document.getElementById('registrationSection');
   const host = document.getElementById('registrationFormHost');
+  if (!section || !host) return;
+
+  if (!ev.registrationEnabled) {
+    section.hidden = true;
+    return;
+  }
+
+  const templateId = (ev.registrationTemplate || '').trim();
+  if (templateId) {
+    loadJSON('content/form-templates.json').then(data => {
+      const template = (data.templates || []).find(t => t.id === templateId);
+      renderRegistrationFormWithFields(ev, template ? template.fields : []);
+    }).catch(() => {
+      renderRegistrationFormWithFields(ev, ev.registrationFields || []);
+    });
+  } else {
+    renderRegistrationFormWithFields(ev, ev.registrationFields || []);
+  }
+}
+
+function renderRegistrationFormWithFields(ev, fields) {
+  const section = document.getElementById('registrationSection');
+  const host = document.getElementById('registrationFormHost');
   const title = document.getElementById('registrationTitle');
   if (!section || !host) return;
 
-  const fields = Array.isArray(ev.registrationFields) ? ev.registrationFields : [];
-  if (!ev.registrationEnabled || !fields.length) {
+  if (!Array.isArray(fields) || !fields.length) {
     section.hidden = true;
     return;
   }

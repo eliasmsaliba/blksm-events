@@ -1,0 +1,13 @@
+{
+  "templates": [
+    {
+      "id": "standard-rsvp",
+      "name": "Standard RSVP",
+      "fields": [
+        { "label": "Full Name", "type": "text", "options": "", "required": true, "width": "half" },
+        { "label": "Email Address", "type": "email", "options": "", "required": true, "width": "half" },
+        { "label": "Phone Number", "type": "tel", "options": "", "required": true, "width": "full" }
+      ]
+    }
+  ]
+}

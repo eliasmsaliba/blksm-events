@@ -122,7 +122,8 @@ collections:
               - { label: "URL Slug", name: "id", widget: "string", hint: "Lowercase, hyphens only, no spaces." }
               - { label: "Enable Registration Form", name: "registrationEnabled", widget: "boolean", default: false, hint: "Turns on a sign-up form on this event's page. Submissions are emailed to you and viewable in the Netlify dashboard." }
               - { label: "Registration Button Label", name: "registrationButtonLabel", widget: "string", required: false, default: "Register Now", hint: "Optional — defaults to 'Register Now'." }
-              - label: "Registration Form Fields"
+              - { label: "Use a Saved Form Template (optional)", name: "registrationTemplate", widget: "string", required: false, hint: "Type the exact ID of a template from the 'Form Templates' section (e.g. 'standard-rsvp') to reuse a form you've already built — saves rebuilding the same fields every time. Leave blank to build a one-off form below instead." }
+              - label: "Registration Form Fields (ignored if a Template is set above)"
                 name: "registrationFields"
                 widget: "list"
                 required: false
@@ -218,3 +219,52 @@ collections:
                   - { label: "Full Details (shown on the item's page)", name: "details", widget: "text", required: false }
                   - { label: "Gallery Photos", name: "gallery", widget: "list", field: { label: "Photo", name: "image", widget: "image" }, required: false }
                   - { label: "URL Slug", name: "id", widget: "string", hint: "Lowercase, hyphens only, no spaces." }
+
+  - name: "formTemplates"
+    label: "Form Templates"
+    files:
+      - name: "formTemplates"
+        label: "Form Templates"
+        file: "content/form-templates.json"
+        fields:
+          - label: "Templates"
+            name: "templates"
+            widget: "list"
+            summary: "{{name}}"
+            hint: "Build a registration form once here, then reuse it on any event by typing its ID into that event's 'Use a Saved Form Template' field. Editing a template here updates every event using it."
+            fields:
+              - { label: "Template ID (lowercase, hyphens only, no spaces — e.g. 'standard-rsvp')", name: "id", widget: "string" }
+              - { label: "Template Name (for your own reference)", name: "name", widget: "string" }
+              - label: "Fields"
+                name: "fields"
+                widget: "list"
+                summary: "{{label}} ({{type}})"
+                fields:
+                  - { label: "Field Label (what the guest sees)", name: "label", widget: "string" }
+                  - label: "Field Type"
+                    name: "type"
+                    widget: "select"
+                    default: "text"
+                    options:
+                      - { label: "Short Text", value: "text" }
+                      - { label: "Email Address", value: "email" }
+                      - { label: "Phone Number", value: "tel" }
+                      - { label: "Number", value: "number" }
+                      - { label: "Date", value: "date" }
+                      - { label: "File Upload", value: "file" }
+                      - { label: "Long Text / Message", value: "textarea" }
+                      - { label: "Dropdown", value: "select" }
+                      - { label: "Radio Buttons (pick one)", value: "radio" }
+                      - { label: "Checkboxes (pick any number)", value: "checkbox" }
+                  - { label: "Options (for Dropdown, Radio, or Checkboxes — one per line. Leave blank on Checkboxes for a single yes/no checkbox.)", name: "options", widget: "text", required: false }
+                  - { label: "Allow Multiple Files? (only used if Field Type is File Upload)", name: "multiple", widget: "boolean", default: false, required: false }
+                  - { label: "Required?", name: "required", widget: "boolean", default: true }
+                  - label: "Width"
+                    name: "width"
+                    widget: "select"
+                    default: "full"
+                    required: false
+                    hint: "Two consecutive 'Half' fields sit side by side as a row."
+                    options:
+                      - { label: "Full Width", value: "full" }
+                      - { label: "Half Width", value: "half" }
