@@ -73,6 +73,7 @@ collections:
                   - { label: "Festival", value: "festival" }
                   - { label: "Club Nights", value: "club-nights" }
                   - { label: "Entertainment", value: "entertainment" }
+                  - { label: "Date Nights", value: "date-nights" }
                   - { label: "Sports", value: "sports" }
                   - { label: "Corporate", value: "corporate" }
                   - { label: "Cultural", value: "cultural" }
@@ -109,6 +110,7 @@ collections:
                   - { label: "Festival", value: "festival" }
                   - { label: "Club Nights", value: "club-nights" }
                   - { label: "Entertainment", value: "entertainment" }
+                  - { label: "Date Nights", value: "date-nights" }
                   - { label: "Sports", value: "sports" }
                   - { label: "Corporate", value: "corporate" }
                   - { label: "Cultural", value: "cultural" }
