@@ -12,7 +12,8 @@
         {
           "type": "text",
           "required": true,
-          "label": "Full Name"
+          "label": "Full Name",
+          "width": null
         },
         {
           "type": "text",
@@ -51,14 +52,16 @@
           "multiple": false,
           "required": true,
           "label": "How many tracks are you submitting?",
-          "options": "One\nTwo\nThree\nFour\nFive"
+          "options": "One\nTwo\nThree\nFour\nFive",
+          "width": "half"
         },
         {
           "type": "checkbox",
           "multiple": false,
           "required": true,
           "label": "AI Tools Used",
-          "options": "Suno\nUdio\nSoundraw\nAISound\nBoomy\nStable Audio\nCustom Model\nOther"
+          "options": "Suno\nUdio\nSoundraw\nAISound\nBoomy\nStable Audio\nCustom Model\nOther",
+          "width": "half"
         },
         {
           "type": "textarea",
@@ -71,6 +74,38 @@
           "multiple": true,
           "required": true,
           "label": "Upload your Songs"
+        },
+        {
+          "type": "checkbox",
+          "multiple": false,
+          "required": true,
+          "width": "half",
+          "label": "South African Native Styles",
+          "options": "Amapiano\nGqom\nKwaito\nAfro House\nAfro Tech\nSouth African House\nCape Jazz"
+        },
+        {
+          "type": "checkbox",
+          "multiple": false,
+          "required": true,
+          "width": "half",
+          "label": "Electronic / Club",
+          "options": "Tech House\nTechno\nMelodic Techno\nProgressive House\nDrum & Bass\nFuture Rave"
+        },
+        {
+          "type": "checkbox",
+          "multiple": false,
+          "required": true,
+          "width": "half",
+          "label": "Creator Economy / Viral",
+          "options": "TikTok Viral Music\nMeme Music\nFestival Music\nClub Anthem\nGaming Music"
+        },
+        {
+          "type": "checkbox",
+          "multiple": false,
+          "required": true,
+          "width": "half",
+          "label": "Experimental",
+          "options": "Cinematic\nExperimental\nAnime Soundtrack\nOrchestral\nAmbient"
         },
         {
           "type": "text",
@@ -150,14 +185,15 @@
       "category": "date-nights"
     },
     {
-      "title": "AI Dance Night",
-      "venue": "Kapstadt Brauhaus Menlo Park",
+      "registrationEnabled": true,
+      "city": "Pretoria",
       "time": "18:00",
       "date": "2026-07-03",
-      "city": "Pretoria",
-      "category": "club-nights",
+      "venue": "Kapstadt Brauhaus Menlo Park",
+      "title": "AI Dance Night",
       "id": "ai-dance-night-july-01",
-      "description": "Step into an electrifying nightlife experience where artificial intelligence takes over the decks and the dancefloor comes alive. AI Dance Night brings together cutting-edge technology, futuristic sounds, incredible visuals, and an unforgettable party atmosphere designed for those ready to experience the next generation of entertainment.\n<br><br>\nDance to the future. Experience what's next."
+      "description": "Step into an electrifying nightlife experience where artificial intelligence takes over the decks and the dancefloor comes alive. AI Dance Night brings together cutting-edge technology, futuristic sounds, incredible visuals, and an unforgettable party atmosphere designed for those ready to experience the next generation of entertainment.\n<br><br>\nDance to the future. Experience what's next.",
+      "category": "club-nights"
     }
   ]
 }
