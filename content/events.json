@@ -3,7 +3,7 @@
     {
       "title": "AI Prompt Party",
       "date": "2026-07-12",
-      "time": "18:00",
+      "time": "13:00",
       "venue": "Kapstadt Brauhaus Menlo Park",
       "city": "Pretoria",
       "category": "club-nights",
@@ -18,6 +18,15 @@
       "venue": "Potties Bar & Restaurant ",
       "city": "Pretoria",
       "id": "pot-en-deksel-july-01"
+    },
+    {
+      "title": "AI Dance Night",
+      "venue": "Kapstadt Brauhaus Menlo Park",
+      "time": "18:00",
+      "date": "2026-07-03",
+      "city": "Pretoria",
+      "category": "club-nights",
+      "id": "ai-dance-night-july-01"
     }
   ]
 }
