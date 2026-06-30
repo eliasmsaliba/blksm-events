@@ -267,7 +267,7 @@ if (eventsList) {
         const isPast = evDate < today;
         const dateLabel = evDate.toLocaleDateString('en-ZA', { day: 'numeric', month: 'short', year: 'numeric' });
         return `
-        <div class="event-card reveal-up ${isPast ? 'is-past' : ''}">
+        <a class="event-card reveal-up ${isPast ? 'is-past' : ''}" href="event-detail.html?id=${ev.id}">
           <div class="event-date">
             <span class="event-day">${evDate.getDate()}</span>
             <span class="event-month">${evDate.toLocaleDateString('en-ZA', { month: 'short' })}</span>
@@ -277,9 +277,8 @@ if (eventsList) {
             <h3>${ev.title}</h3>
             <p class="event-meta">${dateLabel}${ev.time ? ' · ' + ev.time : ''}${ev.venue ? ' · ' + ev.venue : ''}${ev.city ? ', ' + ev.city : ''}</p>
             <p class="event-desc">${ev.description || ''}</p>
-            ${ev.ticketLink ? `<a href="${ev.ticketLink}" class="btn btn-ghost" target="_blank" rel="noopener">Event Details</a>` : ''}
           </div>
-        </div>`;
+        </a>`;
       }).join('');
       observeReveals();
     }
@@ -298,5 +297,61 @@ if (eventsList) {
     }
   }).catch(() => {
     eventsList.innerHTML = '<p style="color:var(--muted)">Unable to load events right now.</p>';
+  });
+}
+
+/* ===================== EVENT DETAIL (event-detail.html) ===================== */
+const eventHero = document.getElementById('eventHero');
+const eventDetail = document.getElementById('eventDetail');
+if (eventHero && eventDetail) {
+  loadJSON('content/events.json').then(data => {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const events = data.events || [];
+    const idx = Math.max(0, events.findIndex(ev => ev.id === id));
+    const ev = events.find(e => e.id === id) || events[0];
+    const [c1, c2] = GRADIENT_PAIRS[idx % GRADIENT_PAIRS.length];
+
+    document.title = ev.title + ' — BLKSM Events';
+
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    const evDate = new Date(ev.date);
+    const isPast = evDate < today;
+    const dateLabel = evDate.toLocaleDateString('en-ZA', { day: 'numeric', month: 'long', year: 'numeric' });
+
+    const heroMedia = ev.image
+      ? `background-image:url('${ev.image}');background-size:cover;background-position:center`
+      : `--c1:${c1};--c2:${c2}`;
+
+    eventHero.innerHTML = `
+      <div class="member-card-hero">
+        <div class="member-avatar project-avatar" style="${heroMedia}"></div>
+        <div class="member-meta">
+          <p class="eyebrow">${isPast ? 'Past Event' : 'Upcoming Event'}${ev.categoryLabel ? ' · ' + ev.categoryLabel : ''}</p>
+          <h1>${ev.title}</h1>
+          <p class="team-role">${dateLabel}${ev.time ? ' · ' + ev.time : ''}${ev.venue ? ' · ' + ev.venue : ''}${ev.city ? ', ' + ev.city : ''}</p>
+        </div>
+      </div>
+    `;
+
+    const gallery = Array.isArray(ev.gallery) ? ev.gallery.filter(Boolean) : [];
+    const galleryHTML = gallery.length
+      ? `<div class="project-gallery">${gallery.map(src => `<div class="project-gallery-item"><img src="${src}" alt="${ev.title}"></div>`).join('')}</div>`
+      : '';
+
+    eventDetail.innerHTML = `
+      <div class="detail-body">
+        <p>${ev.description || ''}</p>
+        ${galleryHTML}
+        <div class="detail-tags">
+          ${ev.categoryLabel ? `<span class="tag">${ev.categoryLabel}</span>` : ''}
+          <span class="tag">${dateLabel}</span>
+          ${ev.venue ? `<span class="tag">${ev.venue}${ev.city ? ', ' + ev.city : ''}</span>` : ''}
+        </div>
+        ${ev.ticketLink ? `<a href="${ev.ticketLink}" class="btn btn-primary" target="_blank" rel="noopener">Tickets / More Info</a>` : ''}
+      </div>
+    `;
+  }).catch(() => {
+    eventDetail.innerHTML = '<p style="color:var(--muted)">Unable to load this event right now.</p>';
   });
 }

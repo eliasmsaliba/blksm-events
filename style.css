@@ -346,8 +346,9 @@ ul{list-style:none}
 .events-list{display:flex;flex-direction:column;gap:18px;border-top:1px solid var(--line)}
 .event-card{
   display:flex;gap:26px;padding:28px 0;border-bottom:1px solid var(--line);
-  opacity:1;transition:opacity .3s;
+  opacity:1;transition:opacity .3s, transform .3s, padding-left .3s;
 }
+.event-card:hover{transform:translateX(4px);padding-left:6px}
 .event-card.is-past{opacity:.6}
 .event-date{
   flex:none;width:78px;height:78px;border-radius:14px;border:1px solid var(--line);

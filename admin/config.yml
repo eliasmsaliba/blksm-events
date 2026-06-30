@@ -98,7 +98,7 @@ collections:
             summary: "{{title}} — {{date}}"
             fields:
               - { label: "Event Title", name: "title", widget: "string" }
-              - { label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD" }
+              - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
               - { label: "Time (optional)", name: "time", widget: "string", required: false, hint: "e.g. 20:00" }
               - { label: "Venue", name: "venue", widget: "string", required: false }
               - { label: "City", name: "city", widget: "string", required: false }
@@ -116,6 +116,7 @@ collections:
                   - { label: "Cultural", value: "cultural" }
               - { label: "Category Label", name: "categoryLabel", widget: "string", required: false }
               - { label: "Description", name: "description", widget: "text", required: false }
-              - { label: "Image", name: "image", widget: "image", required: false }
+              - { label: "Cover Image", name: "image", widget: "image", required: false }
+              - { label: "Gallery Photos (shown on the event detail page)", name: "gallery", widget: "list", field: { label: "Photo", name: "image", widget: "image" }, required: false }
               - { label: "Ticket / More Info Link", name: "ticketLink", widget: "string", required: false }
               - { label: "URL Slug", name: "id", widget: "string", hint: "Lowercase, hyphens only, no spaces." }

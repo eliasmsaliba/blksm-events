@@ -11,6 +11,7 @@
       "categoryLabel": "Club Nights",
       "description": "Replace this with the real event description. Add as many events as you like from the CMS — they'll automatically sort into Upcoming or Past based on today's date.",
       "image": "",
+      "gallery": [],
       "ticketLink": ""
     }
   ]
