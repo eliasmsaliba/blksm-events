@@ -1,20 +1,38 @@
 {
   "items": [
-    { "label": "About", "href": "index.html#about", "isButton": false },
-    { "label": "Process", "href": "index.html#process", "isButton": false },
-    { "label": "Departments", "href": "index.html#departments", "isButton": false },
-    { "label": "Team", "href": "team.html", "isButton": false },
-    { "label": "Portfolio", "href": "portfolio.html", "isButton": false },
-    { "label": "Events", "href": "events.html", "isButton": false },
     {
-      "label": "More",
-      "href": "",
+      "label": "About",
+      "href": "index.html#about",
       "isButton": false,
       "children": [
-        { "label": "Privacy Policy", "href": "privacy.html" },
-        { "label": "Terms & Conditions", "href": "terms.html" }
+        {
+          "label": "Process",
+          "href": "index.html#process"
+        },
+        {
+          "label": "Departments",
+          "href": "index.html#departments"
+        },
+        {
+          "label": "Team",
+          "href": "team.html"
+        }
       ]
     },
-    { "label": "Contact", "href": "index.html#contact", "isButton": true }
+    {
+      "label": "Portfolio",
+      "href": "portfolio.html",
+      "isButton": false
+    },
+    {
+      "label": "Events",
+      "href": "events.html",
+      "isButton": false
+    },
+    {
+      "label": "Contact",
+      "href": "index.html#contact",
+      "isButton": true
+    }
   ]
 }
