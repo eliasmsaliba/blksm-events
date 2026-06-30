@@ -1,3 +1,20 @@
 {
-  "projects": []
+  "projects": [
+    {
+      "details": "Who's choosing who? Who's matching with who? Who's leaving with butterflies? \n<br><br>\nWelcome to Wie Vat Wie, the ultimate social experience where connections happen naturally, laughter is guaranteed, and every conversation could lead to something unexpected.\n<br><br>\nForget awkward introductions and boring nights out. This is all about meeting amazing people, enjoying incredible energy, and stepping into a space where everyone is here for one thing… good vibes and genuine connections.\n<br><br>\nWhether it's friendship, chemistry, or a little bit of mystery…\n<br><br>\nSomeone might just choose you. ",
+      "summary": "Meet new people, enjoy great energy, and experience a night designed for connection, laughter, and unforgettable moments. The question is… Wie Vat Wie?",
+      "nextEvent": "Coming Soon",
+      "gallery": [
+        "/assets/uploads/wie-vat-wie-02.png",
+        "/assets/uploads/wie-vat-wie-03.png",
+        "/assets/uploads/wie-vat-wie-04.png",
+        "/assets/uploads/wie-vat-wie-05.png"
+      ],
+      "categoryLabel": "Meeting New People",
+      "title": "Wie Vat Wie - Padstal Hazelwood",
+      "id": "wie-vat-wie",
+      "image": "/assets/uploads/wie-vat-wie-01.png",
+      "category": "date-nights"
+    }
+  ]
 }
