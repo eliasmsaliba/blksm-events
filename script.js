@@ -164,21 +164,21 @@ if (portfolioGrid) {
         ? `background-image:url('${p.image}');background-size:cover;background-position:center`
         : `--g1:${g1};--g2:${g2}`;
       return `
-      <div class="portfolio-card reveal-up" data-cat="${p.category}">
+      <a class="portfolio-card reveal-up" data-cat="${p.category}" href="portfolio-detail.html?id=${p.id}">
         <div class="portfolio-media" style="${mediaStyle}"><span class="portfolio-cat">${p.categoryLabel}</span></div>
         <h3>${p.title}</h3>
         <p>${p.summary}</p>
-      </div>`;
+      </a>`;
     }).join('');
     observeReveals();
 
     // Portfolio filter (bound after render)
-    const filterRow = document.querySelector('.filter-row');
-    if (filterRow) {
-      filterRow.addEventListener('click', (e) => {
+    const filterRowEl = document.querySelector('.filter-row');
+    if (filterRowEl) {
+      filterRowEl.addEventListener('click', (e) => {
         const btn = e.target.closest('.filter-btn');
-        if (!btn) return;
-        filterRow.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        if (!btn || !btn.dataset.filter) return;
+        filterRowEl.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         const filter = btn.dataset.filter;
         document.querySelectorAll('.portfolio-card').forEach(card => {
@@ -189,5 +189,114 @@ if (portfolioGrid) {
     }
   }).catch(() => {
     portfolioGrid.innerHTML = '<p style="color:var(--muted)">Unable to load portfolio projects right now.</p>';
+  });
+}
+
+/* ===================== PROJECT DETAIL (portfolio-detail.html) ===================== */
+const projectHero = document.getElementById('projectHero');
+const projectDetail = document.getElementById('projectDetail');
+if (projectHero && projectDetail) {
+  loadJSON('content/portfolio.json').then(data => {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const idx = Math.max(0, data.projects.findIndex(p => p.id === id));
+    const project = data.projects.find(p => p.id === id) || data.projects[0];
+    const [g1, g2] = GRADIENT_PAIRS[idx % GRADIENT_PAIRS.length];
+
+    document.title = project.title + ' — BLKSM Events';
+
+    const heroMedia = project.image
+      ? `background-image:url('${project.image}');background-size:cover;background-position:center`
+      : `--c1:${g1};--c2:${g2}`;
+
+    projectHero.innerHTML = `
+      <div class="member-card-hero">
+        <div class="member-avatar project-avatar" style="${heroMedia}"></div>
+        <div class="member-meta">
+          <p class="eyebrow">${project.categoryLabel}</p>
+          <h1>${project.title}</h1>
+          ${project.nextEvent ? `<p class="team-role">Next Event: ${project.nextEvent}</p>` : ''}
+        </div>
+      </div>
+    `;
+
+    const gallery = Array.isArray(project.gallery) ? project.gallery.filter(Boolean) : [];
+    const galleryHTML = gallery.length
+      ? `<div class="project-gallery">${gallery.map(src => `<div class="project-gallery-item"><img src="${src}" alt="${project.title}"></div>`).join('')}</div>`
+      : '';
+
+    projectDetail.innerHTML = `
+      <div class="detail-body">
+        <p>${project.details || project.summary}</p>
+        ${galleryHTML}
+        <div class="detail-tags">
+          <span class="tag">${project.categoryLabel}</span>
+          ${project.nextEvent ? `<span class="tag">Next: ${project.nextEvent}</span>` : ''}
+        </div>
+        <a href="index.html#contact" class="btn btn-primary">Enquire About a Similar Event</a>
+      </div>
+    `;
+  }).catch(() => {
+    projectDetail.innerHTML = '<p style="color:var(--muted)">Unable to load this project right now.</p>';
+  });
+}
+
+/* ===================== EVENTS CALENDAR (events.html) ===================== */
+const eventsList = document.getElementById('eventsList');
+if (eventsList) {
+  loadJSON('content/events.json').then(data => {
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    const events = (data.events || []).slice().sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    function renderEvents(filter) {
+      const filtered = events.filter(ev => {
+        const evDate = new Date(ev.date);
+        const isPast = evDate < today;
+        if (filter === 'upcoming') return !isPast;
+        if (filter === 'past') return isPast;
+        return true;
+      });
+
+      if (!filtered.length) {
+        eventsList.innerHTML = `<p style="color:var(--muted)">No ${filter === 'all' ? '' : filter} events to show right now.</p>`;
+        return;
+      }
+
+      eventsList.innerHTML = filtered.map(ev => {
+        const evDate = new Date(ev.date);
+        const isPast = evDate < today;
+        const dateLabel = evDate.toLocaleDateString('en-ZA', { day: 'numeric', month: 'short', year: 'numeric' });
+        return `
+        <div class="event-card reveal-up ${isPast ? 'is-past' : ''}">
+          <div class="event-date">
+            <span class="event-day">${evDate.getDate()}</span>
+            <span class="event-month">${evDate.toLocaleDateString('en-ZA', { month: 'short' })}</span>
+          </div>
+          <div class="event-body">
+            <span class="event-status">${isPast ? 'Past' : 'Upcoming'}${ev.categoryLabel ? ' · ' + ev.categoryLabel : ''}</span>
+            <h3>${ev.title}</h3>
+            <p class="event-meta">${dateLabel}${ev.time ? ' · ' + ev.time : ''}${ev.venue ? ' · ' + ev.venue : ''}${ev.city ? ', ' + ev.city : ''}</p>
+            <p class="event-desc">${ev.description || ''}</p>
+            ${ev.ticketLink ? `<a href="${ev.ticketLink}" class="btn btn-ghost" target="_blank" rel="noopener">Event Details</a>` : ''}
+          </div>
+        </div>`;
+      }).join('');
+      observeReveals();
+    }
+
+    renderEvents('upcoming');
+
+    const filterRow = document.querySelector('.filter-row');
+    if (filterRow) {
+      filterRow.addEventListener('click', (e) => {
+        const btn = e.target.closest('.filter-btn');
+        if (!btn || !btn.dataset.eventsFilter) return;
+        filterRow.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderEvents(btn.dataset.eventsFilter);
+      });
+    }
+  }).catch(() => {
+    eventsList.innerHTML = '<p style="color:var(--muted)">Unable to load events right now.</p>';
   });
 }

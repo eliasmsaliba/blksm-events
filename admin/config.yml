@@ -71,10 +71,49 @@ collections:
                 widget: "select"
                 options:
                   - { label: "Festival", value: "festival" }
+                  - { label: "Club Nights", value: "club-nights" }
+                  - { label: "Entertainment", value: "entertainment" }
                   - { label: "Sports", value: "sports" }
                   - { label: "Corporate", value: "corporate" }
                   - { label: "Cultural", value: "cultural" }
               - { label: "Category Label (shown on the badge)", name: "categoryLabel", widget: "string" }
-              - { label: "Image", name: "image", widget: "image", required: false, hint: "Optional — leave blank to use a brand gradient instead of a photo." }
-              - { label: "Summary", name: "summary", widget: "text" }
+              - { label: "Cover Image", name: "image", widget: "image", required: false, hint: "Optional — leave blank to use a brand gradient instead of a photo." }
+              - { label: "Short Summary (shown on the portfolio grid card)", name: "summary", widget: "text" }
+              - { label: "Full Details (shown on the project page)", name: "details", widget: "text", required: false }
+              - { label: "Gallery Photos (shown on the project page)", name: "gallery", widget: "list", field: { label: "Photo", name: "image", widget: "image" }, required: false }
+              - { label: "Next Event (optional, free text e.g. '15 August 2026 — Johannesburg')", name: "nextEvent", widget: "string", required: false }
+              - { label: "URL Slug", name: "id", widget: "string", hint: "Lowercase, hyphens only, no spaces." }
+
+  - name: "events"
+    label: "Events Calendar"
+    files:
+      - name: "events"
+        label: "Events"
+        file: "content/events.json"
+        fields:
+          - label: "Events"
+            name: "events"
+            widget: "list"
+            summary: "{{title}} — {{date}}"
+            fields:
+              - { label: "Event Title", name: "title", widget: "string" }
+              - { label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD" }
+              - { label: "Time (optional)", name: "time", widget: "string", required: false, hint: "e.g. 20:00" }
+              - { label: "Venue", name: "venue", widget: "string", required: false }
+              - { label: "City", name: "city", widget: "string", required: false }
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                required: false
+                options:
+                  - { label: "Festival", value: "festival" }
+                  - { label: "Club Nights", value: "club-nights" }
+                  - { label: "Entertainment", value: "entertainment" }
+                  - { label: "Sports", value: "sports" }
+                  - { label: "Corporate", value: "corporate" }
+                  - { label: "Cultural", value: "cultural" }
+              - { label: "Category Label", name: "categoryLabel", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Image", name: "image", widget: "image", required: false }
+              - { label: "Ticket / More Info Link", name: "ticketLink", widget: "string", required: false }
               - { label: "URL Slug", name: "id", widget: "string", hint: "Lowercase, hyphens only, no spaces." }
