@@ -8,114 +8,9 @@
       "time": "13:00",
       "date": "2026-07-12",
       "venue": "Kapstadt Brauhaus Menlo Park",
-      "registrationFields": [
-        {
-          "type": "text",
-          "required": true,
-          "label": "Full Name",
-          "width": null
-        },
-        {
-          "type": "text",
-          "required": true,
-          "label": "Stage Name"
-        },
-        {
-          "type": "tel",
-          "required": true,
-          "label": "Whatsapp Number"
-        },
-        {
-          "type": "email",
-          "required": true,
-          "label": "Email"
-        },
-        {
-          "type": "select",
-          "required": true,
-          "label": "Your Preference ",
-          "options": "Under Cover\nReal Persona"
-        },
-        {
-          "type": "file",
-          "required": true,
-          "label": "Upload a Photo of You"
-        },
-        {
-          "type": "select",
-          "required": true,
-          "label": "City",
-          "options": "Johannesburg\nPretoria\nCenturion\nMidrand\nSoweto\nBenoni\nBoksburg\nKempton Park\nAlberton\nRoodepoort\nRandburg\nSandton\nKrugersdorp\nSprings\nBrakpan\nCape Town\nStellenbosch\nPaarl\nGeorge\nMossel Bay\nKnysna\nHermanus\nWorcester\nSomerset West\nBellville\nDurbanville\nMalmesbury\nSaldanha\nVredenburg\nOudtshoorn\nDurban\nPietermaritzburg\nRichards Bay\nNewcastle\nBallito\nUmhlanga\nPinetown\nChatsworth\nLadysmith\nEmpangeni\nPort Shepstone\nMargate\nHowick\nStanger\nVryheid\nGqeberha\nEast London\nMthatha\nGrahamstown\nJeffreys Bay\nPort Alfred\nQueenstown\nUitenhage\nCradock\nAliwal North\nButterworth\nKing William's Town\nBloemfontein\nWelkom\nBethlehem\nKroonstad\nSasolburg\nHarrismith\nParys\nVirginia\nPhuthaditjhaba\nFicksburg\nPolokwane\nTzaneen\nMokopane\nThohoyandou\nLephalale\nLouis Trichardt\nBela-Bela\nMusina\nGiyani\nHoedspruit\nNelspruit\nWitbank\nSecunda\nMiddelburg\nStanderton\nErmelo\nWhite River\nSabie\nHazyview\nKomatipoort\nRustenburg\nMahikeng\nKlerksdorp\nPotchefstroom\nBrits\nHartbeespoort\nOrkney\nLichtenburg\nVryburg\nZeerust\nKimberley\nUpington\nKuruman\nSpringbok\nDe Aar\nCalvinia\nColesberg\nPostmasburg\nKathu\nAlexander Bay\n"
-        },
-        {
-          "type": "radio",
-          "multiple": false,
-          "required": true,
-          "label": "How many tracks are you submitting?",
-          "options": "One\nTwo\nThree\nFour\nFive",
-          "width": "half"
-        },
-        {
-          "type": "checkbox",
-          "multiple": false,
-          "required": true,
-          "label": "AI Tools Used",
-          "options": "Suno\nUdio\nSoundraw\nAISound\nBoomy\nStable Audio\nCustom Model\nOther",
-          "width": "half"
-        },
-        {
-          "type": "textarea",
-          "multiple": false,
-          "required": true,
-          "label": "Tell us about your sound!"
-        },
-        {
-          "type": "file",
-          "multiple": true,
-          "required": true,
-          "label": "Upload your Songs"
-        },
-        {
-          "type": "checkbox",
-          "multiple": false,
-          "required": true,
-          "width": "half",
-          "label": "South African Native Styles",
-          "options": "Amapiano\nGqom\nKwaito\nAfro House\nAfro Tech\nSouth African House\nCape Jazz"
-        },
-        {
-          "type": "checkbox",
-          "multiple": false,
-          "required": true,
-          "width": "half",
-          "label": "Electronic / Club",
-          "options": "Tech House\nTechno\nMelodic Techno\nProgressive House\nDrum & Bass\nFuture Rave"
-        },
-        {
-          "type": "checkbox",
-          "multiple": false,
-          "required": true,
-          "width": "half",
-          "label": "Creator Economy / Viral",
-          "options": "TikTok Viral Music\nMeme Music\nFestival Music\nClub Anthem\nGaming Music"
-        },
-        {
-          "type": "checkbox",
-          "multiple": false,
-          "required": true,
-          "width": "half",
-          "label": "Experimental",
-          "options": "Cinematic\nExperimental\nAnime Soundtrack\nOrchestral\nAmbient"
-        },
-        {
-          "type": "text",
-          "multiple": false,
-          "required": true,
-          "label": "I Acknowledge...",
-          "options": "I understand the R250 participation fee must be paid via EFT and that my spot is only confirmed once proof of payment is received via WhatsApp.\nI will be present on the night (7 June 2026). I understand that no-show means automatic disqualification, regardless of whether my tracks were selected.\nMy tracks are AI-assisted or fully AI-produced. They contain no copyrighted samples without clearance. I take full responsibility for the content.\nI understand the track submission deadline is 3 days before the event. Late submissions will not be accepted under any circumstances.\nI agree to receive event updates and communications from Prompt Party via WhatsApp and email."
-        }
-      ],
+      "registrationFields": [],
       "gallery": [],
+      "registrationTemplate": "ai-prompt-party-submission",
       "title": "AI Prompt Party",
       "id": "prompt-party-july-01",
       "image": "",
@@ -130,55 +25,8 @@
       "time": "18:00",
       "date": "2026-07-08",
       "venue": "Potties Bar & Restaurant ",
-      "registrationFields": [
-        {
-          "type": "text",
-          "required": true,
-          "label": "First Name"
-        },
-        {
-          "type": "text",
-          "required": true,
-          "label": "Last Name"
-        },
-        {
-          "type": "select",
-          "required": true,
-          "label": "Gender",
-          "options": "Male\nFemale"
-        },
-        {
-          "type": "select",
-          "required": true,
-          "label": "City",
-          "options": "Johannesburg\nPretoria\nCenturion\nMidrand\nSoweto\nBenoni\nBoksburg\nKempton Park\nAlberton\nRoodepoort\nRandburg\nSandton\nKrugersdorp\nSprings\nBrakpan\nCape Town\nStellenbosch\nPaarl\nGeorge\nMossel Bay\nKnysna\nHermanus\nWorcester\nSomerset West\nBellville\nDurbanville\nMalmesbury\nSaldanha\nVredenburg\nOudtshoorn\nDurban\nPietermaritzburg\nRichards Bay\nNewcastle\nBallito\nUmhlanga\nPinetown\nChatsworth\nLadysmith\nEmpangeni\nPort Shepstone\nMargate\nHowick\nStanger\nVryheid\nGqeberha\nEast London\nMthatha\nGrahamstown\nJeffreys Bay\nPort Alfred\nQueenstown\nUitenhage\nCradock\nAliwal North\nButterworth\nKing William's Town\nBloemfontein\nWelkom\nBethlehem\nKroonstad\nSasolburg\nHarrismith\nParys\nVirginia\nPhuthaditjhaba\nFicksburg\nPolokwane\nTzaneen\nMokopane\nThohoyandou\nLephalale\nLouis Trichardt\nBela-Bela\nMusina\nGiyani\nHoedspruit\nNelspruit\nWitbank\nSecunda\nMiddelburg\nStanderton\nErmelo\nWhite River\nSabie\nHazyview\nKomatipoort\nRustenburg\nMahikeng\nKlerksdorp\nPotchefstroom\nBrits\nHartbeespoort\nOrkney\nLichtenburg\nVryburg\nZeerust\nKimberley\nUpington\nKuruman\nSpringbok\nDe Aar\nCalvinia\nColesberg\nPostmasburg\nKathu\nAlexander Bay\n"
-        },
-        {
-          "type": "email",
-          "required": true,
-          "label": "Email"
-        },
-        {
-          "type": "tel",
-          "required": true,
-          "label": "Mobile"
-        },
-        {
-          "type": "date",
-          "required": true,
-          "label": "Date of Birth"
-        },
-        {
-          "type": "file",
-          "required": true,
-          "label": "Upload a Face Pic for you"
-        },
-        {
-          "type": "textarea",
-          "required": true,
-          "label": "Tell us something about you"
-        }
-      ],
+      "registrationFields": [],
+      "registrationTemplate": "pot-en-deksel-registration",
       "title": "Pot en Deksel ",
       "id": "pot-en-deksel-july-01",
       "description": "Good food. Great company. Unexpected connections.\n<br><br>\nPot en Deksel is a unique social dining experience designed to bring people together over incredible food, exciting conversations, and unforgettable moments. Whether you come for friendship, romance, or simply a fun night out, this is where authentic connections happen naturally in a warm and welcoming atmosphere.\n<br><br>\nBecause sometimes the perfect match starts around the table.\n<br><br>\nRegister Below",
@@ -186,10 +34,12 @@
     },
     {
       "registrationEnabled": true,
+      "registrationButtonLabel": "Register",
       "city": "Pretoria",
       "time": "18:00",
       "date": "2026-07-03",
       "venue": "Kapstadt Brauhaus Menlo Park",
+      "registrationTemplate": "ai-dance-party-registration",
       "title": "AI Dance Night",
       "id": "ai-dance-night-july-01",
       "description": "Step into an electrifying nightlife experience where artificial intelligence takes over the decks and the dancefloor comes alive. AI Dance Night brings together cutting-edge technology, futuristic sounds, incredible visuals, and an unforgettable party atmosphere designed for those ready to experience the next generation of entertainment.\n<br><br>\nDance to the future. Experience what's next.",
