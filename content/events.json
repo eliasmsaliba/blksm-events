@@ -2,32 +2,98 @@
   "events": [
     {
       "ticketLink": "",
+      "registrationEnabled": true,
+      "registrationButtonLabel": "Register Now",
       "city": "Pretoria",
       "time": "13:00",
       "date": "2026-07-12",
       "venue": "Kapstadt Brauhaus Menlo Park",
+      "registrationFields": [
+        {
+          "label": "Full Name",
+          "type": "text",
+          "options": "",
+          "required": true
+        },
+        {
+          "label": "Email Address",
+          "type": "email",
+          "options": "",
+          "required": true
+        },
+        {
+          "label": "Phone Number",
+          "type": "tel",
+          "options": "",
+          "required": true
+        },
+        {
+          "label": "Number of Guests",
+          "type": "select",
+          "options": "1\n2\n3\n4\n5+",
+          "required": true
+        },
+        {
+          "label": "Dietary Requirements",
+          "type": "textarea",
+          "options": "",
+          "required": false
+        }
+      ],
+      "gallery": [],
       "title": "AI Prompt Party",
       "id": "prompt-party-july-01",
       "image": "",
-      "gallery": [],
       "description": "AI Prompt Party is a first-of-its-kind experience bringing together creators, innovators, artists, and digital pioneers who are using artificial intelligence to redefine the future of creativity. From music generation to prompt engineering and live competitions, this is the space where imagination meets technology and anything becomes possible.\n<br><br>\nCreate smarter. Compete harder. Build the future.",
-      "category": "club-nights",
-      "registrationEnabled": true,
-      "registrationButtonLabel": "Register Now",
-      "registrationFields": [
-        { "label": "Full Name", "type": "text", "options": "", "required": true },
-        { "label": "Email Address", "type": "email", "options": "", "required": true },
-        { "label": "Phone Number", "type": "tel", "options": "", "required": true },
-        { "label": "Number of Guests", "type": "select", "options": "1\n2\n3\n4\n5+", "required": true },
-        { "label": "Dietary Requirements", "type": "textarea", "options": "", "required": false }
-      ]
+      "category": "club-nights"
     },
     {
       "ticketLink": "",
+      "registrationEnabled": true,
+      "registrationButtonLabel": "Register",
       "city": "Pretoria",
       "time": "18:00",
       "date": "2026-07-08",
       "venue": "Potties Bar & Restaurant ",
+      "registrationFields": [
+        {
+          "type": "text",
+          "required": true,
+          "label": "First Name"
+        },
+        {
+          "type": "text",
+          "required": true,
+          "label": "Last Name"
+        },
+        {
+          "type": "select",
+          "required": true,
+          "label": "Gender",
+          "options": "Male\nFemale"
+        },
+        {
+          "type": "select",
+          "required": true,
+          "label": "City",
+          "options": "Johannesburg\nPretoria\nCenturion\nMidrand\nSoweto\nBenoni\nBoksburg\nKempton Park\nAlberton\nRoodepoort\nRandburg\nSandton\nKrugersdorp\nSprings\nBrakpan\nCape Town\nStellenbosch\nPaarl\nGeorge\nMossel Bay\nKnysna\nHermanus\nWorcester\nSomerset West\nBellville\nDurbanville\nMalmesbury\nSaldanha\nVredenburg\nOudtshoorn\nDurban\nPietermaritzburg\nRichards Bay\nNewcastle\nBallito\nUmhlanga\nPinetown\nChatsworth\nLadysmith\nEmpangeni\nPort Shepstone\nMargate\nHowick\nStanger\nVryheid\nGqeberha\nEast London\nMthatha\nGrahamstown\nJeffreys Bay\nPort Alfred\nQueenstown\nUitenhage\nCradock\nAliwal North\nButterworth\nKing William's Town\nBloemfontein\nWelkom\nBethlehem\nKroonstad\nSasolburg\nHarrismith\nParys\nVirginia\nPhuthaditjhaba\nFicksburg\nPolokwane\nTzaneen\nMokopane\nThohoyandou\nLephalale\nLouis Trichardt\nBela-Bela\nMusina\nGiyani\nHoedspruit\nNelspruit\nWitbank\nSecunda\nMiddelburg\nStanderton\nErmelo\nWhite River\nSabie\nHazyview\nKomatipoort\nRustenburg\nMahikeng\nKlerksdorp\nPotchefstroom\nBrits\nHartbeespoort\nOrkney\nLichtenburg\nVryburg\nZeerust\nKimberley\nUpington\nKuruman\nSpringbok\nDe Aar\nCalvinia\nColesberg\nPostmasburg\nKathu\nAlexander Bay\n"
+        },
+        {
+          "type": "email",
+          "required": true,
+          "label": "Email"
+        },
+        {
+          "type": "tel",
+          "required": true,
+          "label": "Mobile"
+        },
+        {
+          "type": "textarea",
+          "required": true,
+          "label": "Tell us something about you"
+        }
+      ],
       "title": "Pot en Deksel ",
       "id": "pot-en-deksel-july-01",
       "description": "Good food. Great company. Unexpected connections.\n<br><br>\nPot en Deksel is a unique social dining experience designed to bring people together over incredible food, exciting conversations, and unforgettable moments. Whether you come for friendship, romance, or simply a fun night out, this is where authentic connections happen naturally in a warm and welcoming atmosphere.\n<br><br>\nBecause sometimes the perfect match starts around the table.",
