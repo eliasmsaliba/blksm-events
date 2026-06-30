@@ -113,15 +113,140 @@
       "id": "pot-en-deksel-registration",
       "name": "Pot en Deksel Registration Form",
       "fields": [
-        { "label": "First Name", "type": "text", "options": "", "required": true },
-        { "label": "Last Name", "type": "text", "options": "", "required": true },
-        { "label": "Gender", "type": "select", "options": "Male\nFemale", "required": true },
-        { "label": "City", "type": "select", "options": "Johannesburg\nPretoria\nCenturion\nMidrand\nSoweto\nBenoni\nBoksburg\nKempton Park\nAlberton\nRoodepoort\nRandburg\nSandton\nKrugersdorp\nSprings\nBrakpan\nCape Town\nStellenbosch\nPaarl\nGeorge\nMossel Bay\nKnysna\nHermanus\nWorcester\nSomerset West\nBellville\nDurbanville\nMalmesbury\nSaldanha\nVredenburg\nOudtshoorn\nDurban\nPietermaritzburg\nRichards Bay\nNewcastle\nBallito\nUmhlanga\nPinetown\nChatsworth\nLadysmith\nEmpangeni\nPort Shepstone\nMargate\nHowick\nStanger\nVryheid\nGqeberha\nEast London\nMthatha\nGrahamstown\nJeffreys Bay\nPort Alfred\nQueenstown\nUitenhage\nCradock\nAliwal North\nButterworth\nKing William's Town\nBloemfontein\nWelkom\nBethlehem\nKroonstad\nSasolburg\nHarrismith\nParys\nVirginia\nPhuthaditjhaba\nFicksburg\nPolokwane\nTzaneen\nMokopane\nThohoyandou\nLephalale\nLouis Trichardt\nBela-Bela\nMusina\nGiyani\nHoedspruit\nNelspruit\nWitbank\nSecunda\nMiddelburg\nStanderton\nErmelo\nWhite River\nSabie\nHazyview\nKomatipoort\nRustenburg\nMahikeng\nKlerksdorp\nPotchefstroom\nBrits\nHartbeespoort\nOrkney\nLichtenburg\nVryburg\nZeerust\nKimberley\nUpington\nKuruman\nSpringbok\nDe Aar\nCalvinia\nColesberg\nPostmasburg\nKathu\nAlexander Bay\n", "required": true },
-        { "label": "Email", "type": "email", "options": "", "required": true },
-        { "label": "Mobile", "type": "tel", "options": "", "required": true },
-        { "label": "Date of Birth", "type": "date", "options": "", "required": true },
-        { "label": "Upload a Face Pic for you", "type": "file", "options": "", "required": true },
-        { "label": "Tell us something about you", "type": "textarea", "options": "", "required": true }
+        {
+          "label": "First Name",
+          "type": "text",
+          "options": "",
+          "required": true
+        },
+        {
+          "label": "Last Name",
+          "type": "text",
+          "options": "",
+          "required": true
+        },
+        {
+          "label": "Gender",
+          "type": "select",
+          "options": "Male\nFemale",
+          "required": true
+        },
+        {
+          "label": "City",
+          "type": "select",
+          "options": "Johannesburg\nPretoria\nCenturion\nMidrand\nSoweto\nBenoni\nBoksburg\nKempton Park\nAlberton\nRoodepoort\nRandburg\nSandton\nKrugersdorp\nSprings\nBrakpan\nCape Town\nStellenbosch\nPaarl\nGeorge\nMossel Bay\nKnysna\nHermanus\nWorcester\nSomerset West\nBellville\nDurbanville\nMalmesbury\nSaldanha\nVredenburg\nOudtshoorn\nDurban\nPietermaritzburg\nRichards Bay\nNewcastle\nBallito\nUmhlanga\nPinetown\nChatsworth\nLadysmith\nEmpangeni\nPort Shepstone\nMargate\nHowick\nStanger\nVryheid\nGqeberha\nEast London\nMthatha\nGrahamstown\nJeffreys Bay\nPort Alfred\nQueenstown\nUitenhage\nCradock\nAliwal North\nButterworth\nKing William's Town\nBloemfontein\nWelkom\nBethlehem\nKroonstad\nSasolburg\nHarrismith\nParys\nVirginia\nPhuthaditjhaba\nFicksburg\nPolokwane\nTzaneen\nMokopane\nThohoyandou\nLephalale\nLouis Trichardt\nBela-Bela\nMusina\nGiyani\nHoedspruit\nNelspruit\nWitbank\nSecunda\nMiddelburg\nStanderton\nErmelo\nWhite River\nSabie\nHazyview\nKomatipoort\nRustenburg\nMahikeng\nKlerksdorp\nPotchefstroom\nBrits\nHartbeespoort\nOrkney\nLichtenburg\nVryburg\nZeerust\nKimberley\nUpington\nKuruman\nSpringbok\nDe Aar\nCalvinia\nColesberg\nPostmasburg\nKathu\nAlexander Bay\n",
+          "required": true
+        },
+        {
+          "label": "Email",
+          "type": "email",
+          "options": "",
+          "required": true
+        },
+        {
+          "label": "Mobile",
+          "type": "tel",
+          "options": "",
+          "required": true
+        },
+        {
+          "label": "Date of Birth",
+          "type": "date",
+          "options": "",
+          "required": true
+        },
+        {
+          "label": "Upload a Face Pic for you",
+          "type": "file",
+          "options": "",
+          "required": true
+        },
+        {
+          "label": "Tell us something about you",
+          "type": "textarea",
+          "options": "",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "AI Dance Party",
+      "id": "ai-dance-party-registration",
+      "fields": [
+        {
+          "type": "text",
+          "multiple": false,
+          "required": true,
+          "width": "full",
+          "label": "Full Name"
+        },
+        {
+          "type": "text",
+          "multiple": false,
+          "required": true,
+          "width": "full",
+          "label": "Stage Name"
+        },
+        {
+          "type": "radio",
+          "multiple": false,
+          "required": true,
+          "width": "full",
+          "label": "Your Preference ",
+          "options": "Under Cover\nReal Persona"
+        },
+        {
+          "type": "file",
+          "multiple": false,
+          "required": true,
+          "width": "full",
+          "label": "Upload a Photo of you"
+        },
+        {
+          "type": "tel",
+          "multiple": false,
+          "required": true,
+          "width": "full",
+          "label": "WhatsApp Number"
+        },
+        {
+          "type": "email",
+          "multiple": false,
+          "required": true,
+          "width": "full",
+          "label": "Email Address"
+        },
+        {
+          "type": "select",
+          "multiple": false,
+          "required": true,
+          "width": "full",
+          "options": "Johannesburg\nPretoria\nCenturion\nMidrand\nSoweto\nBenoni\nBoksburg\nKempton Park\nAlberton\nRoodepoort\nRandburg\nSandton\nKrugersdorp\nSprings\nBrakpan\nCape Town\nStellenbosch\nPaarl\nGeorge\nMossel Bay\nKnysna\nHermanus\nWorcester\nSomerset West\nBellville\nDurbanville\nMalmesbury\nSaldanha\nVredenburg\nOudtshoorn\nDurban\nPietermaritzburg\nRichards Bay\nNewcastle\nBallito\nUmhlanga\nPinetown\nChatsworth\nLadysmith\nEmpangeni\nPort Shepstone\nMargate\nHowick\nStanger\nVryheid\nGqeberha\nEast London\nMthatha\nGrahamstown\nJeffreys Bay\nPort Alfred\nQueenstown\nUitenhage\nCradock\nAliwal North\nButterworth\nKing William's Town\nBloemfontein\nWelkom\nBethlehem\nKroonstad\nSasolburg\nHarrismith\nParys\nVirginia\nPhuthaditjhaba\nFicksburg\nPolokwane\nTzaneen\nMokopane\nThohoyandou\nLephalale\nLouis Trichardt\nBela-Bela\nMusina\nGiyani\nHoedspruit\nNelspruit\nWitbank\nSecunda\nMiddelburg\nStanderton\nErmelo\nWhite River\nSabie\nHazyview\nKomatipoort\nRustenburg\nMahikeng\nKlerksdorp\nPotchefstroom\nBrits\nHartbeespoort\nOrkney\nLichtenburg\nVryburg\nZeerust\nKimberley\nUpington\nKuruman\nSpringbok\nDe Aar\nCalvinia\nColesberg\nPostmasburg\nKathu\nAlexander Bay\n",
+          "label": "City"
+        },
+        {
+          "type": "select",
+          "multiple": false,
+          "required": true,
+          "width": "half",
+          "label": "How many tracks are you submitting",
+          "options": "One\nTwo\nThee\nFour\nFive\nSix\nSeven\nEight\nNine\nTen"
+        },
+        {
+          "type": "checkbox",
+          "multiple": false,
+          "required": true,
+          "width": "half",
+          "label": "Genre",
+          "options": "Amapiano\nAfro House\nAfro Tech\nGqom\nHouse\nTech House\nTechno\nDeep House\nEDM\nTrance\nDrum & Bass\nDancehall\nKwaito\nAfrobeats\nProgressive House"
+        },
+        {
+          "type": "file",
+          "multiple": true,
+          "required": true,
+          "width": "full",
+          "label": "Upload your Songs"
+        }
       ]
     }
   ]
