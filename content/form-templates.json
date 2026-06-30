@@ -8,6 +8,28 @@
         { "label": "Email Address", "type": "email", "options": "", "required": true, "width": "half" },
         { "label": "Phone Number", "type": "tel", "options": "", "required": true, "width": "full" }
       ]
+    },
+    {
+      "id": "ai-prompt-party-submission",
+      "name": "AI Prompt Party Submission Form",
+      "fields": [
+        { "label": "Full Name", "type": "text", "options": "", "required": true },
+        { "label": "Stage Name", "type": "text", "options": "", "required": true },
+        { "label": "Whatsapp Number", "type": "tel", "options": "", "required": true },
+        { "label": "Email", "type": "email", "options": "", "required": true },
+        { "label": "Your Preference", "type": "select", "options": "Under Cover\nReal Persona", "required": true },
+        { "label": "Upload a Photo of You", "type": "file", "options": "", "required": true },
+        { "label": "City", "type": "select", "options": "Johannesburg\nPretoria\nCenturion\nMidrand\nSoweto\nBenoni\nBoksburg\nKempton Park\nAlberton\nRoodepoort\nRandburg\nSandton\nKrugersdorp\nSprings\nBrakpan\nCape Town\nStellenbosch\nPaarl\nGeorge\nMossel Bay\nKnysna\nHermanus\nWorcester\nSomerset West\nBellville\nDurbanville\nMalmesbury\nSaldanha\nVredenburg\nOudtshoorn\nDurban\nPietermaritzburg\nRichards Bay\nNewcastle\nBallito\nUmhlanga\nPinetown\nChatsworth\nLadysmith\nEmpangeni\nPort Shepstone\nMargate\nHowick\nStanger\nVryheid\nGqeberha\nEast London\nMthatha\nGrahamstown\nJeffreys Bay\nPort Alfred\nQueenstown\nUitenhage\nCradock\nAliwal North\nButterworth\nKing William's Town\nBloemfontein\nWelkom\nBethlehem\nKroonstad\nSasolburg\nHarrismith\nParys\nVirginia\nPhuthaditjhaba\nFicksburg\nPolokwane\nTzaneen\nMokopane\nThohoyandou\nLephalale\nLouis Trichardt\nBela-Bela\nMusina\nGiyani\nHoedspruit\nNelspruit\nWitbank\nSecunda\nMiddelburg\nStanderton\nErmelo\nWhite River\nSabie\nHazyview\nKomatipoort\nRustenburg\nMahikeng\nKlerksdorp\nPotchefstroom\nBrits\nHartbeespoort\nOrkney\nLichtenburg\nVryburg\nZeerust\nKimberley\nUpington\nKuruman\nSpringbok\nDe Aar\nCalvinia\nColesberg\nPostmasburg\nKathu\nAlexander Bay\n", "required": true },
+        { "label": "How many tracks are you submitting?", "type": "radio", "options": "One\nTwo\nThree\nFour\nFive", "required": true, "width": "half" },
+        { "label": "AI Tools Used", "type": "checkbox", "options": "Suno\nUdio\nSoundraw\nAISound\nBoomy\nStable Audio\nCustom Model\nOther", "required": true, "width": "half" },
+        { "label": "Tell us about your sound!", "type": "textarea", "options": "", "required": true },
+        { "label": "Upload your Songs", "type": "file", "options": "", "required": true, "multiple": true },
+        { "label": "South African Native Styles", "type": "checkbox", "options": "Amapiano\nGqom\nKwaito\nAfro House\nAfro Tech\nSouth African House\nCape Jazz", "required": true, "width": "half" },
+        { "label": "Electronic / Club", "type": "checkbox", "options": "Tech House\nTechno\nMelodic Techno\nProgressive House\nDrum & Bass\nFuture Rave", "required": true, "width": "half" },
+        { "label": "Creator Economy / Viral", "type": "checkbox", "options": "TikTok Viral Music\nMeme Music\nFestival Music\nClub Anthem\nGaming Music", "required": true, "width": "half" },
+        { "label": "Experimental", "type": "checkbox", "options": "Cinematic\nExperimental\nAnime Soundtrack\nOrchestral\nAmbient", "required": true, "width": "half" },
+        { "label": "I Acknowledge...", "type": "text", "options": "I understand the R250 participation fee must be paid via EFT and that my spot is only confirmed once proof of payment is received via WhatsApp.\nI will be present on the night (7 June 2026). I understand that no-show means automatic disqualification, regardless of whether my tracks were selected.\nMy tracks are AI-assisted or fully AI-produced. They contain no copyrighted samples without clearance. I take full responsibility for the content.\nI understand the track submission deadline is 3 days before the event. Late submissions will not be accepted under any circumstances.\nI agree to receive event updates and communications from Prompt Party via WhatsApp and email.", "required": true }
+      ]
     }
   ]
 }
