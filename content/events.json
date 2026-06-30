@@ -12,7 +12,16 @@
       "description": "Replace this with the real event description. Add as many events as you like from the CMS — they'll automatically sort into Upcoming or Past based on today's date.",
       "image": "",
       "gallery": [],
-      "ticketLink": ""
+      "ticketLink": "",
+      "registrationEnabled": true,
+      "registrationButtonLabel": "Register Now",
+      "registrationFields": [
+        { "label": "Full Name", "type": "text", "options": "", "required": true },
+        { "label": "Email Address", "type": "email", "options": "", "required": true },
+        { "label": "Phone Number", "type": "tel", "options": "", "required": true },
+        { "label": "Number of Guests", "type": "select", "options": "1\n2\n3\n4\n5+", "required": true },
+        { "label": "Dietary Requirements", "type": "textarea", "options": "", "required": false }
+      ]
     }
   ]
 }

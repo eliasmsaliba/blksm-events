@@ -48,6 +48,28 @@
   </div>
 </section>
 
+<section class="section registration" id="registrationSection" hidden>
+  <div class="container">
+    <div class="section-tag">Reserve Your Spot</div>
+    <h2 class="section-title" id="registrationTitle">Register for This Event</h2>
+    <div id="registrationFormHost"></div>
+  </div>
+</section>
+
+<!--
+  Static stub form so Netlify's build-time scanner registers the "event-registration"
+  form name. The real, dynamically-built form (rendered by script.js) submits to this
+  same form name via fetch — Netlify accepts whatever fields are POSTed once the name
+  is registered, even ones not listed below.
+-->
+<form name="event-registration" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="text" name="name" />
+  <input type="email" name="email" />
+  <input type="tel" name="phone" />
+  <input type="text" name="event" />
+  <textarea name="message"></textarea>
+</form>
+
 <section class="section why team-culture">
   <div class="container">
     <div class="section-tag">What Else Is On</div>

@@ -277,6 +277,7 @@ if (eventsList) {
             <h3>${ev.title}</h3>
             <p class="event-meta">${dateLabel}${ev.time ? ' · ' + ev.time : ''}${ev.venue ? ' · ' + ev.venue : ''}${ev.city ? ', ' + ev.city : ''}</p>
             <p class="event-desc">${ev.description || ''}</p>
+            ${ev.registrationEnabled && !isPast ? `<span class="tag">Registration Open</span>` : ''}
           </div>
         </a>`;
       }).join('');
@@ -351,7 +352,91 @@ if (eventHero && eventDetail) {
         ${ev.ticketLink ? `<a href="${ev.ticketLink}" class="btn btn-primary" target="_blank" rel="noopener">Tickets / More Info</a>` : ''}
       </div>
     `;
+
+    renderRegistrationForm(ev);
   }).catch(() => {
     eventDetail.innerHTML = '<p style="color:var(--muted)">Unable to load this event right now.</p>';
+  });
+}
+
+function slugifyFieldLabel(label, usedNames) {
+  let base = label.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') || 'field';
+  let name = base;
+  let i = 2;
+  while (usedNames.has(name)) { name = `${base}-${i}`; i++; }
+  usedNames.add(name);
+  return name;
+}
+
+function renderRegistrationForm(ev) {
+  const section = document.getElementById('registrationSection');
+  const host = document.getElementById('registrationFormHost');
+  const title = document.getElementById('registrationTitle');
+  if (!section || !host) return;
+
+  const fields = Array.isArray(ev.registrationFields) ? ev.registrationFields : [];
+  if (!ev.registrationEnabled || !fields.length) {
+    section.hidden = true;
+    return;
+  }
+
+  section.hidden = false;
+  if (title) title.textContent = ev.registrationButtonLabel ? `${ev.registrationButtonLabel.replace(/now$/i, '').trim() || 'Register'} for ${ev.title}` : `Register for ${ev.title}`;
+
+  const usedNames = new Set();
+  const fieldsHTML = fields.map(f => {
+    const name = slugifyFieldLabel(f.label || 'field', usedNames);
+    const required = f.required !== false;
+    const reqAttr = required ? 'required' : '';
+    let control;
+    if (f.type === 'textarea') {
+      control = `<textarea id="rf-${name}" name="${name}" rows="4" ${reqAttr}></textarea>`;
+    } else if (f.type === 'select') {
+      const opts = (f.options || '').split('\n').map(o => o.trim()).filter(Boolean);
+      control = `<select id="rf-${name}" name="${name}" ${reqAttr}>
+        <option value="" disabled selected>Select an option</option>
+        ${opts.map(o => `<option value="${o}">${o}</option>`).join('')}
+      </select>`;
+    } else {
+      const type = ['email', 'tel', 'number'].includes(f.type) ? f.type : 'text';
+      control = `<input type="${type}" id="rf-${name}" name="${name}" ${reqAttr}>`;
+    }
+    return `<div class="field"><label for="rf-${name}">${f.label}${required ? '' : ' (optional)'}</label>${control}</div>`;
+  }).join('');
+
+  host.innerHTML = `
+    <form class="contact-form" id="registrationForm">
+      <input type="hidden" name="form-name" value="event-registration">
+      <input type="hidden" name="event" value="${ev.title}">
+      <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+      ${fieldsHTML}
+      <button type="submit" class="btn btn-primary btn-lg">${ev.registrationButtonLabel || 'Register Now'}</button>
+      <p class="form-status" id="registrationStatus" style="display:none"></p>
+    </form>
+  `;
+
+  const form = document.getElementById('registrationForm');
+  const status = document.getElementById('registrationStatus');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new URLSearchParams(new FormData(form)).toString();
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting…';
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: data,
+    })
+      .then(() => {
+        host.innerHTML = `<p class="form-success">Thanks — you're registered for <strong>${ev.title}</strong>. We've got your details and will be in touch if anything changes.</p>`;
+      })
+      .catch(() => {
+        status.style.display = 'block';
+        status.textContent = 'Something went wrong submitting the form. Please try again or contact us directly.';
+        submitBtn.disabled = false;
+        submitBtn.textContent = ev.registrationButtonLabel || 'Register Now';
+      });
   });
 }

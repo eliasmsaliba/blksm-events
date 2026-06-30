@@ -405,7 +405,18 @@ ul{list-style:none}
   outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(235,0,139,.15);
 }
 .contact-form .btn{align-self:flex-start;border:none;cursor:pointer;font-family:var(--sans)}
+.contact-form .btn:disabled{opacity:.6;cursor:not-allowed}
 @media (max-width:640px){.form-row{grid-template-columns:1fr}}
+
+/* REGISTRATION FORM */
+.registration{text-align:center;background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.registration .contact-form{text-align:left}
+.form-status{color:var(--magenta);font-size:14px}
+.form-success{
+  max-width:640px;margin:46px auto 0;padding:28px;border:1px solid var(--line);border-radius:14px;
+  background:var(--bg2);color:var(--ink);font-size:16px;line-height:1.6;
+}
+.form-success strong{color:var(--cyan)}
 
 /* FOOTER */
 .footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:14px}

@@ -120,3 +120,26 @@ collections:
               - { label: "Gallery Photos (shown on the event detail page)", name: "gallery", widget: "list", field: { label: "Photo", name: "image", widget: "image" }, required: false }
               - { label: "Ticket / More Info Link", name: "ticketLink", widget: "string", required: false }
               - { label: "URL Slug", name: "id", widget: "string", hint: "Lowercase, hyphens only, no spaces." }
+              - { label: "Enable Registration Form", name: "registrationEnabled", widget: "boolean", default: false, hint: "Turns on a sign-up form on this event's page. Submissions are emailed to you and viewable in the Netlify dashboard." }
+              - { label: "Registration Button Label", name: "registrationButtonLabel", widget: "string", required: false, default: "Register Now", hint: "Optional — defaults to 'Register Now'." }
+              - label: "Registration Form Fields"
+                name: "registrationFields"
+                widget: "list"
+                required: false
+                summary: "{{label}} ({{type}})"
+                hint: "Build the form by adding one entry per question you want to ask."
+                fields:
+                  - { label: "Field Label (what the guest sees)", name: "label", widget: "string" }
+                  - label: "Field Type"
+                    name: "type"
+                    widget: "select"
+                    default: "text"
+                    options:
+                      - { label: "Short Text", value: "text" }
+                      - { label: "Email Address", value: "email" }
+                      - { label: "Phone Number", value: "tel" }
+                      - { label: "Number", value: "number" }
+                      - { label: "Long Text / Message", value: "textarea" }
+                      - { label: "Dropdown", value: "select" }
+                  - { label: "Dropdown Options (only used if Field Type is Dropdown — one per line)", name: "options", widget: "text", required: false }
+                  - { label: "Required?", name: "required", widget: "boolean", default: true }
