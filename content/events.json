@@ -89,6 +89,16 @@
           "label": "Mobile"
         },
         {
+          "type": "date",
+          "required": true,
+          "label": "Date of Birth"
+        },
+        {
+          "type": "file",
+          "required": true,
+          "label": "Upload a Face Pic for you"
+        },
+        {
           "type": "textarea",
           "required": true,
           "label": "Tell us something about you"
