@@ -7,8 +7,17 @@
       "venue": "Kapstadt Brauhaus Menlo Park",
       "city": "Pretoria",
       "category": "club-nights",
-      "image": "/assets/uploads/post01.png",
+      "image": "",
       "id": "prompt-party-july-01"
+    },
+    {
+      "title": "Pot en Deksel ",
+      "date": "2026-07-08",
+      "category": "date-nights",
+      "time": "18:00",
+      "venue": "Potties Bar & Restaurant ",
+      "city": "Pretoria",
+      "id": "pot-en-deksel-july-01"
     }
   ]
 }
