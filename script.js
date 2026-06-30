@@ -442,12 +442,14 @@ function renderRegistrationForm(ev) {
   if (title) title.textContent = ev.registrationButtonLabel ? `${ev.registrationButtonLabel.replace(/now$/i, '').trim() || 'Register'} for ${ev.title}` : `Register for ${ev.title}`;
 
   const usedNames = new Set();
-  const fieldsHTML = fields.map(f => {
+  const fieldEntries = fields.map(f => {
     const name = slugifyFieldLabel(f.label || 'field', usedNames);
     const required = f.required !== false;
     const reqAttr = required ? 'required' : '';
     const opts = (f.options || '').split('\n').map(o => o.trim()).filter(Boolean);
+    const width = f.width === 'half' ? 'half' : 'full';
 
+    const html = (() => {
     if (f.type === 'radio') {
       return `<fieldset class="field field-group">
         <legend>${f.label}${required ? '' : ' (optional)'}</legend>
@@ -490,7 +492,23 @@ function renderRegistrationForm(ev) {
       control = `<input type="${type}" id="rf-${name}" name="${name}" ${reqAttr}>`;
     }
     return `<div class="field"><label for="rf-${name}">${f.label}${required ? '' : ' (optional)'}</label>${control}</div>`;
-  }).join('');
+    })();
+
+    return { width, html };
+  });
+
+  // Pair up consecutive half-width fields into a side-by-side row.
+  let fieldsHTML = '';
+  for (let i = 0; i < fieldEntries.length; i++) {
+    const cur = fieldEntries[i];
+    const next = fieldEntries[i + 1];
+    if (cur.width === 'half' && next && next.width === 'half') {
+      fieldsHTML += `<div class="form-row">${cur.html}${next.html}</div>`;
+      i++;
+    } else {
+      fieldsHTML += cur.html;
+    }
+  }
 
   host.innerHTML = `
     <form class="contact-form" id="registrationForm" enctype="multipart/form-data">

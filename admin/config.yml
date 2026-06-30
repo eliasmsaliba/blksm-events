@@ -148,6 +148,15 @@ collections:
                   - { label: "Options (for Dropdown, Radio, or Checkboxes — one per line. Leave blank on Checkboxes for a single yes/no checkbox.)", name: "options", widget: "text", required: false }
                   - { label: "Allow Multiple Files? (only used if Field Type is File Upload)", name: "multiple", widget: "boolean", default: false, required: false }
                   - { label: "Required?", name: "required", widget: "boolean", default: true }
+                  - label: "Width"
+                    name: "width"
+                    widget: "select"
+                    default: "full"
+                    required: false
+                    hint: "Two consecutive 'Half' fields sit side by side as a row."
+                    options:
+                      - { label: "Full Width", value: "full" }
+                      - { label: "Half Width", value: "half" }
 
   - name: "menu"
     label: "Site Navigation"
