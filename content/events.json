@@ -81,6 +81,38 @@
           "required": true,
           "label": "I Acknowledge...",
           "options": "I understand the R250 participation fee must be paid via EFT and that my spot is only confirmed once proof of payment is received via WhatsApp.\nI will be present on the night (7 June 2026). I understand that no-show means automatic disqualification, regardless of whether my tracks were selected.\nMy tracks are AI-assisted or fully AI-produced. They contain no copyrighted samples without clearance. I take full responsibility for the content.\nI understand the track submission deadline is 3 days before the event. Late submissions will not be accepted under any circumstances.\nI agree to receive event updates and communications from Prompt Party via WhatsApp and email."
+        },
+        {
+          "type": "checkbox",
+          "multiple": false,
+          "required": true,
+          "width": "half",
+          "label": "South African Native Styles",
+          "options": "Amapiano\nGqom\nKwaito\nAfro House\nAfro Tech\nSouth African House\nCape Jazz"
+        },
+        {
+          "type": "checkbox",
+          "multiple": false,
+          "required": true,
+          "width": "half",
+          "label": "Electronic / Club",
+          "options": "Tech House\nTechno\nMelodic Techno\nProgressive House\nDrum & Bass\nFuture Rave"
+        },
+        {
+          "type": "checkbox",
+          "multiple": false,
+          "required": true,
+          "width": "half",
+          "label": "Creator Economy / Viral",
+          "options": "TikTok Viral Music\nMeme Music\nFestival Music\nClub Anthem\nGaming Music"
+        },
+        {
+          "type": "checkbox",
+          "multiple": false,
+          "required": true,
+          "width": "half",
+          "label": "Experimental",
+          "options": "Cinematic\nExperimental\nAnime Soundtrack\nOrchestral\nAmbient"
         }
       ],
       "gallery": [],
