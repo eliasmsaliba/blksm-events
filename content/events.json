@@ -10,34 +10,41 @@
       "venue": "Kapstadt Brauhaus Menlo Park",
       "registrationFields": [
         {
-          "label": "Full Name",
           "type": "text",
-          "options": "",
-          "required": true
+          "required": true,
+          "label": "Full Name"
         },
         {
-          "label": "Email Address",
-          "type": "email",
-          "options": "",
-          "required": true
+          "type": "text",
+          "required": true,
+          "label": "Stage Name"
         },
         {
-          "label": "Phone Number",
           "type": "tel",
-          "options": "",
-          "required": true
+          "required": true,
+          "label": "Whatsapp Number"
         },
         {
-          "label": "Number of Guests",
+          "type": "email",
+          "required": true,
+          "label": "Email"
+        },
+        {
           "type": "select",
-          "options": "1\n2\n3\n4\n5+",
-          "required": true
+          "required": true,
+          "label": "Your Preference ",
+          "options": "Under Cover\nReal Persona"
         },
         {
-          "label": "Dietary Requirements",
-          "type": "textarea",
-          "options": "",
-          "required": false
+          "type": "file",
+          "required": true,
+          "label": "Upload a Photo of You"
+        },
+        {
+          "type": "select",
+          "required": true,
+          "label": "City",
+          "options": "Johannesburg\nPretoria\nCenturion\nMidrand\nSoweto\nBenoni\nBoksburg\nKempton Park\nAlberton\nRoodepoort\nRandburg\nSandton\nKrugersdorp\nSprings\nBrakpan\nCape Town\nStellenbosch\nPaarl\nGeorge\nMossel Bay\nKnysna\nHermanus\nWorcester\nSomerset West\nBellville\nDurbanville\nMalmesbury\nSaldanha\nVredenburg\nOudtshoorn\nDurban\nPietermaritzburg\nRichards Bay\nNewcastle\nBallito\nUmhlanga\nPinetown\nChatsworth\nLadysmith\nEmpangeni\nPort Shepstone\nMargate\nHowick\nStanger\nVryheid\nGqeberha\nEast London\nMthatha\nGrahamstown\nJeffreys Bay\nPort Alfred\nQueenstown\nUitenhage\nCradock\nAliwal North\nButterworth\nKing William's Town\nBloemfontein\nWelkom\nBethlehem\nKroonstad\nSasolburg\nHarrismith\nParys\nVirginia\nPhuthaditjhaba\nFicksburg\nPolokwane\nTzaneen\nMokopane\nThohoyandou\nLephalale\nLouis Trichardt\nBela-Bela\nMusina\nGiyani\nHoedspruit\nNelspruit\nWitbank\nSecunda\nMiddelburg\nStanderton\nErmelo\nWhite River\nSabie\nHazyview\nKomatipoort\nRustenburg\nMahikeng\nKlerksdorp\nPotchefstroom\nBrits\nHartbeespoort\nOrkney\nLichtenburg\nVryburg\nZeerust\nKimberley\nUpington\nKuruman\nSpringbok\nDe Aar\nCalvinia\nColesberg\nPostmasburg\nKathu\nAlexander Bay\n"
         }
       ],
       "gallery": [],
