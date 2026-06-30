@@ -34,10 +34,12 @@
     },
     {
       "registrationEnabled": true,
+      "registrationButtonLabel": "Register",
       "city": "Pretoria",
       "time": "18:00",
       "date": "2026-07-03",
       "venue": "Kapstadt Brauhaus Menlo Park",
+      "registrationTemplate": "ai-dance-party-registration",
       "title": "AI Dance Night",
       "id": "ai-dance-night-july-01",
       "description": "Step into an electrifying nightlife experience where artificial intelligence takes over the decks and the dancefloor comes alive. AI Dance Night brings together cutting-edge technology, futuristic sounds, incredible visuals, and an unforgettable party atmosphere designed for those ready to experience the next generation of entertainment.\n<br><br>\nDance to the future. Experience what's next.",
