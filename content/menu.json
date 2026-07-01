@@ -20,6 +20,11 @@
       ]
     },
     {
+      "isButton": false,
+      "label": "Meet the team",
+      "href": "team.html"
+    },
+    {
       "label": "Portfolio",
       "href": "portfolio.html",
       "isButton": false
