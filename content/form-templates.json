@@ -67,11 +67,10 @@
           "required": true
         },
         {
-          "label": "Upload your Songs",
-          "type": "file",
+          "label": "Google Drive / Dropbox Link to your Songs",
+          "type": "text",
           "options": "",
-          "required": true,
-          "multiple": true
+          "required": true
         },
         {
           "label": "South African Native Styles",
@@ -236,11 +235,11 @@
           "options": "Amapiano\nAfro House\nAfro Tech\nGqom\nHouse\nTech House\nTechno\nDeep House\nEDM\nTrance\nDrum & Bass\nDancehall\nKwaito\nAfrobeats\nProgressive House"
         },
         {
-          "type": "file",
-          "multiple": true,
+          "type": "text",
+          "multiple": false,
           "required": true,
           "width": "full",
-          "label": "Upload your Songs"
+          "label": "Google Drive / Dropbox Link to your Songs"
         }
       ]
     },
