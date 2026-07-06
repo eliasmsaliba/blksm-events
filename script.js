@@ -558,6 +558,27 @@ function renderRegistrationFormWithFields(ev, fields) {
     // field, map any uploaded files into the generic file1–file5 slots, and
     // best-effort-fill name/email/phone so the dashboard/email still show
     // something recognizable at a glance.
+    // Netlify Forms limit: 10 MB per file, 20 MB total across all files.
+    const MAX_FILE = 10 * 1024 * 1024;
+    const MAX_TOTAL = 20 * 1024 * 1024;
+    let totalSize = 0;
+    let oversizeFile = null;
+    form.querySelectorAll('input[type="file"]').forEach(inp => {
+      Array.from(inp.files).forEach(f => {
+        totalSize += f.size;
+        if (f.size > MAX_FILE && !oversizeFile) oversizeFile = f.name;
+      });
+    });
+    if (oversizeFile || totalSize > MAX_TOTAL) {
+      status.style.display = 'block';
+      status.textContent = oversizeFile
+        ? `"${oversizeFile}" is larger than the 10 MB limit. Please use a smaller file and try again.`
+        : `Total upload size exceeds 20 MB. Please reduce the number or size of files and try again.`;
+      submitBtn.disabled = false;
+      submitBtn.textContent = ev.registrationButtonLabel || 'Register Now';
+      return;
+    }
+
     const payload = new FormData();
     payload.append('form-name', 'event-registration');
     payload.append('event', ev.title);
@@ -623,12 +644,18 @@ function renderRegistrationFormWithFields(ev, fields) {
       method: 'POST',
       body: payload,
     })
-      .then(() => {
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
         host.innerHTML = `<p class="form-success">Thanks — you're registered for <strong>${ev.title}</strong>. We've got your details and will be in touch if anything changes.</p>`;
       })
-      .catch(() => {
+      .catch(err => {
+        const isOversize = err && /413/.test(err.message);
         status.style.display = 'block';
-        status.textContent = 'Something went wrong submitting the form. Please try again or contact us directly.';
+        status.textContent = isOversize
+          ? 'Your files are too large to upload (max 10 MB per file, 20 MB total). Please reduce file sizes and try again.'
+          : 'Something went wrong submitting the form. Please try again or contact us directly at hello@blksm.events.';
         submitBtn.disabled = false;
         submitBtn.textContent = ev.registrationButtonLabel || 'Register Now';
       });
