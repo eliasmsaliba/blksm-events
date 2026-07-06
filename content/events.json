@@ -46,6 +46,21 @@
       "image": "/assets/uploads/ai-dance-night-web.png",
       "description": "Step into an electrifying nightlife experience where artificial intelligence takes over the decks and the dancefloor comes alive. AI Dance Night brings together cutting-edge technology, futuristic sounds, incredible visuals, and an unforgettable party atmosphere designed for those ready to experience the next generation of entertainment.\n<br><br>\nDance to the future. Experience what's next.\n<br><br>\nRegister Below",
       "category": "club-nights"
+    },
+    {
+      "registrationEnabled": true,
+      "registrationButtonLabel": "Register Now",
+      "city": "Pretoria",
+      "time": "19:00",
+      "date": "2026-07-07",
+      "venue": "Padstal Hazelwood",
+      "registrationTemplate": "wie-vat-wie-registration",
+      "categoryLabel": "Wie vat Wie",
+      "title": "Wie Vat Wie",
+      "id": "wie-wat-wie-07-07",
+      "image": "/assets/uploads/wie-vat-wie.png",
+      "description": "It's a fun, interactive speed dating experience where great conversations, unexpected challenges and plenty of laughs come together. Meet new people through quick 3-minute dates, take part in entertaining game rounds, and who knows, you might just find your perfect match. Whether you're looking for love, new friendships, or simply a fantastic night out, Wie Vat Wie, promises an unforgettable evening, ending with music, dancing and a lively Sokkie to celebrate the night.\n",
+      "category": "date-nights"
     }
   ]
 }
