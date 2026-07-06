@@ -282,7 +282,7 @@
           "required": true,
           "width": "full",
           "label": "City",
-          "options": "1\n2\n3\n"
+          "options": "Johannesburg\nPretoria\nCenturion\nMidrand\nSoweto\nBenoni\nBoksburg\nKempton Park\nAlberton\nRoodepoort\nRandburg\nSandton\nKrugersdorp\nSprings\nBrakpan\nCape Town\nStellenbosch\nPaarl\nGeorge\nMossel Bay\nKnysna\nHermanus\nWorcester\nSomerset West\nBellville\nDurbanville\nMalmesbury\nSaldanha\nVredenburg\nOudtshoorn\nDurban\nPietermaritzburg\nRichards Bay\nNewcastle\nBallito\nUmhlanga\nPinetown\nChatsworth\nLadysmith\nEmpangeni\nPort Shepstone\nMargate\nHowick\nStanger\nVryheid\nGqeberha\nEast London\nMthatha\nGrahamstown\nJeffreys Bay\nPort Alfred\nQueenstown\nUitenhage\nCradock\nAliwal North\nButterworth\nKing William's Town\nBloemfontein\nWelkom\nBethlehem\nKroonstad\nSasolburg\nHarrismith\nParys\nVirginia\nPhuthaditjhaba\nFicksburg\nPolokwane\nTzaneen\nMokopane\nThohoyandou\nLephalale\nLouis Trichardt\nBela-Bela\nMusina\nGiyani\nHoedspruit\nNelspruit\nWitbank\nSecunda\nMiddelburg\nStanderton\nErmelo\nWhite River\nSabie\nHazyview\nKomatipoort\nRustenburg\nMahikeng\nKlerksdorp\nPotchefstroom\nBrits\nHartbeespoort\nOrkney\nLichtenburg\nVryburg\nZeerust\nKimberley\nUpington\nKuruman\nSpringbok\nDe Aar\nCalvinia\nColesberg\nPostmasburg\nKathu\nAlexander Bay\n"
         },
         {
           "type": "email",
