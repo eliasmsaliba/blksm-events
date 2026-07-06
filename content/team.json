@@ -1,59 +1,59 @@
 {
   "members": [
     {
-      "id": "jj-collins-de-beer",
-      "name": "JJ Collins De Beer",
-      "role": "Co-Founder / Managing Director",
-      "department": "Leadership",
-      "photo": "/assets/team/1-JJ.png",
-      "email": "jj@blksm.events",
-      "phone": "+27 79 894 8566",
+      "details": "<b>JJ Collins De Beer</b> doesn't do boring. And at BLKSM Events, that's exactly the point.\n\nAs Managing Director, JJ is the engine behind the chaos, the guy making sure every wild idea actually lands, on time, on budget, and with impact. He's known for turning \"this might be crazy\" into \"that was unreal,\" whether it's a high-energy fight night, a black-tie gala with a twist, or a full-scale brand experience that people can't stop talking about.\n\nBefore stepping into BLKSM, JJ cut his teeth as Projects Director at BearHug LLC, where he managed everything from branding rollouts to multi-channel campaigns. Translation? He knows how to take a concept, build it properly, and deliver it without the usual chaos (well… controlled chaos).\n\nAt BLKSM, he's focused on scaling the brand, building powerful partnerships, and raising the bar on what events in South Africa can look and feel like. He leads from the front, keeps things moving fast, and has a reputation for making things happen when others are still \"circling back.\"\n\nHe's hands-on, straight-talking, and thrives under pressure, the kind of leader who's just as comfortable in a strategy meeting as he is on-site, solving problems in real time.\n\nHis philosophy is simple: If it doesn't excite people, it doesn't belong at BLKSM. And if it does… it better hit hard.",
       "bio": "The engine behind the chaos — making sure every wild idea lands on time, on budget, and with impact.",
-      "details": "JJ Collins De Beer doesn't do boring. And at BLKSM Events, that's exactly the point.\n\nAs Managing Director, JJ is the engine behind the chaos, the guy making sure every wild idea actually lands, on time, on budget, and with impact. He's known for turning \"this might be crazy\" into \"that was unreal,\" whether it's a high-energy fight night, a black-tie gala with a twist, or a full-scale brand experience that people can't stop talking about.\n\nBefore stepping into BLKSM, JJ cut his teeth as Projects Director at BearHug LLC, where he managed everything from branding rollouts to multi-channel campaigns. Translation? He knows how to take a concept, build it properly, and deliver it without the usual chaos (well… controlled chaos).\n\nAt BLKSM, he's focused on scaling the brand, building powerful partnerships, and raising the bar on what events in South Africa can look and feel like. He leads from the front, keeps things moving fast, and has a reputation for making things happen when others are still \"circling back.\"\n\nHe's hands-on, straight-talking, and thrives under pressure, the kind of leader who's just as comfortable in a strategy meeting as he is on-site, solving problems in real time.\n\nHis philosophy is simple: If it doesn't excite people, it doesn't belong at BLKSM. And if it does… it better hit hard."
+      "name": "JJ Collins De Beer",
+      "phone": "+27 79 894 8566",
+      "photo": "/assets/uploads/1-jj-web.png",
+      "department": "Leadership",
+      "role": "Co-Founder / Managing Director",
+      "id": "jj-collins-de-beer",
+      "email": "jj@blksm.events"
     },
     {
-      "id": "etienne-viljoen",
-      "name": "Etienne Viljoen",
-      "role": "Accounts Manager",
-      "department": "Accounts",
-      "photo": "/assets/team/2-Etienne Viljoen.png",
-      "email": "etienne@blksm.events",
-      "phone": "+27 79 426 0644",
+      "details": "<b>Etienne</b> is the calm in the chaos… and at BLKSM, that's saying a lot.\n\nAs Accounts Manager, he's the one quietly (and sometimes not so quietly) making sure everything actually works. While everyone else is throwing big ideas around, Etienne is already three steps ahead, figuring out how to make it happen, who needs to do what, and how to keep it all from falling apart.\n\nHe brings a strong mix of multinational experience and real-world execution, which basically means he's seen a bit of everything, and knows how to handle it. Before joining BLKSM, Etienne worked closely with leadership at BearHug LLC, where he became known as the guy who just steps in and sorts things out… no drama, no fuss (okay, maybe a little bit of internal sighing).\n\nAt BLKSM, he's hands-on with client coordination, internal alignment, and making sure the team has what they need to deliver. If something's slipping, he's on it. If something's missing, he's already found it. And if something's broken… well, give him five minutes.\n\nHe's dependable, adaptable, and not afraid to get stuck in, the kind of operator who understands that behind every \"effortless\" event is a lot of very intentional hard work.\n\nNow stepping into this new chapter with BLKSM, Etienne is focused on tightening systems, keeping the momentum strong, and making sure the machine runs smoothly, even when it really shouldn't.\n\nHis approach? Keep it under control, keep it moving, and if all else fails… figure it out.",
       "bio": "The calm in the chaos — already three steps ahead, making sure everything actually works.",
-      "details": "Etienne is the calm in the chaos… and at BLKSM, that's saying a lot.\n\nAs Accounts Manager, he's the one quietly (and sometimes not so quietly) making sure everything actually works. While everyone else is throwing big ideas around, Etienne is already three steps ahead, figuring out how to make it happen, who needs to do what, and how to keep it all from falling apart.\n\nHe brings a strong mix of multinational experience and real-world execution, which basically means he's seen a bit of everything, and knows how to handle it. Before joining BLKSM, Etienne worked closely with leadership at BearHug LLC, where he became known as the guy who just steps in and sorts things out… no drama, no fuss (okay, maybe a little bit of internal sighing).\n\nAt BLKSM, he's hands-on with client coordination, internal alignment, and making sure the team has what they need to deliver. If something's slipping, he's on it. If something's missing, he's already found it. And if something's broken… well, give him five minutes.\n\nHe's dependable, adaptable, and not afraid to get stuck in, the kind of operator who understands that behind every \"effortless\" event is a lot of very intentional hard work.\n\nNow stepping into this new chapter with BLKSM, Etienne is focused on tightening systems, keeping the momentum strong, and making sure the machine runs smoothly, even when it really shouldn't.\n\nHis approach? Keep it under control, keep it moving, and if all else fails… figure it out."
+      "name": "Etienne Viljoen",
+      "phone": "+27 79 426 0644",
+      "photo": "/assets/uploads/2-etienne-viljoen-web.png",
+      "department": "Accounts",
+      "role": "Accounts Manager",
+      "id": "etienne-viljoen",
+      "email": "etienne@blksm.events"
     },
     {
-      "id": "ryan-cilliers",
-      "name": "Ryan Cilliers",
-      "role": "Accounts Executive",
-      "department": "Accounts",
-      "photo": "/assets/team/3-Ryan Cilliers.png",
-      "email": "ryan@blksm.events",
-      "phone": "+27 81 881 5739",
+      "details": "<b>Ryan Cilliers</b> is the kind of guy who brings energy wherever he goes, and at BLKSM, that energy gets put to good use.\n\nOriginally from Pretoria and still proudly local, Ryan grew up with a strong love for sport and the outdoors. From athletics to rugby, cricket, softball, and even fishing, he's represented Gauteng colours and competed at a national level, so discipline, teamwork, and giving 100% aren't exactly new concepts to him.\n\nNow stepping into the world of events, Ryan brings that same mindset into everything he does. As an Accounts Executive at BLKSM Events, he's hands-on, eager to learn, and always ready to jump in wherever needed. Whether it's assisting on-site, supporting the team behind the scenes, or making sure the small details are taken care of, Ryan shows up with enthusiasm and a willingness to go the extra mile.\n\nHe's a people person through and through, someone who genuinely enjoys being around others, building connections, and being part of something bigger. His friends and family mean everything to him, and that same loyalty and care naturally carry over into how he works with the team.\n\nWith a strong work ethic, a positive attitude, and a real excitement for the events industry, he's one to watch as he grows within the BLKSM team.\n\nHis approach? Give it your all, enjoy the moment, and always show up ready.",
       "bio": "Hands-on, eager to learn, and always ready to jump in wherever needed.",
-      "details": "Ryan Cilliers is the kind of guy who brings energy wherever he goes, and at BLKSM, that energy gets put to good use.\n\nOriginally from Pretoria and still proudly local, Ryan grew up with a strong love for sport and the outdoors. From athletics to rugby, cricket, softball, and even fishing, he's represented Gauteng colours and competed at a national level, so discipline, teamwork, and giving 100% aren't exactly new concepts to him.\n\nNow stepping into the world of events, Ryan brings that same mindset into everything he does. As an Accounts Executive at BLKSM Events, he's hands-on, eager to learn, and always ready to jump in wherever needed. Whether it's assisting on-site, supporting the team behind the scenes, or making sure the small details are taken care of, Ryan shows up with enthusiasm and a willingness to go the extra mile.\n\nHe's a people person through and through, someone who genuinely enjoys being around others, building connections, and being part of something bigger. His friends and family mean everything to him, and that same loyalty and care naturally carry over into how he works with the team.\n\nWith a strong work ethic, a positive attitude, and a real excitement for the events industry, he's one to watch as he grows within the BLKSM team.\n\nHis approach? Give it your all, enjoy the moment, and always show up ready."
-    },
-    {
-      "id": "hubert-bredenhann",
-      "name": "Hubert Bredenhann",
-      "role": "Accounts Executive",
+      "name": "Ryan Cilliers",
+      "phone": "+27 81 881 5739",
+      "photo": "/assets/uploads/3-ryan-cilliers-web.png",
       "department": "Accounts",
-      "photo": "/assets/team/4-Hubert Bredenhann.png",
-      "email": "herbie@blksm.events",
-      "phone": "+27 73 897 5662",
-      "bio": "Doesn't believe in quiet entrances— or quiet anything, really.",
-      "details": "Hubert (Herbie, Spanner…) Bredenhann doesn't believe in quiet entrances… or quiet anything, really.\n\nA full-on extrovert with a serious love for people and their lifestyles, Herbie brings energy that's hard to ignore (and even harder to contain). If there's a crowd, he's in the middle of it. If there's a vibe, he's probably already turned it up a notch.\n\nHe attended Grey College High School on a scholarship, so while he might look like pure chaos, there's actually a solid foundation of discipline underneath it all. Add in a love for cricket and swimming, and you've got someone who understands teamwork… even if he occasionally plays by his own rules.\n\nAt BLKSM Events, Herbie steps in as a Junior Events Coordinator with enthusiasm, confidence, and just the right amount of impulsiveness to keep things interesting. He's the kind of guy who says \"let's just do it\", and somehow makes it work. Whether he's assisting on-site, jumping into last-minute tasks, or bringing extra energy to the team, Hubert shows up loud, proud, and ready.\n\nHe's naturally social, effortlessly approachable, and thrives in environments where people, pressure, and unpredictability all collide, basically, the perfect BLKSM storm.\n\nFair warning: He might go slightly off-script… but it usually ends up being a good call.\n\nHis approach? Go all in, trust the moment, and if it feels right, run with it."
+      "role": "Accounts Executive",
+      "id": "ryan-cilliers",
+      "email": "ryan@blksm.events"
     },
     {
-      "id": "beon-hurter",
-      "name": "Beon Jared Simphiwe Hurter",
-      "role": "Marketing & HR Officer",
-      "department": "Marketing & HR",
-      "photo": "/assets/team/5-Beon Jared Simphiwe Hurter.png",
-      "email": "beon@blksm.events",
+      "details": "<b>Hubert (Herbie, Spanner…) Bredenhann</b> doesn't believe in quiet entrances… or quiet anything, really.\n\nA full-on extrovert with a serious love for people and their lifestyles, Herbie brings energy that's hard to ignore (and even harder to contain). If there's a crowd, he's in the middle of it. If there's a vibe, he's probably already turned it up a notch.\n\nHe attended Grey College High School on a scholarship, so while he might look like pure chaos, there's actually a solid foundation of discipline underneath it all. Add in a love for cricket and swimming, and you've got someone who understands teamwork… even if he occasionally plays by his own rules.\n\nAt BLKSM Events, Herbie steps in as a Junior Events Coordinator with enthusiasm, confidence, and just the right amount of impulsiveness to keep things interesting. He's the kind of guy who says \"let's just do it\", and somehow makes it work. Whether he's assisting on-site, jumping into last-minute tasks, or bringing extra energy to the team, Hubert shows up loud, proud, and ready.\n\nHe's naturally social, effortlessly approachable, and thrives in environments where people, pressure, and unpredictability all collide, basically, the perfect BLKSM storm.\n\nFair warning: He might go slightly off-script… but it usually ends up being a good call.\n\nHis approach? Go all in, trust the moment, and if it feels right, run with it.",
+      "bio": "Doesn't believe in quiet entrances— or quiet anything, really.",
+      "name": "Hubert Bredenhann",
       "phone": "+27 73 897 5662",
+      "photo": "/assets/uploads/4-hubert-bredenhann-web.png",
+      "department": "Accounts",
+      "role": "Accounts Executive",
+      "id": "hubert-bredenhann",
+      "email": "herbie@blksm.events"
+    },
+    {
+      "details": "<b>Beon</b> is driven by a passion for building experiences, creating meaningful connections, and bringing ideas to life in ways that leave a lasting impact.\n\nWith a natural passion for creativity, music, culture, and innovation, he thrives in environments where collaboration and execution come together to create something beyond the ordinary. He continuously seeks opportunities to challenge conventional thinking, explore new ideas, and grow both personally and professionally.\n\nAt BLKSM, Beon plays a vital role across Human Resources and Marketing, contributing significantly to both the internal culture of the company and the way the brand engages with its audience. From strengthening team dynamics and supporting talent development to assisting with brand positioning, campaign execution, and audience engagement, he helps ensure that the company continues to evolve both internally and externally.\n\nHe brings energy, adaptability, and a people-first mindset into every aspect of his work. His ability to combine strong interpersonal understanding with creative thinking allows him to contribute meaningfully to the growth of the business and the experiences BLKSM creates.\n\nFor Beon, success is built through strong culture, bold creativity, meaningful connections, and the constant drive to help shape what comes next.",
       "bio": "Driven by a passion for building experiences, meaningful connections, and bringing ideas to life.",
-      "details": "Beon is driven by a passion for building experiences, creating meaningful connections, and bringing ideas to life in ways that leave a lasting impact.\n\nWith a natural passion for creativity, music, culture, and innovation, he thrives in environments where collaboration and execution come together to create something beyond the ordinary. He continuously seeks opportunities to challenge conventional thinking, explore new ideas, and grow both personally and professionally.\n\nAt BLKSM, Beon plays a vital role across Human Resources and Marketing, contributing significantly to both the internal culture of the company and the way the brand engages with its audience. From strengthening team dynamics and supporting talent development to assisting with brand positioning, campaign execution, and audience engagement, he helps ensure that the company continues to evolve both internally and externally.\n\nHe brings energy, adaptability, and a people-first mindset into every aspect of his work. His ability to combine strong interpersonal understanding with creative thinking allows him to contribute meaningfully to the growth of the business and the experiences BLKSM creates.\n\nFor Beon, success is built through strong culture, bold creativity, meaningful connections, and the constant drive to help shape what comes next."
+      "name": "Beon Jared Simphiwe Hurter",
+      "phone": "+27 73 897 5662",
+      "photo": "/assets/uploads/5-beon-jared-simphiwe-hurter-web.png",
+      "department": "Marketing & HR",
+      "role": "Marketing & HR Officer",
+      "id": "beon-hurter",
+      "email": "beon@blksm.events"
     }
   ]
 }

@@ -2,9 +2,13 @@
   "items": [
     {
       "label": "Home",
-      "href": "index.html#about",
+      "href": "index.html",
       "isButton": false,
       "children": [
+        {
+          "label": "About Us",
+          "href": "index.html#about"
+        },
         {
           "label": "Process",
           "href": "index.html#process"
@@ -12,12 +16,13 @@
         {
           "label": "Departments",
           "href": "index.html#departments"
-        },
-        {
-          "label": "Team",
-          "href": "team.html"
         }
       ]
+    },
+    {
+      "isButton": false,
+      "label": "Meet the team",
+      "href": "team.html"
     },
     {
       "label": "Portfolio",

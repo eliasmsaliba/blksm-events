@@ -5,15 +5,15 @@
       "summary": "Meet new people, enjoy great energy, and experience a night designed for connection, laughter, and unforgettable moments. The question is… Wie Vat Wie?",
       "nextEvent": "Coming Soon",
       "gallery": [
-        "/assets/uploads/wie-vat-wie-02.png",
-        "/assets/uploads/wie-vat-wie-03.png",
-        "/assets/uploads/wie-vat-wie-04.png",
-        "/assets/uploads/wie-vat-wie-05.png"
+        "/assets/uploads/wie-vat-wie-02-web.png",
+        "/assets/uploads/wie-vat-wie-03-web.png",
+        "/assets/uploads/wie-vat-wie-04-web.png",
+        "/assets/uploads/wie-vat-wie-05-web.png"
       ],
       "categoryLabel": "Meeting New People",
       "title": "Wie Vat Wie - Padstal Hazelwood",
       "id": "wie-vat-wie",
-      "image": "/assets/uploads/wie-vat-wie-01.png",
+      "image": "/assets/uploads/wie-vat-wie-01-web.png",
       "category": "date-nights"
     }
   ]

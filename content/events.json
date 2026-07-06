@@ -13,8 +13,8 @@
       "registrationTemplate": "ai-prompt-party-submission",
       "title": "AI Prompt Party",
       "id": "prompt-party-july-01",
-      "image": "",
-      "description": "AI Prompt Party is a first-of-its-kind experience bringing together creators, innovators, artists, and digital pioneers who are using artificial intelligence to redefine the future of creativity. From music generation to prompt engineering and live competitions, this is the space where imagination meets technology and anything becomes possible.\n<br><br>\nCreate smarter. Compete harder. Build the future.",
+      "image": "/assets/uploads/prompt-party-web.png",
+      "description": "AI Prompt Party is a first-of-its-kind experience bringing together creators, innovators, artists, and digital pioneers who are using artificial intelligence to redefine the future of creativity. From music generation to prompt engineering and live competitions, this is the space where imagination meets technology and anything becomes possible.\n<br><br>\nCreate smarter. Compete harder. Build the future.\n<br><br>\nRegister Below",
       "category": "club-nights"
     },
     {
@@ -29,6 +29,7 @@
       "registrationTemplate": "pot-en-deksel-registration",
       "title": "Pot en Deksel ",
       "id": "pot-en-deksel-july-01",
+      "image": "/assets/uploads/pot-en-deksel-web.png",
       "description": "Good food. Great company. Unexpected connections.\n<br><br>\nPot en Deksel is a unique social dining experience designed to bring people together over incredible food, exciting conversations, and unforgettable moments. Whether you come for friendship, romance, or simply a fun night out, this is where authentic connections happen naturally in a warm and welcoming atmosphere.\n<br><br>\nBecause sometimes the perfect match starts around the table.\n<br><br>\nRegister Below",
       "category": "date-nights"
     },
@@ -42,8 +43,24 @@
       "registrationTemplate": "ai-dance-party-registration",
       "title": "AI Dance Night",
       "id": "ai-dance-night-july-01",
-      "description": "Step into an electrifying nightlife experience where artificial intelligence takes over the decks and the dancefloor comes alive. AI Dance Night brings together cutting-edge technology, futuristic sounds, incredible visuals, and an unforgettable party atmosphere designed for those ready to experience the next generation of entertainment.\n<br><br>\nDance to the future. Experience what's next.",
+      "image": "/assets/uploads/ai-dance-night-web.png",
+      "description": "Step into an electrifying nightlife experience where artificial intelligence takes over the decks and the dancefloor comes alive. AI Dance Night brings together cutting-edge technology, futuristic sounds, incredible visuals, and an unforgettable party atmosphere designed for those ready to experience the next generation of entertainment.\n<br><br>\nDance to the future. Experience what's next.\n<br><br>\nRegister Below",
       "category": "club-nights"
+    },
+    {
+      "registrationEnabled": true,
+      "registrationButtonLabel": "Register Now",
+      "city": "Pretoria",
+      "time": "19:00",
+      "date": "2026-07-07",
+      "venue": "Padstal Hazelwood",
+      "registrationTemplate": "wie-vat-wie-registration",
+      "categoryLabel": "Wie vat Wie",
+      "title": "Wie Vat Wie",
+      "id": "wie-wat-wie-07-07",
+      "image": "/assets/uploads/wie-vat-wie.png",
+      "description": "It's a fun, interactive speed dating experience where great conversations, unexpected challenges and plenty of laughs come together. Meet new people through quick 3-minute dates, take part in entertaining game rounds, and who knows, you might just find your perfect match. Whether you're looking for love, new friendships, or simply a fantastic night out, Wie Vat Wie, promises an unforgettable evening, ending with music, dancing and a lively Sokkie to celebrate the night.\n",
+      "category": "date-nights"
     }
   ]
 }

@@ -100,12 +100,6 @@
           "options": "Cinematic\nExperimental\nAnime Soundtrack\nOrchestral\nAmbient",
           "required": true,
           "width": "half"
-        },
-        {
-          "label": "I Acknowledge...",
-          "type": "text",
-          "options": "I understand the R250 participation fee must be paid via EFT and that my spot is only confirmed once proof of payment is received via WhatsApp.\nI will be present on the night (7 June 2026). I understand that no-show means automatic disqualification, regardless of whether my tracks were selected.\nMy tracks are AI-assisted or fully AI-produced. They contain no copyrighted samples without clearance. I take full responsibility for the content.\nI understand the track submission deadline is 3 days before the event. Late submissions will not be accepted under any circumstances.\nI agree to receive event updates and communications from Prompt Party via WhatsApp and email.",
-          "required": true
         }
       ]
     },
@@ -117,7 +111,8 @@
           "label": "First Name",
           "type": "text",
           "options": "",
-          "required": true
+          "required": true,
+          "width": "half"
         },
         {
           "label": "Last Name",
@@ -246,6 +241,77 @@
           "required": true,
           "width": "full",
           "label": "Upload your Songs"
+        }
+      ]
+    },
+    {
+      "id": "wie-vat-wie-registration",
+      "name": "Wie Vat Wie Registration",
+      "fields": [
+        {
+          "type": "text",
+          "multiple": false,
+          "required": true,
+          "width": "half",
+          "label": "First Name"
+        },
+        {
+          "type": "text",
+          "multiple": false,
+          "required": true,
+          "width": "half",
+          "label": "Last Name"
+        },
+        {
+          "type": "select",
+          "multiple": false,
+          "required": true,
+          "width": "full",
+          "label": "Gender",
+          "options": "Male\nFemale"
+        },
+        {
+          "type": "select",
+          "multiple": false,
+          "required": true,
+          "width": "full",
+          "label": "City",
+          "options": "Johannesburg\nPretoria\nCenturion\nMidrand\nSoweto\nBenoni\nBoksburg\nKempton Park\nAlberton\nRoodepoort\nRandburg\nSandton\nKrugersdorp\nSprings\nBrakpan\nCape Town\nStellenbosch\nPaarl\nGeorge\nMossel Bay\nKnysna\nHermanus\nWorcester\nSomerset West\nBellville\nDurbanville\nMalmesbury\nSaldanha\nVredenburg\nOudtshoorn\nDurban\nPietermaritzburg\nRichards Bay\nNewcastle\nBallito\nUmhlanga\nPinetown\nChatsworth\nLadysmith\nEmpangeni\nPort Shepstone\nMargate\nHowick\nStanger\nVryheid\nGqeberha\nEast London\nMthatha\nGrahamstown\nJeffreys Bay\nPort Alfred\nQueenstown\nUitenhage\nCradock\nAliwal North\nButterworth\nKing William's Town\nBloemfontein\nWelkom\nBethlehem\nKroonstad\nSasolburg\nHarrismith\nParys\nVirginia\nPhuthaditjhaba\nFicksburg\nPolokwane\nTzaneen\nMokopane\nThohoyandou\nLephalale\nLouis Trichardt\nBela-Bela\nMusina\nGiyani\nHoedspruit\nNelspruit\nWitbank\nSecunda\nMiddelburg\nStanderton\nErmelo\nWhite River\nSabie\nHazyview\nKomatipoort\nRustenburg\nMahikeng\nKlerksdorp\nPotchefstroom\nBrits\nHartbeespoort\nOrkney\nLichtenburg\nVryburg\nZeerust\nKimberley\nUpington\nKuruman\nSpringbok\nDe Aar\nCalvinia\nColesberg\nPostmasburg\nKathu\nAlexander Bay\n"
+        },
+        {
+          "type": "email",
+          "multiple": false,
+          "required": true,
+          "width": "full",
+          "label": "Email"
+        },
+        {
+          "type": "tel",
+          "multiple": false,
+          "required": true,
+          "width": "full",
+          "label": "Mobile"
+        },
+        {
+          "type": "date",
+          "multiple": false,
+          "required": true,
+          "width": "full",
+          "label": "Date of Birth"
+        },
+        {
+          "type": "file",
+          "multiple": false,
+          "required": true,
+          "width": "full",
+          "label": "Upload a Face Pic for You"
+        },
+        {
+          "type": "textarea",
+          "multiple": false,
+          "required": true,
+          "width": "full",
+          "label": "Tell us something about you"
         }
       ]
     }
