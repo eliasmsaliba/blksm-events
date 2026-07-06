@@ -249,6 +249,77 @@
           "label": "Upload your Songs"
         }
       ]
+    },
+    {
+      "id": "wie-vat-wie-registration",
+      "name": "Wie Vat Wie Registration",
+      "fields": [
+        {
+          "type": "text",
+          "multiple": false,
+          "required": true,
+          "width": "half",
+          "label": "First Name"
+        },
+        {
+          "type": "text",
+          "multiple": false,
+          "required": true,
+          "width": "half",
+          "label": "Last Name"
+        },
+        {
+          "type": "select",
+          "multiple": false,
+          "required": true,
+          "width": "full",
+          "label": "Gender",
+          "options": "Male\nFemale"
+        },
+        {
+          "type": "select",
+          "multiple": false,
+          "required": true,
+          "width": "full",
+          "label": "City",
+          "options": "1\n2\n3\n"
+        },
+        {
+          "type": "email",
+          "multiple": false,
+          "required": true,
+          "width": "full",
+          "label": "Email"
+        },
+        {
+          "type": "tel",
+          "multiple": false,
+          "required": true,
+          "width": "full",
+          "label": "Mobile"
+        },
+        {
+          "type": "date",
+          "multiple": false,
+          "required": true,
+          "width": "full",
+          "label": "Date of Birth"
+        },
+        {
+          "type": "file",
+          "multiple": false,
+          "required": true,
+          "width": "full",
+          "label": "Upload a Face Pic for You"
+        },
+        {
+          "type": "textarea",
+          "multiple": false,
+          "required": true,
+          "width": "full",
+          "label": "Tell us something about you"
+        }
+      ]
     }
   ]
 }
