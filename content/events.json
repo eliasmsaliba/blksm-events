@@ -18,22 +18,6 @@
       "category": "club-nights"
     },
     {
-      "ticketLink": "https://xht.4ad.myftpupload.com/wp-content/uploads/2026/06/wie-vat-wie-live.html",
-      "registrationEnabled": true,
-      "registrationButtonLabel": "Register",
-      "city": "Pretoria",
-      "time": "18:00",
-      "date": "2026-07-08",
-      "venue": "Potties Bar & Restaurant ",
-      "registrationFields": [],
-      "registrationTemplate": "pot-en-deksel-registration",
-      "title": "Pot en Deksel ",
-      "id": "pot-en-deksel-july-01",
-      "image": "/assets/uploads/pot-en-deksel-web.png",
-      "description": "Good food. Great company. Unexpected connections.\n<br><br>\nPot en Deksel is a unique social dining experience designed to bring people together over incredible food, exciting conversations, and unforgettable moments. Whether you come for friendship, romance, or simply a fun night out, this is where authentic connections happen naturally in a warm and welcoming atmosphere.\n<br><br>\nBecause sometimes the perfect match starts around the table.\n<br><br>\nRegister Below",
-      "category": "date-nights"
-    },
-    {
       "registrationEnabled": true,
       "registrationButtonLabel": "Register",
       "city": "Pretoria",
