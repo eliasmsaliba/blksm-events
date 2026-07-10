@@ -46,6 +46,24 @@
       "image": "/assets/uploads/wie-vat-wie.png",
       "description": "It's a fun, interactive speed dating experience where great conversations, unexpected challenges and plenty of laughs come together. Meet new people through quick 3-minute dates, take part in entertaining game rounds, and who knows, you might just find your perfect match. Whether you're looking for love, new friendships, or simply a fantastic night out, Wie Vat Wie, promises an unforgettable evening, ending with music, dancing and a lively Sokkie to celebrate the night.\n",
       "category": "date-nights"
+    },
+    {
+      "registrationEnabled": false,
+      "registrationButtonLabel": "Register Now",
+      "city": "Pretoria",
+      "time": "7:30 pm",
+      "date": "2026-07-16",
+      "venue": "Padstal Hazelwood",
+      "gallery": [
+        "/assets/uploads/jager-bingo004.png",
+        "/assets/uploads/jager-bingo001.png",
+        "/assets/uploads/jager-bingo005.png"
+      ],
+      "categoryLabel": "Bingo Night",
+      "title": "Jager Bingo",
+      "image": "/assets/uploads/chatgpt-image-jul-10-2026-10_32_26-am.png",
+      "description": "Jäger Bingo is not your grandmother's bingo night. It's a fast-paced social experience where classic bingo meets great music, big laughs, and plenty of Jägermeister-fuelled fun. Expect interactive games, surprise prizes, outrageous moments, and an electric atmosphere as every number called could bring you one step closer to victory.\n\nWhether you're a seasoned bingo champion or playing for the first time, Jäger Bingo is designed for everyone who enjoys a great night out with friends. Grab a drink, mark your cards, embrace the chaos, and get ready for an unforgettable evening where anything can happen.\n",
+      "category": "entertainment"
     }
   ]
 }
