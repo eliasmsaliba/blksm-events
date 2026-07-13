@@ -455,8 +455,8 @@ ul{list-style:none}
 .carousel-track{display:flex;gap:48px;align-items:center;width:max-content;animation:carouselScroll 30s linear infinite}
 .carousel-track:hover{animation-play-state:paused}
 @keyframes carouselScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.carousel-logo{flex:0 0 auto;height:56px;display:flex;align-items:center}
-.carousel-logo img{height:100%;width:auto;max-width:160px;object-fit:contain;filter:grayscale(1) brightness(1.8);opacity:.7;transition:filter .3s,opacity .3s}
+.carousel-logo{flex:0 0 auto;height:80px;display:flex;align-items:center}
+.carousel-logo img{height:100%;width:auto;max-width:200px;object-fit:contain;filter:grayscale(1) brightness(1.8);opacity:.7;transition:filter .3s,opacity .3s}
 .carousel-logo:hover img{filter:grayscale(0) brightness(1);opacity:1}
 .carousel-logo a{display:flex;align-items:center;height:100%}
 
