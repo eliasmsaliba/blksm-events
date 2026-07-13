@@ -67,9 +67,9 @@
           "required": true
         },
         {
-          "label": "Google Drive / Dropbox Link to your Songs",
-          "type": "text",
-          "options": "",
+          "label": "Please send your songs on Whatsapp to: +27722648151",
+          "type": "radio",
+          "options": "OK, Done\nWill do on the day",
           "required": true
         },
         {
