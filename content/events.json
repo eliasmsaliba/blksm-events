@@ -32,7 +32,7 @@
       "category": "club-nights"
     },
     {
-      "ticketLink": "https://xht.4ad.myftpupload.com/wp-content/uploads/2026/06/wie-vat-wie-live.html",
+      "ticketLink": "",
       "registrationEnabled": true,
       "registrationButtonLabel": "Register Now",
       "city": "Pretoria",
@@ -61,9 +61,26 @@
       ],
       "categoryLabel": "Bingo Night",
       "title": "Jager Bingo",
+      "id": "jager-bingo-01",
       "image": "/assets/uploads/chatgpt-image-jul-10-2026-10_32_26-am.png",
       "description": "Jäger Bingo is not your grandmother's bingo night. It's a fast-paced social experience where classic bingo meets great music, big laughs, and plenty of Jägermeister-fuelled fun. Expect interactive games, surprise prizes, outrageous moments, and an electric atmosphere as every number called could bring you one step closer to victory.\n\nWhether you're a seasoned bingo champion or playing for the first time, Jäger Bingo is designed for everyone who enjoys a great night out with friends. Grab a drink, mark your cards, embrace the chaos, and get ready for an unforgettable evening where anything can happen.\n",
       "category": "entertainment"
+    },
+    {
+      "ticketLink": "https://wie-vat-wie.web.app/",
+      "registrationEnabled": true,
+      "registrationButtonLabel": "Find your Match",
+      "city": "Pretoria",
+      "time": "19:00",
+      "date": "2026-07-14",
+      "venue": "Padstal Hazelwood",
+      "registrationTemplate": "wie-vat-wie-registration",
+      "categoryLabel": "Wie Vat Wie",
+      "title": "Wie Vat Wie",
+      "id": "wie-vat-wie-july14",
+      "image": "/assets/uploads/wie-vat-wie.png",
+      "description": "It's a fun, interactive speed dating experience where great conversations, unexpected challenges and plenty of laughs come together. Meet new people through quick 3-minute dates, take part in entertaining game rounds, and who knows, you might just find your perfect match. Whether you're looking for love, new friendships, or simply a fantastic night out, Wie Vat Wie, promises an unforgettable evening, ending with music, dancing and a lively Sokkie to celebrate the night.\n",
+      "category": "date-nights"
     }
   ]
 }

@@ -37,7 +37,8 @@
         }
       ],
       "pages": [
-        "home"
+        "home",
+        "portfolio"
       ]
     }
   ]
