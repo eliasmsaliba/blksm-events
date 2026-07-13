@@ -220,6 +220,36 @@ collections:
                   - { label: "Gallery Photos", name: "gallery", widget: "list", field: { label: "Photo", name: "image", widget: "image" }, required: false }
                   - { label: "URL Slug", name: "id", widget: "string", hint: "Lowercase, hyphens only, no spaces." }
 
+  - name: "partners"
+    label: "Partners & Sponsors"
+    files:
+      - name: "partners"
+        label: "Logo Carousel"
+        file: "content/partners.json"
+        fields:
+          - { label: "Section Heading", name: "heading", widget: "string", default: "Our Partners" }
+          - { label: "Subtext (optional)", name: "subtext", widget: "string", required: false, hint: "Optional line shown under the heading." }
+          - label: "Show on Pages"
+            name: "pages"
+            widget: "select"
+            multiple: true
+            required: false
+            hint: "Tick every page where the logo carousel should appear."
+            options:
+              - { label: "Home", value: "home" }
+              - { label: "Team", value: "team" }
+              - { label: "Portfolio", value: "portfolio" }
+              - { label: "Events", value: "events" }
+          - label: "Logos"
+            name: "logos"
+            widget: "list"
+            summary: "{{name}}"
+            hint: "Add one entry per logo. Logos scroll automatically in a carousel."
+            fields:
+              - { label: "Name (for your reference)", name: "name", widget: "string" }
+              - { label: "Logo Image", name: "image", widget: "image" }
+              - { label: "Link URL (where clicking the logo goes)", name: "url", widget: "string", required: false, hint: "e.g. https://example.com" }
+
   - name: "formTemplates"
     label: "Form Templates"
     files:

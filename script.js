@@ -764,3 +764,53 @@ if (customItemHero && customItemDetail) {
     customItemDetail.innerHTML = '<p style="color:var(--muted)">Unable to load this item right now.</p>';
   });
 }
+
+/* ===================== PARTNERS / SPONSORS CAROUSEL ===================== */
+(function () {
+  const slot = document.getElementById('partnersCarousel');
+  if (!slot) return;
+
+  // Determine which page we're on by filename
+  const filename = window.location.pathname.split('/').pop() || 'index.html';
+  const pageKey = filename === 'index.html' || filename === '' ? 'home'
+    : filename === 'team.html' ? 'team'
+    : filename === 'portfolio.html' ? 'portfolio'
+    : filename === 'events.html' ? 'events'
+    : null;
+
+  if (!pageKey) return;
+
+  loadJSON('content/partners.json').then(data => {
+    const pages = Array.isArray(data.pages) ? data.pages : [];
+    if (!pages.includes(pageKey)) return;
+
+    const logos = Array.isArray(data.logos) ? data.logos.filter(l => l.image) : [];
+    if (!logos.length) return;
+
+    // Duplicate logos so the infinite scroll loop is seamless
+    const all = [...logos, ...logos];
+    const items = all.map(l => {
+      const img = `<img src="${l.image}" alt="${l.name || ''}">`;
+      return `<div class="carousel-logo">${l.url
+        ? `<a href="${l.url}" target="_blank" rel="noopener noreferrer">${img}</a>`
+        : img}</div>`;
+    }).join('');
+
+    slot.innerHTML = `
+      <section class="partners-section">
+        <div class="container">
+          <div class="section-tag">Partners &amp; Sponsors</div>
+          <h2 class="section-title">${data.heading || 'Our Partners'}</h2>
+          ${data.subtext ? `<p class="partners-subtext">${data.subtext}</p>` : ''}
+        </div>
+        <div class="carousel-track-wrap">
+          <div class="carousel-track">${items}</div>
+        </div>
+      </section>
+    `;
+
+    // Adjust animation speed based on number of logos (more logos = longer duration)
+    const track = slot.querySelector('.carousel-track');
+    if (track) track.style.animationDuration = Math.max(20, logos.length * 4) + 's';
+  }).catch(() => {});
+})();

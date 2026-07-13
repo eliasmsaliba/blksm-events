@@ -446,6 +446,20 @@ ul{list-style:none}
 }
 .form-success strong{color:var(--cyan)}
 
+/* PARTNERS CAROUSEL */
+.partners-section{padding:60px 0;background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
+.partners-section .section-tag{margin-bottom:12px}
+.partners-section .section-title{margin-bottom:36px}
+.partners-subtext{color:var(--muted);margin-top:-24px;margin-bottom:36px;font-size:15px}
+.carousel-track-wrap{overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.carousel-track{display:flex;gap:48px;align-items:center;width:max-content;animation:carouselScroll 30s linear infinite}
+.carousel-track:hover{animation-play-state:paused}
+@keyframes carouselScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.carousel-logo{flex:0 0 auto;height:56px;display:flex;align-items:center}
+.carousel-logo img{height:100%;width:auto;max-width:160px;object-fit:contain;filter:grayscale(1) brightness(1.8);opacity:.7;transition:filter .3s,opacity .3s}
+.carousel-logo:hover img{filter:grayscale(0) brightness(1);opacity:1}
+.carousel-logo a{display:flex;align-items:center;height:100%}
+
 /* FOOTER */
 .footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:14px}
 .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
