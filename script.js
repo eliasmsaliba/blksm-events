@@ -407,7 +407,7 @@ if (eventHero && eventDetail) {
           <span class="tag">${dateLabel}</span>
           ${ev.venue ? `<span class="tag">${ev.venue}${ev.city ? ', ' + ev.city : ''}</span>` : ''}
         </div>
-        ${ev.ticketLink ? `<a href="${ev.ticketLink}" class="btn btn-primary" target="_blank" rel="noopener">Tickets / More Info</a>` : ''}
+        ${ev.ticketLink ? `<a href="${ev.ticketLink}" class="btn btn-primary" target="_blank" rel="noopener">${ev.ticketLinkLabel || 'Tickets / More Info'}</a>` : ''}
       </div>
     `;
 

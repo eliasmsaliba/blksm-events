@@ -119,6 +119,7 @@ collections:
               - { label: "Cover Image", name: "image", widget: "image", required: false }
               - { label: "Gallery Photos (shown on the event detail page)", name: "gallery", widget: "list", field: { label: "Photo", name: "image", widget: "image" }, required: false }
               - { label: "Ticket / More Info Link", name: "ticketLink", widget: "string", required: false }
+              - { label: "Ticket / More Info Button Label", name: "ticketLinkLabel", widget: "string", required: false, default: "Tickets / More Info", hint: "Customise the button text, e.g. 'Buy Tickets', 'RSVP', 'Book Now'." }
               - { label: "URL Slug", name: "id", widget: "string", hint: "Lowercase, hyphens only, no spaces." }
               - { label: "Enable Registration Form", name: "registrationEnabled", widget: "boolean", default: false, hint: "Turns on a sign-up form on this event's page. Submissions are emailed to you and viewable in the Netlify dashboard." }
               - { label: "Registration Button Label", name: "registrationButtonLabel", widget: "string", required: false, default: "Register Now", hint: "Optional — defaults to 'Register Now'." }
