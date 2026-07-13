@@ -224,31 +224,37 @@ collections:
     label: "Partners & Sponsors"
     files:
       - name: "partners"
-        label: "Logo Carousel"
+        label: "Logo Carousels"
         file: "content/partners.json"
         fields:
-          - { label: "Section Heading", name: "heading", widget: "string", default: "Our Partners" }
-          - { label: "Subtext (optional)", name: "subtext", widget: "string", required: false, hint: "Optional line shown under the heading." }
-          - label: "Show on Pages"
-            name: "pages"
-            widget: "select"
-            multiple: true
-            required: false
-            hint: "Tick every page where the logo carousel should appear."
-            options:
-              - { label: "Home", value: "home" }
-              - { label: "Team", value: "team" }
-              - { label: "Portfolio", value: "portfolio" }
-              - { label: "Events", value: "events" }
-          - label: "Logos"
-            name: "logos"
+          - label: "Carousels"
+            name: "carousels"
             widget: "list"
-            summary: "{{name}}"
-            hint: "Add one entry per logo. Logos scroll automatically in a carousel."
+            summary: "{{heading}}"
+            hint: "Add one entry per carousel (e.g. 'Our Sponsors', 'Our Clients', 'Media Partners'). Each appears as a separate section on the selected pages."
             fields:
-              - { label: "Name (for your reference)", name: "name", widget: "string" }
-              - { label: "Logo Image", name: "image", widget: "image" }
-              - { label: "Link URL (where clicking the logo goes)", name: "url", widget: "string", required: false, hint: "e.g. https://example.com" }
+              - { label: "Section Heading", name: "heading", widget: "string", hint: "e.g. Our Sponsors" }
+              - { label: "Subtext (optional)", name: "subtext", widget: "string", required: false, hint: "Optional line shown under the heading." }
+              - label: "Show on Pages"
+                name: "pages"
+                widget: "select"
+                multiple: true
+                required: false
+                hint: "Tick every page where this carousel should appear."
+                options:
+                  - { label: "Home", value: "home" }
+                  - { label: "Team", value: "team" }
+                  - { label: "Portfolio", value: "portfolio" }
+                  - { label: "Events", value: "events" }
+              - label: "Logos"
+                name: "logos"
+                widget: "list"
+                summary: "{{name}}"
+                hint: "Add one entry per logo."
+                fields:
+                  - { label: "Name (for your reference)", name: "name", widget: "string" }
+                  - { label: "Logo Image", name: "image", widget: "image" }
+                  - { label: "Link URL (where clicking the logo goes)", name: "url", widget: "string", required: false, hint: "e.g. https://example.com" }
 
   - name: "formTemplates"
     label: "Form Templates"

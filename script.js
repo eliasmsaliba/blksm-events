@@ -781,36 +781,36 @@ if (customItemHero && customItemDetail) {
   if (!pageKey) return;
 
   loadJSON('content/partners.json').then(data => {
-    const pages = Array.isArray(data.pages) ? data.pages : [];
-    if (!pages.includes(pageKey)) return;
+    const carousels = Array.isArray(data.carousels) ? data.carousels : [];
+    const matching = carousels.filter(c => Array.isArray(c.pages) && c.pages.includes(pageKey));
+    if (!matching.length) return;
 
-    const logos = Array.isArray(data.logos) ? data.logos.filter(l => l.image) : [];
-    if (!logos.length) return;
+    slot.innerHTML = matching.map(carousel => {
+      const logos = Array.isArray(carousel.logos) ? carousel.logos.filter(l => l.image) : [];
+      if (!logos.length) return '';
 
-    // Duplicate logos so the infinite scroll loop is seamless
-    const all = [...logos, ...logos];
-    const items = all.map(l => {
-      const img = `<img src="${l.image}" alt="${l.name || ''}">`;
-      return `<div class="carousel-logo">${l.url
-        ? `<a href="${l.url}" target="_blank" rel="noopener noreferrer">${img}</a>`
-        : img}</div>`;
+      const all = [...logos, ...logos];
+      const items = all.map(l => {
+        const img = `<img src="${l.image}" alt="${l.name || ''}">`;
+        return `<div class="carousel-logo">${l.url
+          ? `<a href="${l.url}" target="_blank" rel="noopener noreferrer">${img}</a>`
+          : img}</div>`;
+      }).join('');
+
+      const duration = Math.max(20, logos.length * 4) + 's';
+
+      return `
+        <section class="partners-section">
+          <div class="container">
+            <div class="section-tag">Partners &amp; Sponsors</div>
+            <h2 class="section-title">${carousel.heading || 'Our Partners'}</h2>
+            ${carousel.subtext ? `<p class="partners-subtext">${carousel.subtext}</p>` : ''}
+          </div>
+          <div class="carousel-track-wrap">
+            <div class="carousel-track" style="animation-duration:${duration}">${items}</div>
+          </div>
+        </section>
+      `;
     }).join('');
-
-    slot.innerHTML = `
-      <section class="partners-section">
-        <div class="container">
-          <div class="section-tag">Partners &amp; Sponsors</div>
-          <h2 class="section-title">${data.heading || 'Our Partners'}</h2>
-          ${data.subtext ? `<p class="partners-subtext">${data.subtext}</p>` : ''}
-        </div>
-        <div class="carousel-track-wrap">
-          <div class="carousel-track">${items}</div>
-        </div>
-      </section>
-    `;
-
-    // Adjust animation speed based on number of logos (more logos = longer duration)
-    const track = slot.querySelector('.carousel-track');
-    if (track) track.style.animationDuration = Math.max(20, logos.length * 4) + 's';
   }).catch(() => {});
 })();
