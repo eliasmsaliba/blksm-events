@@ -1,3 +1,44 @@
 {
-  "carousels": []
+  "carousels": [
+    {
+      "heading": "Our Clients",
+      "logos": [
+        {
+          "image": "/assets/uploads/padstal.png",
+          "name": "Padstal Hazelwood"
+        },
+        {
+          "image": "/assets/uploads/jager.png",
+          "name": "Jägermeister"
+        },
+        {
+          "image": "/assets/uploads/kapstadt.png",
+          "name": "Kapstadt Brauhaus"
+        },
+        {
+          "image": "/assets/uploads/kolonnade.png",
+          "name": "Kolonnade Shopping Centre "
+        },
+        {
+          "image": "/assets/uploads/bosveld.png",
+          "name": "Bosveld Charcoal"
+        },
+        {
+          "image": "/assets/uploads/hts.png",
+          "name": "HTS John Voster"
+        },
+        {
+          "image": "/assets/uploads/afriwheels.png",
+          "name": "Afri Wheels"
+        },
+        {
+          "name": "Presley's Pretoria",
+          "image": "/assets/uploads/pres.png"
+        }
+      ],
+      "pages": [
+        "home"
+      ]
+    }
+  ]
 }
