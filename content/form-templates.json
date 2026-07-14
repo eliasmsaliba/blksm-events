@@ -311,6 +311,13 @@
           "required": true,
           "width": "full",
           "label": "Tell us something about you"
+        },
+        {
+          "type": "text",
+          "multiple": false,
+          "required": false,
+          "width": "half",
+          "label": "Reference Code:"
         }
       ]
     }
