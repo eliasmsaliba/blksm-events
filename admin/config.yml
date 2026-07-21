@@ -247,6 +247,7 @@ collections:
                   - { label: "Team", value: "team" }
                   - { label: "Portfolio", value: "portfolio" }
                   - { label: "Events", value: "events" }
+                  - { label: "Blog", value: "blog" }
               - label: "Logos"
                 name: "logos"
                 widget: "list"
@@ -256,6 +257,28 @@ collections:
                   - { label: "Name (for your reference)", name: "name", widget: "string" }
                   - { label: "Logo Image", name: "image", widget: "image" }
                   - { label: "Link URL (where clicking the logo goes)", name: "url", widget: "string", required: false, hint: "e.g. https://example.com" }
+
+  - name: "blog"
+    label: "Blog"
+    files:
+      - name: "blog"
+        label: "Blog Posts"
+        file: "content/blog.json"
+        fields:
+          - label: "Posts"
+            name: "posts"
+            widget: "list"
+            summary: "{{title}} — {{date}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "URL Slug", name: "id", widget: "string", hint: "Lowercase, hyphens only, no spaces — e.g. 'behind-the-scenes-ai-prompt-party'." }
+              - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
+              - { label: "Author", name: "author", widget: "string", required: false, hint: "e.g. JJ Saliba" }
+              - { label: "Category", name: "category", widget: "string", required: false, hint: "e.g. Event Recap, Industry Insights, Behind the Scenes" }
+              - { label: "Cover Image", name: "image", widget: "image", required: false }
+              - { label: "Excerpt (shown on the blog grid card)", name: "excerpt", widget: "text", required: false }
+              - { label: "Full Post Body", name: "body", widget: "text", hint: "Write your full post here. Use double line breaks for paragraphs." }
+              - { label: "Gallery (optional — shown at the bottom of the post)", name: "gallery", widget: "list", field: { label: "Photo", name: "image", widget: "image" }, required: false }
 
   - name: "formTemplates"
     label: "Form Templates"

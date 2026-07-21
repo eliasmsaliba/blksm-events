@@ -765,6 +765,114 @@ if (customItemHero && customItemDetail) {
   });
 }
 
+/* ===================== BLOG LISTING (blog.html) ===================== */
+const blogGrid = document.getElementById('blogGrid');
+const blogFilterRow = document.getElementById('blogFilterRow');
+if (blogGrid) {
+  loadJSON('content/blog.json').then(data => {
+    const posts = (data.posts || []).slice().sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    if (!posts.length) {
+      blogGrid.innerHTML = '<p style="color:var(--muted);grid-column:1/-1">No posts yet — check back soon.</p>';
+      return;
+    }
+
+    // Build category filter buttons
+    const cats = [...new Set(posts.map(p => p.category).filter(Boolean))];
+    if (cats.length && blogFilterRow) {
+      cats.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.className = 'filter-btn';
+        btn.dataset.blogFilter = cat;
+        btn.textContent = cat;
+        blogFilterRow.appendChild(btn);
+      });
+      blogFilterRow.addEventListener('click', e => {
+        const btn = e.target.closest('[data-blog-filter]');
+        if (!btn) return;
+        blogFilterRow.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.blogFilter;
+        blogGrid.querySelectorAll('.blog-card').forEach(card => {
+          card.style.display = (filter === 'all' || card.dataset.cat === filter) ? '' : 'none';
+        });
+      });
+    }
+
+    blogGrid.innerHTML = posts.map(post => {
+      const media = post.image
+        ? `<img class="blog-card-media" src="${post.image}" alt="${post.title}">`
+        : `<div class="blog-card-media-placeholder"></div>`;
+      const dateStr = post.date ? new Date(post.date).toLocaleDateString('en-ZA', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
+      return `
+        <a class="blog-card reveal-up" href="blog-post.html?id=${post.id}" data-cat="${post.category || ''}">
+          ${media}
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              ${post.category ? `<span class="blog-card-cat">${post.category}</span>` : ''}
+              ${dateStr ? `<span class="blog-card-date">${dateStr}</span>` : ''}
+            </div>
+            <h3>${post.title}</h3>
+            ${post.excerpt ? `<p>${post.excerpt}</p>` : ''}
+            ${post.author ? `<p class="blog-card-author">By <span>${post.author}</span></p>` : ''}
+          </div>
+        </a>`;
+    }).join('');
+    observeReveals();
+  }).catch(() => {
+    blogGrid.innerHTML = '<p style="color:var(--muted)">Unable to load posts right now.</p>';
+  });
+}
+
+/* ===================== BLOG POST DETAIL (blog-post.html) ===================== */
+const blogPostHero = document.getElementById('blogPostHero');
+const blogPostDetail = document.getElementById('blogPostDetail');
+if (blogPostHero && blogPostDetail) {
+  const id = new URLSearchParams(window.location.search).get('id');
+  loadJSON('content/blog.json').then(data => {
+    const post = (data.posts || []).find(p => p.id === id);
+    if (!post) {
+      blogPostHero.innerHTML = `<h1 class="hero-title page-title">Post Not Found</h1>`;
+      blogPostDetail.innerHTML = `<p><a href="blog.html">Back to Blog</a></p>`;
+      return;
+    }
+
+    document.title = post.title + ' — BLKSM Events';
+    const dateStr = post.date ? new Date(post.date).toLocaleDateString('en-ZA', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
+
+    blogPostHero.innerHTML = `
+      <div class="blog-post-hero-inner">
+        <div class="blog-post-meta">
+          ${post.category ? `<span class="blog-post-cat">${post.category}</span>` : ''}
+          ${dateStr ? `<span class="blog-post-date">${dateStr}</span>` : ''}
+        </div>
+        <h1 class="hero-title page-title">${post.title}</h1>
+        ${post.author ? `<p class="blog-post-author">By <span>${post.author}</span></p>` : ''}
+      </div>
+    `;
+
+    const gallery = Array.isArray(post.gallery) ? post.gallery.filter(Boolean) : [];
+    const galleryHTML = gallery.length
+      ? `<div class="project-gallery">${gallery.map(src => `<div class="project-gallery-item"><img src="${src}" alt="${post.title}"></div>`).join('')}</div>`
+      : '';
+
+    const bodyHTML = (post.body || '')
+      .split(/\n\n+/)
+      .map(para => para.trim())
+      .filter(Boolean)
+      .map(para => `<p>${para.replace(/\n/g, '<br>')}</p>`)
+      .join('');
+
+    blogPostDetail.innerHTML = `
+      ${post.image ? `<img class="blog-post-cover" src="${post.image}" alt="${post.title}">` : ''}
+      <div class="blog-post-body">${bodyHTML}</div>
+      ${galleryHTML}
+    `;
+  }).catch(() => {
+    blogPostDetail.innerHTML = '<p style="color:var(--muted)">Unable to load this post right now.</p>';
+  });
+}
+
 /* ===================== PARTNERS / SPONSORS CAROUSEL ===================== */
 (function () {
   const slot = document.getElementById('partnersCarousel');
@@ -776,6 +884,7 @@ if (customItemHero && customItemDetail) {
     : filename === 'team.html' ? 'team'
     : filename === 'portfolio.html' ? 'portfolio'
     : filename === 'events.html' ? 'events'
+    : filename === 'blog.html' ? 'blog'
     : null;
 
   if (!pageKey) return;

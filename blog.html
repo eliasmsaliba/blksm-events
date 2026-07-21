@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — BLKSM Events</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="noise"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><img src="assets/logo.svg" alt="BLKSM Events" class="logo-img"></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks"></ul>
+  </div>
+</nav>
+
+<header class="hero hero-sub-page">
+  <div class="hero-bg">
+    <div class="cine-beam"></div>
+    <div class="cine-beam2"></div>
+    <div class="cine-vignette"></div>
+  </div>
+  <div class="hero-content">
+    <p class="eyebrow reveal">Insights & Stories</p>
+    <h1 class="hero-title page-title">
+      <span class="reveal">THE</span>
+      <span class="reveal hero-accent">BLKSM BLOG</span>
+    </h1>
+    <p class="hero-sub reveal">Industry insights, event recaps, behind the scenes, and everything in between.</p>
+  </div>
+</header>
+
+<section class="section blog-page">
+  <div class="container">
+    <div class="filter-row reveal-up" id="blogFilterRow">
+      <button class="filter-btn active" data-blog-filter="all">All</button>
+    </div>
+    <div class="blog-grid" id="blogGrid">
+      <!-- populated by script.js -->
+    </div>
+  </div>
+</section>
+
+<section class="section why team-culture">
+  <div class="container">
+    <div class="section-tag">Let's Talk</div>
+    <h2 class="section-title">Got an Event <span class="accent">Coming Up?</span></h2>
+    <p class="lead-narrow">Whichever industry you're in, our integrated operating model adapts to deliver it safely, seamlessly, and memorably.</p>
+    <a href="index.html#contact" class="btn btn-primary">Start a Conversation</a>
+  </div>
+</section>
+
+<div id="partnersCarousel"></div>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="index.html" class="logo"><img src="assets/logo.svg" alt="BLKSM Events" class="logo-img"></a>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+    </div>
+    <p>&copy; <span id="year"></span> BLKSM Events. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

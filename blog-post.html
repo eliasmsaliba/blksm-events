@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Post — BLKSM Events</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="noise"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><img src="assets/logo.svg" alt="BLKSM Events" class="logo-img"></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks"></ul>
+  </div>
+</nav>
+
+<header class="hero hero-sub-page member-hero">
+  <div class="hero-bg">
+    <div class="cine-beam"></div>
+    <div class="cine-beam2"></div>
+    <div class="cine-vignette"></div>
+  </div>
+  <div class="hero-content" id="blogPostHero">
+    <!-- populated by script.js -->
+  </div>
+</header>
+
+<section class="section member-detail">
+  <div class="container" id="blogPostDetail">
+    <!-- populated by script.js -->
+  </div>
+</section>
+
+<section class="section why team-culture">
+  <div class="container">
+    <div class="section-tag">Keep Reading</div>
+    <h2 class="section-title">Back to the <span class="accent">Blog</span></h2>
+    <a href="blog.html" class="btn btn-primary">All Posts</a>
+  </div>
+</section>
+
+<div id="partnersCarousel"></div>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="index.html" class="logo"><img src="assets/logo.svg" alt="BLKSM Events" class="logo-img"></a>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+    </div>
+    <p>&copy; <span id="year"></span> BLKSM Events. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
