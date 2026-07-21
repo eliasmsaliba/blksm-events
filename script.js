@@ -856,12 +856,9 @@ if (blogPostHero && blogPostDetail) {
       ? `<div class="project-gallery">${gallery.map(src => `<div class="project-gallery-item"><img src="${src}" alt="${post.title}"></div>`).join('')}</div>`
       : '';
 
-    const bodyHTML = (post.body || '')
-      .split(/\n\n+/)
-      .map(para => para.trim())
-      .filter(Boolean)
-      .map(para => `<p>${para.replace(/\n/g, '<br>')}</p>`)
-      .join('');
+    const bodyHTML = (typeof marked !== 'undefined')
+      ? marked.parse(post.body || '')
+      : (post.body || '').split(/\n\n+/).map(p => `<p>${p.trim()}</p>`).join('');
 
     blogPostDetail.innerHTML = `
       ${post.image ? `<img class="blog-post-cover" src="${post.image}" alt="${post.title}">` : ''}

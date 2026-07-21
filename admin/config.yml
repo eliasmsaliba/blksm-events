@@ -277,7 +277,7 @@ collections:
               - { label: "Category", name: "category", widget: "string", required: false, hint: "e.g. Event Recap, Industry Insights, Behind the Scenes" }
               - { label: "Cover Image", name: "image", widget: "image", required: false }
               - { label: "Excerpt (shown on the blog grid card)", name: "excerpt", widget: "text", required: false }
-              - { label: "Full Post Body", name: "body", widget: "text", hint: "Write your full post here. Use double line breaks for paragraphs." }
+              - { label: "Full Post Body", name: "body", widget: "markdown" }
               - { label: "Gallery (optional — shown at the bottom of the post)", name: "gallery", widget: "list", field: { label: "Photo", name: "image", widget: "image" }, required: false }
 
   - name: "formTemplates"
