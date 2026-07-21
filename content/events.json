@@ -72,6 +72,7 @@
       "registrationButtonLabel": "Find your Match",
       "city": "Pretoria",
       "time": "19:00",
+      "ticketLinkLabel": "Let's Date",
       "date": "2026-07-14",
       "venue": "Padstal Hazelwood",
       "registrationTemplate": "wie-vat-wie-registration",
@@ -81,6 +82,24 @@
       "image": "/assets/uploads/wie-vat-wie.png",
       "description": "It's a fun, interactive speed dating experience where great conversations, unexpected challenges and plenty of laughs come together. Meet new people through quick 3-minute dates, take part in entertaining game rounds, and who knows, you might just find your perfect match. Whether you're looking for love, new friendships, or simply a fantastic night out, Wie Vat Wie, promises an unforgettable evening, ending with music, dancing and a lively Sokkie to celebrate the night.\n",
       "category": "date-nights"
+    },
+    {
+      "ticketLink": "https://bosveld-golfday.web.app/",
+      "registrationEnabled": false,
+      "registrationButtonLabel": "",
+      "city": "Centurion",
+      "ticketLinkLabel": "Register Now",
+      "date": "2026-09-30",
+      "venue": "Centurion Residential Estate & Country Club",
+      "gallery": [
+        "/assets/uploads/chatgpt-image-jul-21-2026-10_28_53-am.png"
+      ],
+      "categoryLabel": "Golf Day",
+      "title": "Bosveld Charcoal Golf Day",
+      "id": "bosveld-golfday",
+      "image": "/assets/uploads/bsvldgd.png",
+      "description": "Bosveld Charcoal Golf Day is a premium experience that brings together\ngreat golf, open-flame braai, fine company and Rugby Legends all for a purpose.\nAn unforgettable day of networking, entertainment and impact.",
+      "category": "sports"
     }
   ]
 }
