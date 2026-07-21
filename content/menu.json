@@ -35,6 +35,11 @@
       "isButton": false
     },
     {
+      "isButton": false,
+      "label": "Blogs",
+      "href": "https://blksm.events/blog.html"
+    },
+    {
       "label": "Contact",
       "href": "index.html#contact",
       "isButton": true
