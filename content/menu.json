@@ -43,6 +43,11 @@
       "label": "Contact",
       "href": "index.html#contact",
       "isButton": true
+    },
+    {
+      "isButton": false,
+      "label": "Our CSR",
+      "href": "https://blksm.events/csr.html"
     }
   ]
 }
