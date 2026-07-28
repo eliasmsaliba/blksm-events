@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLKSM Cares | Supporting Wollies Animal Shelter Pretoria</title>
+<meta name="description" content="BLKSM Events proudly supports Wollies Animal Shelter through a monthly Pretoria community donation drive collecting pet food, blankets, toys, bedding and essential shelter supplies.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── CSR PAGE STYLES ─────────────────────────────────────── */
+.csr-hero-tag{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:18px;display:block}
+.csr-hero-title{font-family:var(--serif);font-size:clamp(52px,9vw,120px);line-height:.95;margin-bottom:28px}
+.csr-hero-title em{color:var(--accent2);font-style:normal}
+.csr-hero-sub{font-size:clamp(16px,2vw,20px);color:var(--muted);max-width:620px;line-height:1.65;margin-bottom:40px}
+.csr-cta-row{display:flex;gap:14px;flex-wrap:wrap}
+
+/* Placeholder image blocks */
+.ph{border-radius:16px;overflow:hidden;position:relative;background:linear-gradient(135deg,rgba(235,0,139,.15),rgba(0,217,232,.12));border:1px solid var(--line)}
+.ph::after{content:attr(data-label);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.25);font-weight:600}
+.ph-full{width:100%;aspect-ratio:16/7}
+.ph-sq{width:100%;aspect-ratio:1}
+.ph-tall{width:100%;aspect-ratio:9/13}
+.ph-wide{width:100%;aspect-ratio:16/9}
+
+/* Mission section */
+.csr-mission{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.csr-mission-text .lead{font-size:clamp(18px,2.2vw,24px);line-height:1.55;color:var(--ink);margin-bottom:24px;font-weight:500}
+.csr-mission-text p{color:var(--muted);font-size:16px;line-height:1.8;margin-bottom:18px}
+.csr-mission-img{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.csr-mission-img .ph:first-child{grid-column:1/-1}
+
+/* Stats bar */
+.csr-stats{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:60px 0}
+.csr-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
+.stat-num{font-family:var(--serif);font-size:clamp(48px,6vw,72px);line-height:1;color:var(--magenta);display:block;margin-bottom:8px}
+.stat-label{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);line-height:1.5}
+
+/* Why Wollies */
+.csr-why{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.csr-why-imgs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.csr-why-text h2{font-family:var(--serif);font-size:clamp(36px,4.5vw,56px);line-height:1.05;margin-bottom:28px}
+.csr-why-text p{color:var(--muted);font-size:15.5px;line-height:1.8;margin-bottom:18px}
+.csr-why-text a{color:var(--accent2);text-decoration:underline;text-underline-offset:3px}
+
+/* More than a shelter */
+.csr-promise{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.csr-promise-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.promise-list{list-style:none;margin:32px 0}
+.promise-list li{padding:16px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:15.5px;line-height:1.6;padding-left:24px;position:relative}
+.promise-list li::before{content:'→';position:absolute;left:0;color:var(--magenta)}
+.csr-promise-imgs{display:grid;grid-template-columns:1fr;gap:14px}
+
+/* Drive section */
+.drive-steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:48px}
+.drive-step{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:32px;transition:border-color .3s,transform .3s}
+.drive-step:hover{border-color:var(--magenta);transform:translateY(-6px)}
+.step-num{font-family:var(--serif);font-size:64px;line-height:1;color:var(--magenta);opacity:.3;margin-bottom:12px;display:block}
+.drive-step h3{font-size:17px;margin-bottom:10px;color:var(--ink)}
+.drive-step p{color:var(--muted);font-size:14px;line-height:1.7}
+
+/* Donations grid */
+.donations-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.donation-cat{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:28px;transition:border-color .3s}
+.donation-cat:hover{border-color:var(--cyan)}
+.donation-cat-icon{font-size:36px;margin-bottom:16px;display:block}
+.donation-cat h3{font-size:17px;margin-bottom:14px;color:var(--ink)}
+.donation-cat ul{list-style:none}
+.donation-cat ul li{color:var(--muted);font-size:13.5px;line-height:1.6;padding:4px 0;padding-left:16px;position:relative}
+.donation-cat ul li::before{content:'·';position:absolute;left:0;color:var(--accent)}
+
+/* Involvement cards */
+.involve-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.involve-card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--bg2);transition:transform .3s,border-color .3s}
+.involve-card:hover{transform:translateY(-6px);border-color:var(--magenta)}
+.involve-card-img{width:100%;aspect-ratio:4/3}
+.involve-card-body{padding:24px}
+.involve-card h3{font-size:17px;margin-bottom:10px}
+.involve-card p{color:var(--muted);font-size:14px;line-height:1.65}
+
+/* Quote block */
+.csr-quote{background:linear-gradient(135deg,rgba(235,0,139,.08),rgba(0,217,232,.06));border-left:4px solid var(--magenta);border-radius:0 16px 16px 0;padding:40px 48px;margin:48px 0}
+.csr-quote p{font-size:clamp(18px,2.5vw,26px);line-height:1.55;color:var(--ink);font-weight:500}
+
+/* Commitment list */
+.commitment-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px}
+.commitment-list li{display:flex;gap:12px;align-items:flex-start;color:var(--muted);font-size:14.5px;line-height:1.6}
+.commitment-list li::before{content:'✓';color:var(--cyan);font-weight:700;flex-shrink:0;margin-top:2px}
+
+/* Final CTA */
+.csr-final-cta{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.csr-final-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.csr-final-text h2{font-family:var(--serif);font-size:clamp(36px,5vw,64px);line-height:1.02;margin-bottom:20px}
+.csr-final-text p{color:var(--muted);font-size:16px;line-height:1.75;margin-bottom:32px}
+.csr-final-btns{display:flex;flex-direction:column;gap:12px}
+.csr-final-btns .btn{text-align:center;justify-content:center}
+
+/* Wollies info */
+.wollies-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:48px}
+.wollies-info-block{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:36px}
+.wollies-info-block h3{font-family:var(--serif);font-size:28px;color:var(--accent2);margin-bottom:20px}
+.wollies-hours{list-style:none}
+.wollies-hours li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--muted)}
+.wollies-hours li span:first-child{color:var(--ink);font-weight:500}
+.wollies-hours li.closed span:last-child{color:var(--magenta)}
+.wollies-address p{color:var(--muted);font-size:15px;line-height:1.75}
+.wollies-address strong{color:var(--ink)}
+.wollies-address a{color:var(--accent2);text-decoration:underline;text-underline-offset:3px}
+
+/* Hashtag banner */
+.hashtag-banner{text-align:center;padding:80px 0;border-top:1px solid var(--line)}
+.hashtag-banner .tag-big{font-family:var(--serif);font-size:clamp(36px,6vw,80px);color:transparent;background:linear-gradient(90deg,var(--magenta),var(--cyan));-webkit-background-clip:text;background-clip:text;display:block;margin-bottom:12px}
+.hashtag-banner p{color:var(--muted);font-size:15px;letter-spacing:1px}
+
+/* Photo strip */
+.photo-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
+
+/* Responsive */
+@media(max-width:900px){
+  .csr-mission,.csr-why,.csr-promise-inner,.csr-final-inner,.wollies-info-grid{grid-template-columns:1fr}
+  .drive-steps,.involve-grid{grid-template-columns:1fr 1fr}
+  .donations-grid{grid-template-columns:1fr 1fr}
+  .csr-stats-grid{grid-template-columns:repeat(2,1fr)}
+  .photo-strip{grid-template-columns:repeat(2,1fr)}
+  .commitment-list{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .drive-steps,.donations-grid,.involve-grid{grid-template-columns:1fr}
+  .csr-stats-grid{grid-template-columns:repeat(2,1fr)}
+  .csr-why-imgs{grid-template-columns:1fr}
+  .csr-mission-img{grid-template-columns:1fr}
+  .photo-strip{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<div class="noise"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><img src="assets/logo.svg" alt="BLKSM Events" class="logo-img"></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks"></ul>
+  </div>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────────── -->
+<header class="hero" style="min-height:100vh;display:flex;align-items:center">
+  <div class="hero-bg">
+    <div class="cine-beam"></div>
+    <div class="cine-beam2"></div>
+    <div class="cine-vignette"></div>
+  </div>
+  <div class="hero-content" style="padding:160px 0 100px">
+    <span class="csr-hero-tag reveal">BLKSM Cares · Corporate Social Responsibility</span>
+    <h1 class="csr-hero-title reveal">
+      PAWS<br>
+      FOR<br>
+      <em>WOLLIES</em>
+    </h1>
+    <p class="csr-hero-sub reveal">Every paw deserves safety. Every animal deserves a second chance.</p>
+    <p class="csr-hero-sub reveal" style="margin-bottom:40px;font-size:clamp(14px,1.6vw,17px)">
+      BLKSM Events proudly supports <strong style="color:var(--ink)">Wollies Animal Shelter NPC</strong> in Pretoria North as our official CSR partner.
+    </p>
+    <div class="csr-cta-row reveal">
+      <a href="#monthly-drive" class="btn btn-primary">Support the Monthly Drive</a>
+      <a href="https://wollies.org/about-us/" target="_blank" rel="noopener" class="btn btn-secondary">Learn More About Wollies</a>
+    </div>
+  </div>
+</header>
+
+<!-- ── HERO PHOTO STRIP ──────────────────────────────────── -->
+<div class="container" style="padding-top:0;margin-top:-40px;position:relative;z-index:2">
+  <div class="photo-strip">
+    <div class="ph ph-wide reveal-up" data-label="shelter dogs photo"></div>
+    <div class="ph ph-wide reveal-up" data-label="shelter cats photo"></div>
+    <div class="ph ph-wide reveal-up" data-label="wollies team photo"></div>
+    <div class="ph ph-wide reveal-up" data-label="animals at shelter"></div>
+  </div>
+</div>
+
+<!-- ── MISSION ───────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="csr-mission">
+      <div class="csr-mission-text">
+        <div class="section-tag reveal">Our Purpose</div>
+        <h2 class="section-title reveal">Creating experiences.<br><span class="accent">Strengthening communities.</span><br>Changing lives.</h2>
+        <p class="reveal" style="font-size:16px;line-height:1.8;color:var(--muted);margin-bottom:18px">At BLKSM Events, we believe that the success of a business should be measured not only by the experiences it creates, but also by the impact it leaves behind.</p>
+        <p class="reveal" style="font-size:16px;line-height:1.8;color:var(--muted);margin-bottom:18px">Events have the power to bring people together. They create communities, inspire participation and remind us that meaningful change becomes possible when individuals, businesses and organisations work towards a shared purpose.</p>
+        <p class="reveal" style="font-size:16px;line-height:1.8;color:var(--muted)">As part of our commitment to becoming a responsible, community-driven business, BLKSM Events has adopted animal welfare as our official Corporate Social Responsibility focus — and we are proud to announce that our primary beneficiary and community partner will be <strong style="color:var(--ink)">Wollies Animal Shelter NPC</strong>.</p>
+      </div>
+      <div class="csr-mission-img reveal-up">
+        <div class="ph" style="aspect-ratio:16/9;grid-column:1/-1" data-label="blksm team with animals"></div>
+        <div class="ph ph-sq" data-label="donation handover"></div>
+        <div class="ph ph-sq" data-label="dog adoption"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS ─────────────────────────────────────────────── -->
+<div class="csr-stats">
+  <div class="container">
+    <div class="csr-stats-grid">
+      <div class="reveal-up">
+        <span class="stat-num">1 000+</span>
+        <span class="stat-label">Dogs &amp; cats in Wollies' care</span>
+      </div>
+      <div class="reveal-up">
+        <span class="stat-num">22</span>
+        <span class="stat-label">Dedicated staff members</span>
+      </div>
+      <div class="reveal-up">
+        <span class="stat-num">R200k</span>
+        <span class="stat-label">Monthly vet costs at the shelter</span>
+      </div>
+      <div class="reveal-up">
+        <span class="stat-num">2003</span>
+        <span class="stat-label">Year Wollies was established</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── WHY WOLLIES ───────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="csr-why">
+      <div class="csr-why-imgs reveal-up">
+        <div class="ph" style="grid-column:1/-1;aspect-ratio:16/9" data-label="wollies shelter exterior"></div>
+        <div class="ph ph-sq" data-label="dogs in kennels"></div>
+        <div class="ph ph-sq" data-label="cats at wollies"></div>
+      </div>
+      <div class="csr-why-text">
+        <div class="section-tag reveal">Why We Chose Them</div>
+        <h2 class="reveal">Why <span class="accent">Wollies?</span></h2>
+        <p class="reveal">Wollies is not a distant national organisation operating outside our immediate environment. It is part of our community.</p>
+        <p class="reveal">Located in Hesteapark in Pretoria North, Wollies has grown from a small sterilisation initiative established in 2003 into a large-scale animal shelter caring for abandoned, neglected and abused dogs and cats. It operates as a non-profit, pro-life organisation and does not receive government funding.</p>
+        <p class="reveal">Animals remain in Wollies' care until suitable forever homes can be found for them. The daily operation is supported by a dedicated team of approximately 22 employees, with volunteers providing additional support — particularly over weekends.</p>
+        <p class="reveal">Every day, the Wollies team provides food, clean water, safe shelter, bedding, veterinary treatment, medication, sanitation, exercise, socialisation and human care to animals that may have experienced abandonment, trauma, neglect or abuse.</p>
+        <a href="https://wollies.org/about-us/" target="_blank" rel="noopener" class="btn btn-secondary reveal" style="margin-top:12px;display:inline-flex">Learn More About Wollies →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MORE THAN A SHELTER ───────────────────────────────── -->
+<section class="section csr-promise">
+  <div class="container">
+    <div class="csr-promise-inner">
+      <div>
+        <div class="section-tag reveal">More Than a Shelter</div>
+        <h2 class="section-title reveal">A <span class="accent">Promise</span> to Animals Who Have Nowhere Else to Go.</h2>
+        <ul class="promise-list">
+          <li class="reveal">An abandoned dog will receive another meal.</li>
+          <li class="reveal">A frightened cat will have somewhere warm and safe to sleep.</li>
+          <li class="reveal">An injured animal will receive medical attention.</li>
+          <li class="reveal">Animals will not be forgotten simply because finding them the right home may take time.</li>
+        </ul>
+        <p class="reveal" style="color:var(--muted);font-size:15px;line-height:1.8">Adoption fees include sterilisation, deworming, vaccination and microchipping. Cats are also tested for FIV and feline leukaemia before leaving the shelter. Their commitment carries a significant operational cost — veterinary expenses alone can reach approximately <strong style="color:var(--ink)">R200,000 per month</strong>.</p>
+        <p class="reveal" style="color:var(--muted);font-size:15px;line-height:1.8;margin-top:18px">Wollies cannot carry this responsibility alone. It depends on individuals, volunteers, businesses and community organisations choosing to help. <strong style="color:var(--ink)">That is where BLKSM Events intends to make a difference.</strong></p>
+      </div>
+      <div class="csr-promise-imgs reveal-up">
+        <div class="ph ph-tall" data-label="shelter animal portrait"></div>
+        <div class="ph ph-wide" style="margin-top:14px" data-label="volunteer with animals"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MONTHLY DRIVE ─────────────────────────────────────── -->
+<section class="section" id="monthly-drive">
+  <div class="container">
+    <div class="section-tag reveal">Our Initiative</div>
+    <h2 class="section-title reveal">The BLKSM Monthly <span class="accent">Wollies Drive</span></h2>
+    <p class="lead-narrow reveal">One community. One collection. Hundreds of lives supported. Every month, our team travels through Pretoria and surrounding areas to collect essential supplies donated by individuals, families, businesses, schools, residential estates and corporate partners.</p>
+
+    <div class="ph ph-full reveal-up" style="margin-top:48px" data-label="collection drive in action"></div>
+
+    <div class="drive-steps">
+      <div class="drive-step reveal-up">
+        <span class="step-num">01</span>
+        <h3>Priority List Announced</h3>
+        <p>Before each drive, BLKSM Events publishes a list of the items most urgently required by Wollies — so donors give according to real needs, not assumptions.</p>
+      </div>
+      <div class="drive-step reveal-up">
+        <span class="step-num">02</span>
+        <h3>The Community Collects</h3>
+        <p>Individuals, families, schools, offices and neighbourhoods gather their contributions. A single bag of food matters. An office-wide campaign matters even more.</p>
+      </div>
+      <div class="drive-step reveal-up">
+        <span class="step-num">03</span>
+        <h3>BLKSM Collects</h3>
+        <p>Our team travels the announced route and visits participating collection points. Larger collections from businesses and estates are arranged in advance.</p>
+      </div>
+      <div class="drive-step reveal-up">
+        <span class="step-num">04</span>
+        <h3>Donations Sorted</h3>
+        <p>Items are inspected, grouped and prepared for delivery to ensure the handover is organised, efficient and useful to the shelter.</p>
+      </div>
+      <div class="drive-step reveal-up">
+        <span class="step-num">05</span>
+        <h3>Delivered to Wollies</h3>
+        <p>The collected goods are transported to Wollies and formally handed over to the shelter team in Hesteapark, Pretoria North.</p>
+      </div>
+      <div class="drive-step reveal-up">
+        <span class="step-num">06</span>
+        <h3>Impact Shared</h3>
+        <p>Following each drive, we publish an update showing what was collected, who participated and how the community contributed — including handover photos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PHOTO STRIP 2 ─────────────────────────────────────── -->
+<div style="padding:0 0 80px;position:relative;z-index:1">
+  <div class="container">
+    <div class="photo-strip">
+      <div class="ph ph-sq reveal-up" data-label="donation sorting"></div>
+      <div class="ph ph-sq reveal-up" data-label="community collection point"></div>
+      <div class="ph ph-sq reveal-up" data-label="delivery to shelter"></div>
+      <div class="ph ph-sq reveal-up" data-label="team at wollies"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── WHAT TO DONATE ────────────────────────────────────── -->
+<section class="section" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container">
+    <div class="section-tag reveal">What's Needed</div>
+    <h2 class="section-title reveal">What You Can <span class="accent">Donate</span></h2>
+    <p class="lead-narrow reveal">The needs of a large shelter continue throughout the year. Even the most basic items are consumed quickly when more than 1 000 animals require daily care.</p>
+
+    <div class="donations-grid">
+      <div class="donation-cat reveal-up">
+        <span class="donation-cat-icon">🐾</span>
+        <h3>Food &amp; Nutrition</h3>
+        <ul>
+          <li>Adult dog and cat food (sealed, unexpired)</li>
+          <li>Puppy and kitten food</li>
+          <li>Senior animal food</li>
+          <li>Large- and small-breed dog food</li>
+          <li>Wet food and tinned food</li>
+          <li>Animal treats suitable for shelter use</li>
+        </ul>
+      </div>
+      <div class="donation-cat reveal-up">
+        <span class="donation-cat-icon">🛏️</span>
+        <h3>Blankets &amp; Bedding</h3>
+        <ul>
+          <li>Clean blankets and towels</li>
+          <li>Pet beds and fleece bedding</li>
+          <li>Durable mats and kennel bedding</li>
+          <li>Warm winter items</li>
+        </ul>
+        <p style="color:var(--muted);font-size:13px;margin-top:14px;line-height:1.6">Please ensure used items are clean and in a condition safe and practical for animals.</p>
+      </div>
+      <div class="donation-cat reveal-up">
+        <span class="donation-cat-icon">🧸</span>
+        <h3>Toys &amp; Enrichment</h3>
+        <ul>
+          <li>Durable dog toys and balls</li>
+          <li>Rope toys and chew toys</li>
+          <li>Cat toys and scratching items</li>
+          <li>Leads, collars and harnesses</li>
+          <li>Stainless-steel feeding and water bowls</li>
+        </ul>
+      </div>
+      <div class="donation-cat reveal-up">
+        <span class="donation-cat-icon">🧹</span>
+        <h3>Cleaning Supplies</h3>
+        <ul>
+          <li>Animal-safe disinfectants</li>
+          <li>Detergent and washing powder</li>
+          <li>Chlorine powder and cleaning agents</li>
+          <li>Refuse bags and cleaning cloths</li>
+          <li>Paper towels and disposable gloves</li>
+          <li>Buckets, brooms, mops and sponges</li>
+        </ul>
+      </div>
+      <div class="donation-cat reveal-up">
+        <span class="donation-cat-icon">⭐</span>
+        <h3>High-Value Donations</h3>
+        <ul>
+          <li>Kennel equipment and maintenance materials</li>
+          <li>Bulk food donations</li>
+          <li>Veterinary sponsorship</li>
+          <li>Transport assistance</li>
+          <li>Corporate volunteer days</li>
+          <li>Storage equipment</li>
+        </ul>
+      </div>
+      <div class="donation-cat reveal-up" style="background:linear-gradient(135deg,rgba(235,0,139,.08),rgba(0,217,232,.06));border-color:rgba(235,0,139,.3)">
+        <span class="donation-cat-icon">💳</span>
+        <h3>Financial Contributions</h3>
+        <p style="color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:18px">For monetary donations, please use Wollies' official channels to ensure funds are received and administered directly by the shelter.</p>
+        <a href="https://donate.wollies.org/" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:13px;padding:10px 20px">Donate to Wollies Directly →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GET INVOLVED ──────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-tag reveal">Take Part</div>
+    <h2 class="section-title reveal">Ways to Get <span class="accent">Involved</span></h2>
+    <p class="lead-narrow reveal">Whatever form your contribution takes, it becomes part of something bigger: a community choosing not to look away.</p>
+
+    <div class="involve-grid">
+      <div class="involve-card reveal-up">
+        <div class="ph involve-card-img" data-label="individual donor"></div>
+        <div class="involve-card-body">
+          <h3>Donate as an Individual</h3>
+          <p>Add a bag of dog food, cat food, a blanket or a toy to your monthly shopping and contribute it during the next BLKSM collection. No donation is too small to matter.</p>
+        </div>
+      </div>
+      <div class="involve-card reveal-up">
+        <div class="ph involve-card-img" data-label="collection point business"></div>
+        <div class="involve-card-body">
+          <h3>Become a Collection Point</h3>
+          <p>Businesses, venues, restaurants, gyms, schools and residential estates can volunteer to host a temporary BLKSM Wollies collection point and make the campaign visible in their community.</p>
+        </div>
+      </div>
+      <div class="involve-card reveal-up">
+        <div class="ph involve-card-img" data-label="workplace donation drive"></div>
+        <div class="involve-card-body">
+          <h3>Organise a Workplace Drive</h3>
+          <p>Invite your employees, customers or suppliers to contribute towards a collective donation. BLKSM Events can coordinate the collection of larger workplace contributions during the monthly route.</p>
+        </div>
+      </div>
+      <div class="involve-card reveal-up">
+        <div class="ph involve-card-img" data-label="event donation station"></div>
+        <div class="involve-card-body">
+          <h3>Include Wollies in Your Event</h3>
+          <p>BLKSM Events clients can incorporate animal welfare into selected events — a donation station, a "bring a blanket" entry initiative, an adoption-awareness campaign or a corporate team challenge.</p>
+        </div>
+      </div>
+      <div class="involve-card reveal-up">
+        <div class="ph involve-card-img" data-label="volunteers at shelter"></div>
+        <div class="involve-card-body">
+          <h3>Volunteer Your Time</h3>
+          <p>Wollies relies on volunteers who give their time and attention to the animals. The organisation welcomes volunteer involvement — confirm visiting arrangements directly before travelling.</p>
+        </div>
+      </div>
+      <div class="involve-card reveal-up">
+        <div class="ph involve-card-img" data-label="dog adoption family"></div>
+        <div class="involve-card-body">
+          <h3>Consider Responsible Adoption</h3>
+          <p>A donation supports an animal today. Adoption creates space for the shelter to help another animal tomorrow. Wollies has dogs and cats of all sizes, ages and personalities waiting for suitable homes.</p>
+          <a href="https://wollies.org/all-listings/" target="_blank" rel="noopener" style="color:var(--accent2);font-size:13px;display:inline-block;margin-top:12px">Browse Available Animals →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── QUOTE BLOCK ───────────────────────────────────────── -->
+<div style="position:relative;z-index:1">
+  <div class="container">
+    <div class="csr-quote reveal">
+      <p>"Small actions become full bowls, warm beds and second chances. Let us show them that Pretoria cares."</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── COMMITMENT ────────────────────────────────────────── -->
+<section class="section" style="background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+      <div>
+        <div class="section-tag reveal">Our Promise</div>
+        <h2 class="section-title reveal">Our Commitment to <span class="accent">Responsible Impact</span></h2>
+        <p class="reveal" style="color:var(--muted);font-size:15.5px;line-height:1.8;margin-top:16px">BLKSM Events is committed to ensuring that this initiative remains practical, credible and transparent. This initiative will evolve according to the needs of the shelter. During some months, the greatest requirement may be food. During winter, the focus may move towards blankets and bedding.</p>
+        <ul class="commitment-list reveal-up" style="margin-top:32px">
+          <li>Consulting with Wollies about priority requirements</li>
+          <li>Promoting responsible and appropriate donations</li>
+          <li>Keeping collected goods safe and organised</li>
+          <li>Delivering donations within the announced period</li>
+          <li>Acknowledging participating collection partners</li>
+          <li>Publishing regular campaign updates</li>
+          <li>Respecting the privacy of anonymous donors</li>
+          <li>Promoting adoption and responsible pet ownership</li>
+        </ul>
+      </div>
+      <div class="reveal-up">
+        <div class="ph" style="aspect-ratio:9/11;border-radius:20px" data-label="blksm team commitment photo"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY IT MATTERS ────────────────────────────────────── -->
+<section class="section">
+  <div class="container" style="max-width:860px">
+    <div class="section-tag reveal">The Bigger Picture</div>
+    <h2 class="section-title reveal">Why Animal Welfare Belongs to <span class="accent">All of Us</span></h2>
+    <p class="reveal" style="color:var(--muted);font-size:16px;line-height:1.85;margin-bottom:20px">Animal welfare is not only the responsibility of shelters and rescue organisations. It is a community responsibility.</p>
+    <p class="reveal" style="color:var(--muted);font-size:16px;line-height:1.85;margin-bottom:20px">Shelters frequently receive animals because of abandonment, financial hardship, housing restrictions, uncontrolled breeding and owners who are no longer able or willing to care for their pets. Recent reporting from Pretoria indicates that shelters are facing growing pressure as more animals are surrendered because of financial strain and restrictive residential pet policies.</p>
+    <p class="reveal" style="color:var(--muted);font-size:16px;line-height:1.85;margin-bottom:20px">By supporting Wollies, our community is not only helping the animals already inside the shelter. We are also contributing to a broader culture of responsible ownership, compassion and prevention.</p>
+    <p class="reveal" style="color:var(--ink);font-size:17px;line-height:1.75;font-weight:500">The BLKSM Monthly Wollies Drive will not be treated as a once-off publicity exercise. Animal welfare will become part of how we operate, communicate and engage with our community — permanently.</p>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ──────────────────────────────────────────── -->
+<section class="section csr-final-cta">
+  <div class="container">
+    <div class="csr-final-inner">
+      <div class="csr-final-text">
+        <div class="section-tag reveal">Join Us</div>
+        <h2 class="reveal">Join the Next BLKSM <span class="accent">Wollies Drive</span></h2>
+        <p class="reveal">Together, we can help put food into bowls. Together, we can help provide warm places to sleep. Together, we can give shelter animals comfort, dignity and hope while they wait for the families they deserve.</p>
+      </div>
+      <div class="csr-final-btns reveal-up">
+        <a href="index.html#contact" class="btn btn-primary">View the Next Collection Date</a>
+        <a href="index.html#contact" class="btn btn-secondary">Register as a Collection Partner</a>
+        <a href="index.html#contact" class="btn btn-secondary">Contribute to the Monthly Drive</a>
+        <a href="https://wollies.org/" target="_blank" rel="noopener" class="btn btn-secondary">Visit Wollies Animal Shelter →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WOLLIES INFO ───────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-tag reveal">Find Wollies</div>
+    <h2 class="section-title reveal">Wollies Animal <span class="accent">Shelter</span></h2>
+    <div class="wollies-info-grid">
+      <div class="wollies-info-block reveal-up">
+        <h3>Location &amp; Hours</h3>
+        <div class="wollies-address" style="margin-bottom:24px">
+          <p><strong>Wollies Animal Shelter NPC</strong><br>
+          101 Rooikat Street, Hesteapark<br>
+          Pretoria North, Gauteng, 0110</p>
+          <a href="https://wollies.org/contact-us/" target="_blank" rel="noopener" style="display:inline-block;margin-top:12px;font-size:13px">wollies.org/contact-us →</a>
+        </div>
+        <ul class="wollies-hours">
+          <li><span>Monday</span><span>09:00 – 16:00</span></li>
+          <li><span>Tuesday</span><span>09:00 – 16:00</span></li>
+          <li class="closed"><span>Wednesday</span><span>Closed</span></li>
+          <li><span>Thursday</span><span>09:00 – 16:00</span></li>
+          <li><span>Friday</span><span>09:00 – 16:00</span></li>
+          <li><span>Saturday</span><span>09:00 – 16:00</span></li>
+          <li><span>Sunday</span><span>09:00 – 12:00</span></li>
+        </ul>
+        <p style="color:var(--muted);font-size:12px;margin-top:16px;line-height:1.6">Visitors should confirm the latest operating hours directly with Wollies before travelling.</p>
+      </div>
+      <div class="reveal-up" style="display:flex;flex-direction:column;gap:14px">
+        <div class="ph" style="flex:1;min-height:200px;border-radius:16px" data-label="wollies shelter exterior"></div>
+        <div class="ph" style="flex:1;min-height:200px;border-radius:16px" data-label="shelter animals"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HASHTAG BANNER ────────────────────────────────────── -->
+<div class="hashtag-banner">
+  <span class="tag-big">#BLKSMPawsForWollies</span>
+  <p>Tag us on social media when you participate in the next monthly drive.</p>
+</div>
+
+<div id="partnersCarousel"></div>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="index.html" class="logo"><img src="assets/logo.svg" alt="BLKSM Events" class="logo-img"></a>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+    </div>
+    <p>&copy; <span id="year"></span> BLKSM Events. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
