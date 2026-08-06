@@ -870,6 +870,24 @@ if (blogPostHero && blogPostDetail) {
   });
 }
 
+/* ===================== CSR PAGE PHOTOS (csr.html) ===================== */
+if (document.querySelectorAll('[data-csr]').length) {
+  loadJSON('content/csr.json').then(data => {
+    document.querySelectorAll('[data-csr]').forEach(el => {
+      const key = el.dataset.csr;
+      const src = data[key];
+      if (!src) return;
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = el.dataset.label || '';
+      img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit';
+      el.classList.remove('ph');
+      el.innerHTML = '';
+      el.appendChild(img);
+    });
+  }).catch(() => {});
+}
+
 /* ===================== PARTNERS / SPONSORS CAROUSEL ===================== */
 (function () {
   const slot = document.getElementById('partnersCarousel');

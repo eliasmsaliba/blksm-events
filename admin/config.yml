@@ -258,6 +258,47 @@ collections:
                   - { label: "Logo Image", name: "image", widget: "image" }
                   - { label: "Link URL (where clicking the logo goes)", name: "url", widget: "string", required: false, hint: "e.g. https://example.com" }
 
+  - name: "csr"
+    label: "CSR — Paws for Wollies"
+    files:
+      - name: "csr"
+        label: "CSR Page Photos"
+        file: "content/csr.json"
+        fields:
+          - { label: "— HERO PHOTO STRIP —", name: "_h1", widget: "hidden", required: false }
+          - { label: "Hero Strip — Photo 1", name: "heroStrip1", widget: "image", required: false }
+          - { label: "Hero Strip — Photo 2", name: "heroStrip2", widget: "image", required: false }
+          - { label: "Hero Strip — Photo 3", name: "heroStrip3", widget: "image", required: false }
+          - { label: "Hero Strip — Photo 4", name: "heroStrip4", widget: "image", required: false }
+          - { label: "— MISSION SECTION —", name: "_h2", widget: "hidden", required: false }
+          - { label: "Mission — Main Wide Photo", name: "missionMain", widget: "image", required: false }
+          - { label: "Mission — Square Photo 1", name: "missionSquare1", widget: "image", required: false }
+          - { label: "Mission — Square Photo 2", name: "missionSquare2", widget: "image", required: false }
+          - { label: "— WHY WOLLIES SECTION —", name: "_h3", widget: "hidden", required: false }
+          - { label: "Why Wollies — Main Wide Photo", name: "whyMain", widget: "image", required: false }
+          - { label: "Why Wollies — Square Photo 1", name: "whySquare1", widget: "image", required: false }
+          - { label: "Why Wollies — Square Photo 2", name: "whySquare2", widget: "image", required: false }
+          - { label: "— MORE THAN A SHELTER —", name: "_h4", widget: "hidden", required: false }
+          - { label: "Promise — Tall Portrait Photo", name: "promiseTall", widget: "image", required: false }
+          - { label: "Promise — Wide Photo", name: "promiseWide", widget: "image", required: false }
+          - { label: "— MONTHLY DRIVE —", name: "_h5", widget: "hidden", required: false }
+          - { label: "Monthly Drive — Hero Banner Photo", name: "driveMain", widget: "image", required: false }
+          - { label: "Drive Strip — Photo 1", name: "driveStrip1", widget: "image", required: false }
+          - { label: "Drive Strip — Photo 2", name: "driveStrip2", widget: "image", required: false }
+          - { label: "Drive Strip — Photo 3", name: "driveStrip3", widget: "image", required: false }
+          - { label: "Drive Strip — Photo 4", name: "driveStrip4", widget: "image", required: false }
+          - { label: "— GET INVOLVED CARDS —", name: "_h6", widget: "hidden", required: false }
+          - { label: "Involve Card 1 — Donate as Individual", name: "involveCard1", widget: "image", required: false }
+          - { label: "Involve Card 2 — Become a Collection Point", name: "involveCard2", widget: "image", required: false }
+          - { label: "Involve Card 3 — Organise a Workplace Drive", name: "involveCard3", widget: "image", required: false }
+          - { label: "Involve Card 4 — Include Wollies in Your Event", name: "involveCard4", widget: "image", required: false }
+          - { label: "Involve Card 5 — Volunteer", name: "involveCard5", widget: "image", required: false }
+          - { label: "Involve Card 6 — Consider Adoption", name: "involveCard6", widget: "image", required: false }
+          - { label: "— OTHER SECTIONS —", name: "_h7", widget: "hidden", required: false }
+          - { label: "Commitment — Side Photo", name: "commitmentPhoto", widget: "image", required: false }
+          - { label: "Wollies Info — Photo 1", name: "wolliesPhoto1", widget: "image", required: false }
+          - { label: "Wollies Info — Photo 2", name: "wolliesPhoto2", widget: "image", required: false }
+
   - name: "blog"
     label: "Blog"
     files:
