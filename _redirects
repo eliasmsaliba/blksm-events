@@ -1,0 +1,3 @@
+# Maintenance mode — remove this file to go live again
+/admin/*  /admin/index.html  200
+/*        /maintenance.html  200

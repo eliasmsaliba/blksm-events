@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLKSM Events — Back Soon</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<style>
+  :root{--magenta:#eb008b;--cyan:#00d9e8;--bg:#040405;--text:#f5f6f8;--muted:#94939c}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    background:var(--bg);color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    display:flex;align-items:center;justify-content:center;
+    min-height:100vh;overflow:hidden;position:relative;
+    -webkit-font-smoothing:antialiased;
+  }
+  body::before{
+    content:'';position:fixed;inset:-10%;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(circle at 15% 20%,rgba(235,0,139,.12),transparent 40%),
+      radial-gradient(circle at 85% 75%,rgba(0,217,232,.09),transparent 40%),
+      radial-gradient(circle at 50% 50%,rgba(255,242,0,.02),transparent 50%);
+    animation:bg 30s ease-in-out infinite alternate;
+  }
+  @keyframes bg{0%{transform:translate(0,0) scale(1)}100%{transform:translate(-3%,3%) scale(1.08)}}
+
+  /* Cinematic beams */
+  .beam{position:fixed;pointer-events:none;z-index:0}
+  .beam1{
+    top:-20%;left:10%;width:1px;height:130vh;
+    background:linear-gradient(180deg,transparent,rgba(235,0,139,.35) 30%,rgba(235,0,139,.18) 60%,transparent);
+    transform:rotate(-8deg);transform-origin:top center;
+    animation:sweep1 8s ease-in-out infinite alternate;
+    box-shadow:0 0 60px 18px rgba(235,0,139,.08);
+  }
+  .beam2{
+    top:-20%;right:18%;width:1px;height:120vh;
+    background:linear-gradient(180deg,transparent,rgba(0,217,232,.28) 40%,rgba(0,217,232,.12) 65%,transparent);
+    transform:rotate(6deg);transform-origin:top center;
+    animation:sweep2 11s ease-in-out infinite alternate;
+    box-shadow:0 0 50px 14px rgba(0,217,232,.07);
+  }
+  @keyframes sweep1{0%{transform:rotate(-8deg)}100%{transform:rotate(4deg)}}
+  @keyframes sweep2{0%{transform:rotate(6deg)}100%{transform:rotate(-5deg)}}
+
+  .noise{
+    position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.03;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode:overlay;
+  }
+
+  .card{
+    position:relative;z-index:1;text-align:center;
+    padding:64px 48px;max-width:560px;width:90%;
+  }
+
+  .logo{display:flex;justify-content:center;margin-bottom:48px}
+  .logo svg{height:36px;width:auto}
+
+  .eyebrow{
+    font-size:11px;letter-spacing:4px;text-transform:uppercase;
+    color:var(--magenta);font-weight:700;margin-bottom:20px;display:block;
+  }
+
+  h1{
+    font-family:'Bebas Neue',Georgia,serif;
+    font-size:clamp(52px,10vw,88px);
+    line-height:.95;margin-bottom:24px;
+    background:linear-gradient(135deg,var(--text) 40%,var(--muted));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  h1 em{
+    color:transparent;
+    background:linear-gradient(90deg,var(--magenta),var(--cyan));
+    -webkit-background-clip:text;background-clip:text;
+    font-style:normal;
+  }
+
+  p{
+    color:var(--muted);font-size:16px;line-height:1.75;margin-bottom:32px;
+  }
+
+  .divider{
+    width:48px;height:2px;
+    background:linear-gradient(90deg,var(--magenta),var(--cyan));
+    margin:32px auto;border-radius:2px;
+  }
+
+  .contact{font-size:14px;color:var(--muted)}
+  .contact a{color:var(--cyan);text-decoration:none;border-bottom:1px solid rgba(0,217,232,.3);transition:border-color .2s}
+  .contact a:hover{border-color:var(--cyan)}
+
+  /* Bebas Neue fallback — loads from Google if available */
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<div class="beam beam1"></div>
+<div class="beam beam2"></div>
+
+<div class="card">
+  <div class="logo">
+    <img src="assets/logo.svg" alt="BLKSM Events" style="height:32px;width:auto">
+  </div>
+
+  <span class="eyebrow">We'll Be Right Back</span>
+
+  <h1>BACK<br><em>SOON.</em></h1>
+
+  <div class="divider"></div>
+
+  <p>We're currently making some improvements to our website. We'll be back up shortly — better than ever.</p>
+
+  <p class="contact">
+    In the meantime, reach us at<br>
+    <a href="mailto:hello@blksm.events">hello@blksm.events</a>
+  </p>
+</div>
+</body>
+</html>
