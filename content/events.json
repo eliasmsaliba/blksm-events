@@ -84,24 +84,6 @@
       "category": "date-nights"
     },
     {
-      "ticketLink": "https://bosveld-golfday.web.app/",
-      "registrationEnabled": false,
-      "registrationButtonLabel": "",
-      "city": "Centurion",
-      "ticketLinkLabel": "Register Now",
-      "date": "2026-09-30",
-      "venue": "Centurion Residential Estate & Country Club",
-      "gallery": [
-        "/assets/uploads/chatgpt-image-jul-21-2026-10_28_53-am.png"
-      ],
-      "categoryLabel": "Golf Day",
-      "title": "Bosveld Charcoal Golf Day",
-      "id": "bosveld-golfday",
-      "image": "/assets/uploads/bsvldgd.png",
-      "description": "Bosveld Charcoal Golf Day is a premium experience that brings together\ngreat golf, open-flame braai, fine company and Rugby Legends all for a purpose.\nAn unforgettable day of networking, entertainment and impact.",
-      "category": "sports"
-    },
-    {
       "ticketLink": "https://wie-vat-wie.web.app/",
       "registrationEnabled": true,
       "registrationButtonLabel": "Register Now",
