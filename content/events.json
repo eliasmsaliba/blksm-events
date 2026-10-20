@@ -116,10 +116,11 @@
       "category": "sports"
     },
     {
+      "ticketLink": "https://bakkie-drags-2026.web.app/",
       "registrationEnabled": false,
       "registrationButtonLabel": "Register Now",
       "city": "Pretoria",
-      "ticketLinkLabel": "Tickets / More Info",
+      "ticketLinkLabel": "Tickets / More Info ",
       "date": "2026-11-21",
       "venue": "Sandwani Game Lodge ",
       "title": "STOF SKOP",
